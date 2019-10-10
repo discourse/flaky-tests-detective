@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../spec_helper.rb'
 require_relative '../../lib/detective.rb'
 require_relative '../../lib/printers/json_printer.rb'
@@ -13,7 +15,7 @@ RSpec.describe Detective do
     }
   end
 
-  let(:archive) { MemoryArchive.new(raw_report, { metadata: { runs: 0 }, ruby_tests: {}, js_tests: {}}) }
+  let(:archive) { MemoryArchive.new(raw_report, metadata: { runs: 0 }, ruby_tests: {}, js_tests: {}) }
 
   describe '#report_for' do
     it 'filters tests with less than one failures' do
@@ -50,7 +52,7 @@ RSpec.describe Detective do
       end
 
       let(:archive) { MemoryArchive.new(raw_report, previous_report) }
-    
+
       it 'returns the test that changed since the last report' do
         threshold = 2
 
@@ -67,7 +69,7 @@ RSpec.describe Detective do
         expect(selected_tests(report)).to be_empty
       end
     end
-    
+
     def build_report(threshold, archive)
       subject.report_for(JSONPrinter.new, threshold, archive)
     end

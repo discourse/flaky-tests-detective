@@ -32,8 +32,8 @@ class Detective
   end
 
   def curate_report!(report, previous_report, test_key, threshold)
-    report[test_key].delete_if do |test_name, test| 
-      test[:failures] < threshold || 
+    report[test_key].delete_if do |test_name, test|
+      test[:failures] < threshold ||
       (!previous_report.dig(test_key).empty? &&
       report.dig(test_key, test_name, :failures) == previous_report.dig(test_key, test_name, :failures))
     end

@@ -39,7 +39,7 @@ class TextPrinter
   end
 
   def js_tests(tests_report)
-    with_test_data = tests_report 
+    with_test_data = tests_report
     tests_report.each { |t, r| r[:test] = t }
     ordered_tests = with_test_data.values.sort_by { |r| -r[:failures] }
 

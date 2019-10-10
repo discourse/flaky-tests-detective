@@ -60,7 +60,7 @@ class BuildOutputParser
       if s[:failure_zone]
         new_test = stripped_line.match?(/\d\)/)
         s[:watching_test] = s[:watching_test] || new_test
-        
+
         gather_ruby_test_errors(s, new_test, stripped_line)
       elsif s[:failure_list]
         test_line = stripped_line.include? 'rspec'
@@ -75,7 +75,7 @@ class BuildOutputParser
     if is_new_test
       state[:results] << ''
     elsif state[:watching_test]
-      backtrace_end = line.include? '# ./'  
+      backtrace_end = line.include? '# ./'
       if backtrace_end
         state[:watching_test] = false
         state[:test_number] += 1
@@ -110,8 +110,8 @@ class BuildOutputParser
   end
 
   def parse_js_errors(state, archive, commit_hash)
-    initial_s = { 
-      watching_test: false, current_module: nil, seed: nil, 
+    initial_s = {
+      watching_test: false, current_module: nil, seed: nil,
       current_test_key: nil, errors: state, new_errors: false
     }
 

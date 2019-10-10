@@ -36,12 +36,12 @@ class MarkdownPrinter
   private
 
   def build_ruby_failures(ruby_json)
-    ordered_tests = ruby_json.values.sort_by { |r| -r[:failures] } 
-    
+    ordered_tests = ruby_json.values.sort_by { |r| -r[:failures] }
+
     ordered_tests.reduce('') do |memo, test|
       memo += <<~eos
         #### #{test[:module]}
-        
+
         Failures: #{test[:failures]}
         #{details(test)}
       eos
@@ -49,7 +49,7 @@ class MarkdownPrinter
   end
 
   def build_js_failures(js_json)
-    with_test_data = js_json 
+    with_test_data = js_json
     with_test_data.each { |t, r| r[:test] = t }
     ordered_tests = with_test_data.values.sort_by { |r| -r[:failures] }
 
@@ -58,7 +58,7 @@ class MarkdownPrinter
         #### #{test[:test].to_s.gsub('_', ' ')}
 
         Failures: #{test[:failures]}
-        #{test[:module]} 
+        #{test[:module]}
         #{details(test)}
       eos
     end

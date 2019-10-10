@@ -9,5 +9,9 @@ group :test do
   gem 'byebug'
 end
 
+group :development do
+  gem 'rubocop', require: false
+end
+
 gem 'discourse_api'
 gem 'json'

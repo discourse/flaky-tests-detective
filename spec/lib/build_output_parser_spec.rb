@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../spec_helper.rb'
 require_relative '../../lib/build_output_parser.rb'
 require_relative '../../lib/archives/file_system_archive.rb'
@@ -89,8 +91,8 @@ RSpec.describe BuildOutputParser do
     it 'Parses and stores failed tests' do
       test_failed_assertion = "index has_login_hint is false doesn't allow access"
       test_assertion_result = <<~EOS
-        Failure/Error: expect(response).not_to be_forbidden 
-        expected `#<ActionDispatch::TestResponse:0x000055a703336698 @mon_mutex=#<Thread::Mutex:0x000055a703336620>, @mo..., @method=nil, @request_method=nil, @remote_ip=nil, @original_fullpath=nil, @fullpath=nil, @ip=nil>>.forbidden?` to return false, got true 
+        Failure/Error: expect(response).not_to be_forbidden
+        expected `#<ActionDispatch::TestResponse:0x000055a703336698 @mon_mutex=#<Thread::Mutex:0x000055a703336620>, @mo..., @method=nil, @request_method=nil, @remote_ip=nil, @original_fullpath=nil, @fullpath=nil, @ip=nil>>.forbidden?` to return false, got true
       EOS
       test_module = './spec/requests/finish_installation_controller_spec.rb:11'
 

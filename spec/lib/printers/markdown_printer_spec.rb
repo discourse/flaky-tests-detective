@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../../spec_helper.rb'
 require_relative '../../../lib/printers/markdown_printer.rb'
 require 'json'
@@ -36,7 +38,7 @@ RSpec.describe MarkdownPrinter do
     let(:json_report) { { ruby_tests: {}, js_tests: {} } }
 
     it 'includes a message saying there is no new flakey tests' do
-      body =  "*Looks like I couldn't find any flakey tests this time :tada:*"
+      body = "*Looks like I couldn't find any flakey tests this time :tada:*"
 
       report = subject.print_from(json_report)
 
