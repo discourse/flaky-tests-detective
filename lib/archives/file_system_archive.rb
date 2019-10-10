@@ -32,7 +32,7 @@ class FileSystemArchive
   end
 
   def clean_report
-    { metadata: { runs: 0, last_commit_hash: nil }, ruby_tests: {}, js_tests: {} }
+    { metadata: { runs: 0, last_commit_hash: nil }, ruby_tests: {}, js_tests: {}, slowest_ruby_tests: {}, slowest_js_tests: {} }
   end
 
   def raw_build_iterator

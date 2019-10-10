@@ -7,11 +7,11 @@ require 'fileutils'
 require 'date'
 
 RSpec.describe MarkdownPrinter do
-  let(:raw_json_path) { File.expand_path('../../examples/reports/build_report.json', __dir__) }
+  let(:raw_json_path) { File.expand_path('../../examples/test_reports/build_report.json', __dir__) }
   let(:json_report) { JSON.parse(File.read(raw_json_path), symbolize_names: true) }
 
   it 'includes the title' do
-    title = "## Flakey tests report - #{Date.today.strftime('%m/%d/%Y')}"
+    title = "## Tests report - #{Date.today.strftime('%m/%d/%Y')}"
 
     report = subject.print_from(json_report)
 
@@ -35,7 +35,7 @@ RSpec.describe MarkdownPrinter do
   end
 
   context 'When report is empty' do
-    let(:json_report) { { ruby_tests: {}, js_tests: {} } }
+    let(:json_report) { { ruby_tests: {}, js_tests: {} , slowest_ruby_tests: {}, slowest_js_tests: {} } }
 
     it 'includes a message saying there is no new flakey tests' do
       body = "*Looks like I couldn't find any flakey tests this time :tada:*"

@@ -366,23 +366,23 @@ Starting background redis
 109:C 25 Mar 2019 12:11:17.178 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
 109:C 25 Mar 2019 12:11:17.178 # Redis version=5.0.4, bits=64, commit=00000000, modified=0, pid=109, just started
 109:C 25 Mar 2019 12:11:17.178 # Configuration loaded
-                _._                                                  
-           _.-``__ ''-._                                             
+                _._
+           _.-``__ ''-._
       _.-``    `.  `_.  ''-._           Redis 5.0.4 (00000000/0) 64 bit
-  .-`` .-```.  ```\/    _.,_ ''-._                                   
+  .-`` .-```.  ```\/    _.,_ ''-._
  (    '      ,       .-`  | `,    )     Running in standalone mode
  |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
  |    `-._   `._    /     _.-'    |     PID: 109
-  `-._    `-._  `-./  _.-'    _.-'                                   
- |`-._`-._    `-.__.-'    _.-'_.-'|                                  
- |    `-._`-._        _.-'_.-'    |           http://redis.io        
-  `-._    `-._`-.__.-'_.-'    _.-'                                   
- |`-._`-._    `-.__.-'    _.-'_.-'|                                  
- |    `-._`-._        _.-'_.-'    |                                  
-  `-._    `-._`-.__.-'_.-'    _.-'                                   
-      `-._    `-.__.-'    _.-'                                       
-          `-._        _.-'                                           
-              `-.__.-'                                               
+  `-._    `-._  `-./  _.-'    _.-'
+ |`-._`-._    `-.__.-'    _.-'_.-'|
+ |    `-._`-._        _.-'_.-'    |           http://redis.io
+  `-._    `-._`-.__.-'_.-'    _.-'
+ |`-._`-._    `-.__.-'    _.-'_.-'|
+ |    `-._`-._        _.-'_.-'    |
+  `-._    `-._`-.__.-'_.-'    _.-'
+      `-._    `-.__.-'    _.-'
+          `-._        _.-'
+              `-.__.-'
 
 109:M 25 Mar 2019 12:11:17.179 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
 109:M 25 Mar 2019 12:11:17.179 # Server initialized
@@ -2194,7 +2194,7 @@ Created database 'discourse_test_multisite'
    -> 0.0026s
 -- add_column(:site_customizations, :stylesheet_baked, :text, {:default=>"", :null=>false})
    -> 0.0026s
-== 20121216230719 AddOverrideDefaultStyleToSiteCustomization: migrated (0.0067s) 
+== 20121216230719 AddOverrideDefaultStyleToSiteCustomization: migrated (0.0067s)
 
 == 20121218205642 AddTopicsEnteredToUsers: migrating ==========================
 -- add_column(:users, :topics_entered, :integer, {:default=>0, :null=>false})
@@ -2327,7 +2327,7 @@ Created database 'discourse_test_multisite'
    -> 0.0014s
 -- execute("update topic_users set total_msecs_viewed =\n       (\n         select coalesce(sum(msecs) ,0)\n         from post_timings t\n         where topic_users.topic_id = t.topic_id and topic_users.user_id = t.user_id\n       )")
    -> 0.0011s
-== 20130122232825 AddAutoTrackAfterSecondsAndBanningAndDobToUser: migrated (0.0135s) 
+== 20130122232825 AddAutoTrackAfterSecondsAndBanningAndDobToUser: migrated (0.0135s)
 
 == 20130123070909 AutoTrackAllTopicsRepliedTo: migrating ======================
 -- execute("update topic_users set notification_level = 2, notifications_reason_id = 4\n      from posts p\n      where\n        notification_level = 1 and\n        notifications_reason_id is null and\n        p.topic_id = topic_users.topic_id and\n        p.user_id = topic_users.user_id\n    ")
@@ -2553,7 +2553,7 @@ Created database 'discourse_test_multisite'
    -> 0.0036s
 -- add_column(:users, :enable_quoting, :boolean, {:default=>true, :null=>false})
    -> 0.0039s
-== 20130313004922 AddExternalLinksInNewTabAnDisableQuotingToUser: migrated (0.0147s) 
+== 20130313004922 AddExternalLinksInNewTabAnDisableQuotingToUser: migrated (0.0147s)
 
 == 20130314093434 AddForegroundColorToCategories: migrating ===================
 -- add_column(:categories, :text_color, :string, {:limit=>6, :null=>false, :default=>"FFFFFF"})
@@ -2777,7 +2777,7 @@ Created database 'discourse_test_multisite'
    -> 0.0007s
 -- add_column(:incoming_links, :current_user_id, :int, {})
    -> 0.0003s
-== 20130426052257 AddIncomingIpCurrentUserIdToIncomingLinks: migrated (0.0032s) 
+== 20130426052257 AddIncomingIpCurrentUserIdToIncomingLinks: migrated (0.0032s)
 
 == 20130428194335 AddUnstarredAtToTopicUsers: migrating =======================
 -- add_column(:topic_users, :unstarred_at, :datetime, {})
@@ -3830,7 +3830,7 @@ Created database 'discourse_test_multisite'
    -> 0.0063s
 -- change_column_default(:categories, :topics_year, 0)
    -> 0.0024s
-== 20140206195001 AddDefaultsToCategoryPostsAndTopicsFields: migrated (0.0187s) 
+== 20140206195001 AddDefaultsToCategoryPostsAndTopicsFields: migrated (0.0187s)
 
 == 20140206215029 AddMailingListModeToUsers: migrating ========================
 -- rename_column(:users, :watch_new_topics, :mailing_list_mode)
@@ -3908,12 +3908,12 @@ Created database 'discourse_test_multisite'
    -> 0.0004s
 == 20140228005443 AddExternalUsernameToSingleSignOnRecord: migrated (0.0016s) =
 
-== 20140228173431 AddExternalEmailAndExternalNameToSingleSignOnRecord: migrating 
+== 20140228173431 AddExternalEmailAndExternalNameToSingleSignOnRecord: migrating
 -- add_column(:single_sign_on_records, :external_email, :string, {})
    -> 0.0005s
 -- add_column(:single_sign_on_records, :external_name, :string, {})
    -> 0.0003s
-== 20140228173431 AddExternalEmailAndExternalNameToSingleSignOnRecord: migrated (0.0018s) 
+== 20140228173431 AddExternalEmailAndExternalNameToSingleSignOnRecord: migrated (0.0018s)
 
 == 20140228205743 AddAdminOnlyToUserHistories: migrating ======================
 -- add_column(:user_histories, :admin_only, :boolean, {:default=>false})
@@ -4711,7 +4711,7 @@ Created database 'discourse_test_multisite'
    -> 0.0004s
 -- execute("      UPDATE post_actions\n         SET disagreed_at = deleted_at,\n             disagreed_by_id = deleted_by_id,\n             deleted_at = NULL,\n             deleted_by_id = NULL\n       WHERE deleted_by_id != user_id\n")
    -> 0.0005s
-== 20140730203029 AddDisagreedAtAndDisagreedByIdToPostAction: migrated (0.0033s) 
+== 20140730203029 AddDisagreedAtAndDisagreedByIdToPostAction: migrated (0.0033s)
 
 == 20140731011328 AddReplyQuotedToPosts: migrating ============================
 -- add_column(:posts, :reply_quoted, :boolean, {:null=>false, :default=>false})
@@ -4986,7 +4986,7 @@ Created database 'discourse_test_multisite'
 == 20140817011612 AddExternalAvatarUrlToSingleSignOnRecord: migrating =========
 -- add_column(:single_sign_on_records, :external_avatar_url, :string, {})
    -> 0.0003s
-== 20140817011612 AddExternalAvatarUrlToSingleSignOnRecord: migrated (0.0016s) 
+== 20140817011612 AddExternalAvatarUrlToSingleSignOnRecord: migrated (0.0016s)
 
 == 20140818023700 IndexEmailTokens: migrating =================================
 -- add_index(:email_tokens, [:user_id])
@@ -5053,10 +5053,10 @@ Created database 'discourse_test_multisite'
    -> 0.0015s
 == 20140828200231 MakeUrlColBiggerInPermalinks: migrated (0.0074s) ============
 
-== 20140831191346 RemoveCategoryGroupsOrphanedByRemovingCategoryOrGroup: migrating 
+== 20140831191346 RemoveCategoryGroupsOrphanedByRemovingCategoryOrGroup: migrating
 -- execute("DELETE FROM category_groups\n             WHERE group_id NOT IN (\n                 SELECT groups.id FROM groups)\n              OR category_id NOT IN (\n                 SELECT categories.id FROM categories)")
    -> 0.0005s
-== 20140831191346 RemoveCategoryGroupsOrphanedByRemovingCategoryOrGroup: migrated (0.0015s) 
+== 20140831191346 RemoveCategoryGroupsOrphanedByRemovingCategoryOrGroup: migrated (0.0015s)
 
 == 20140904055702 CorrectPostActionIndex: migrating ===========================
 -- execute("DELETE FROM post_actions pa\n                    USING post_actions pa2\n             WHERE pa.post_action_type_id IN (3,4,7,8) AND\n                   pa2.post_action_type_id IN (3,4,7,8) AND\n                   pa.deleted_at IS NULL AND\n                   pa2.deleted_at IS NULL AND\n                   pa.disagreed_at IS NULL AND\n                   pa2.disagreed_at IS NULL AND\n                   pa.deferred_at IS NULL AND\n                   pa2.deferred_at IS NULL AND\n                   pa.id < pa2.id AND\n                   pa.user_id = pa2.user_id AND\n                   pa.post_id = pa2.post_id AND\n                   pa.targets_topic = pa2.targets_topic")
@@ -5211,12 +5211,12 @@ Created database 'discourse_test_multisite'
    -> 0.0015s
 == 20141008181228 AddRequiredSignupToUserFields: migrated (0.0026s) ===========
 
-== 20141008192525 AddAutoCloseBasedOnLastPostAndAutoCloseHoursToTopics: migrating 
+== 20141008192525 AddAutoCloseBasedOnLastPostAndAutoCloseHoursToTopics: migrating
 -- add_column(:topics, :auto_close_based_on_last_post, :boolean, {:default=>false})
    -> 0.0040s
 -- add_column(:topics, :auto_close_hours, :float, {})
    -> 0.0004s
-== 20141008192525 AddAutoCloseBasedOnLastPostAndAutoCloseHoursToTopics: migrated (0.0081s) 
+== 20141008192525 AddAutoCloseBasedOnLastPostAndAutoCloseHoursToTopics: migrated (0.0081s)
 
 == 20141008192526 AddAutoCloseBasedOnLastPostToCategories: migrating ==========
 -- add_column(:categories, :auto_close_based_on_last_post, :boolean, {:default=>false})
@@ -5300,10 +5300,10 @@ Created database 'discourse_test_multisite'
 == 20141216112341 ResolveDuplicateGroupNames: migrating =======================
 == 20141216112341 ResolveDuplicateGroupNames: migrated (0.0031s) ==============
 
-== 20141222051622 RemoveOverrideDefaultStylesFromSiteCustomizations: migrating 
+== 20141222051622 RemoveOverrideDefaultStylesFromSiteCustomizations: migrating
 -- remove_column(:site_customizations, :override_default_style)
    -> 0.0004s
-== 20141222051622 RemoveOverrideDefaultStylesFromSiteCustomizations: migrated (0.0014s) 
+== 20141222051622 RemoveOverrideDefaultStylesFromSiteCustomizations: migrated (0.0014s)
 
 == 20141222224220 FixEmojiPathTake2: migrating ================================
 -- execute("      UPDATE posts\n         SET cooked = REPLACE(cooked, '/plugins/emoji/images/', '/images/emoji/')\n       WHERE cooked LIKE '%/plugins/emoji/images/%'\n")
@@ -5529,7 +5529,7 @@ Created database 'discourse_test_multisite'
 == 20150323062322 RemoveAllowPrivateMessagesFromUserProfile: migrating ========
 -- remove_column(:user_profiles, :allow_private_messages)
    -> 0.0004s
-== 20150323062322 RemoveAllowPrivateMessagesFromUserProfile: migrated (0.0014s) 
+== 20150323062322 RemoveAllowPrivateMessagesFromUserProfile: migrated (0.0014s)
 
 == 20150323234856 AddMutedUsers: migrating ====================================
 -- adapter_name()
@@ -5995,7 +5995,7 @@ Created database 'discourse_test_multisite'
    -> 0.0002s
 -- add_column(:site_customizations, :mobile_footer_baked, :text, {})
    -> 0.0003s
-== 20151127011837 AddHeaderAndFooterBakedToSiteCustomizations: migrated (0.0029s) 
+== 20151127011837 AddHeaderAndFooterBakedToSiteCustomizations: migrated (0.0029s)
 
 == 20151201035631 AddGroupMentions: migrating =================================
 -- adapter_name()
@@ -6061,7 +6061,7 @@ Created database 'discourse_test_multisite'
    -> 0.0018s
 -- add_index(:group_archived_messages, [:group_id, :topic_id], {:unique=>true})
    -> 0.0015s
-== 20151220232725 AddUserArchivedMessagesGroupArchivedMessages: migrated (0.0084s) 
+== 20151220232725 AddUserArchivedMessagesGroupArchivedMessages: migrated (0.0084s)
 
 == 20160108051129 FixIncorrectUserHistory: migrating ==========================
 -- execute("SELECT min(id) FROM user_histories WHERE (action = 16 AND previous_value in ('0','1','2','3','4')) OR\n(action = 19 AND target_user_id IS NULL AND details IS NOT NULL)\n")
@@ -6260,7 +6260,7 @@ Created database 'discourse_test_multisite'
 == 20160302104253 AddLikeNotificationFrequencyToUserOptions: migrating ========
 -- add_column(:user_options, :like_notification_frequency, :integer, {:null=>false, :default=>1})
    -> 0.0012s
-== 20160302104253 AddLikeNotificationFrequencyToUserOptions: migrated (0.0025s) 
+== 20160302104253 AddLikeNotificationFrequencyToUserOptions: migrated (0.0025s)
 
 == 20160302170230 RenameDigestAfterDaysToDigestAfterMinutes: migrating ========
 -- rename_column(:user_options, :digest_after_days, :digest_after_minutes)
@@ -6269,7 +6269,7 @@ Created database 'discourse_test_multisite'
    -> 0.0003s
 -- execute("UPDATE site_settings SET value = value::integer * 1440 WHERE name = 'default_email_digest_frequency' AND value IS NOT NULL")
    -> 0.0002s
-== 20160302170230 RenameDigestAfterDaysToDigestAfterMinutes: migrated (0.0072s) 
+== 20160302170230 RenameDigestAfterDaysToDigestAfterMinutes: migrated (0.0072s)
 
 == 20160303183607 ClearCommonPasswordsCache: migrating ========================
 == 20160303183607 ClearCommonPasswordsCache: migrated (0.0041s) ===============
@@ -6692,7 +6692,7 @@ Created database 'discourse_test_multisite'
    -> 0.0008s
 -- add_index(:web_hook_event_types_hooks, [:web_hook_event_type_id, :web_hook_id], {:name=>"idx_web_hook_event_types_hooks_on_ids", :unique=>true})
    -> 0.0016s
-== 20160905085445 CreateJoinTableWebHooksWebHookEventTypes: migrated (0.0034s) 
+== 20160905085445 CreateJoinTableWebHooksWebHookEventTypes: migrated (0.0034s)
 
 == 20160905091958 CreateJoinTableWebHooksGroups: migrating ====================
 -- create_join_table(:web_hooks, :groups, {:column_options=>{:type=>:integer}})
@@ -7299,12 +7299,12 @@ Created database 'discourse_test_multisite'
    -> 0.0003s
 == 20170501191912 AddUploadIdToThemeFields: migrated (0.0124s) ================
 
-== 20170505035229 MigrateMailingListDailyUpdatesUsersToDailySummary: migrating 
+== 20170505035229 MigrateMailingListDailyUpdatesUsersToDailySummary: migrating
 -- change_column_default(:user_options, :mailing_list_mode_frequency, 1)
    -> 0.0076s
 -- execute("UPDATE user_options\nSET digest_after_minutes = 1440, email_digests = 't', mailing_list_mode = 'f'\nWHERE mailing_list_mode_frequency = 0 AND mailing_list_mode\n")
    -> 0.0008s
-== 20170505035229 MigrateMailingListDailyUpdatesUsersToDailySummary: migrated (0.0097s) 
+== 20170505035229 MigrateMailingListDailyUpdatesUsersToDailySummary: migrated (0.0097s)
 
 == 20170508183819 AddCssClassNameToEmbeddableHosts: migrating =================
 -- add_column(:embeddable_hosts, :class_name, :string, {})
@@ -7319,7 +7319,7 @@ Created database 'discourse_test_multisite'
 == 20170511080007 RenameConvertPastedImagesQualitySiteSetting: migrating ======
 -- execute("UPDATE site_settings SET name = 'png_to_jpg_quality' WHERE name = 'convert_pasted_images_quality'")
    -> 0.0003s
-== 20170511080007 RenameConvertPastedImagesQualitySiteSetting: migrated (0.0014s) 
+== 20170511080007 RenameConvertPastedImagesQualitySiteSetting: migrated (0.0014s)
 
 == 20170511184842 RenameTopicStatusUpdatesToTopicTimers: migrating ============
 -- rename_table(:topic_status_updates, :topic_timers)
@@ -7447,7 +7447,7 @@ Created database 'discourse_test_multisite'
 == 20170725075535 CorrectDefaultEmailMailingListModeFrequency: migrating ======
 -- execute("UPDATE site_settings SET value = '1' WHERE value = '0' AND name = 'default_email_mailing_list_mode_frequency';")
    -> 0.0002s
-== 20170725075535 CorrectDefaultEmailMailingListModeFrequency: migrated (0.0011s) 
+== 20170725075535 CorrectDefaultEmailMailingListModeFrequency: migrated (0.0011s)
 
 == 20170728012754 SplitPublicInGroups: migrating ==============================
 -- add_column(:groups, :public_exit, :boolean, {:default=>false, :null=>false})
@@ -7658,7 +7658,7 @@ Created database 'discourse_test_multisite'
 == 20180207161422 AddSkippedCreatedAtUserIdIndexOnEmailLogs: migrating ========
 -- execute("CREATE INDEX idx_email_logs_user_created_filtered ON email_logs(user_id, created_at) WHERE skipped = 'f'")
    -> 0.0006s
-== 20180207161422 AddSkippedCreatedAtUserIdIndexOnEmailLogs: migrated (0.0016s) 
+== 20180207161422 AddSkippedCreatedAtUserIdIndexOnEmailLogs: migrated (0.0016s)
 
 == 20180207163946 CreateCategoryTagStats: migrating ===========================
 -- adapter_name()
@@ -7698,12 +7698,12 @@ Created database 'discourse_test_multisite'
    -> 0.0004s
 == 20180309014014 AddPrivateKeyToRemoteTheme: migrated (0.0014s) ==============
 
-== 20180316092939 AddExternalProfileAndCardBackgroundUrlToSingleSignOnRecord: migrating 
+== 20180316092939 AddExternalProfileAndCardBackgroundUrlToSingleSignOnRecord: migrating
 -- add_column(:single_sign_on_records, :external_profile_background_url, :string)
    -> 0.0005s
 -- add_column(:single_sign_on_records, :external_card_background_url, :string)
    -> 0.0003s
-== 20180316092939 AddExternalProfileAndCardBackgroundUrlToSingleSignOnRecord: migrated (0.0077s) 
+== 20180316092939 AddExternalProfileAndCardBackgroundUrlToSingleSignOnRecord: migrated (0.0077s)
 
 == 20180316165104 CreateSharedDrafts: migrating ===============================
 -- adapter_name()
@@ -7890,7 +7890,7 @@ Created database 'discourse_test_multisite'
 == 20180716062405 AddNavigateToFirstPostAfterReadToCategories: migrating ======
 -- add_column(:categories, :navigate_to_first_post_after_read, :bool, {:null=>false, :default=>false})
    -> 0.0041s
-== 20180716062405 AddNavigateToFirstPostAfterReadToCategories: migrated (0.0054s) 
+== 20180716062405 AddNavigateToFirstPostAfterReadToCategories: migrated (0.0054s)
 
 == 20180716072125 AlterBounceKeyOnEmailLogs: migrating ========================
 -- change_column(:email_logs, :bounce_key, "uuid USING bounce_key::uuid")
@@ -7972,7 +7972,7 @@ Created database 'discourse_test_multisite'
    -> 0.0003s
 -- add_index(:email_logs, [:user_id, :created_at])
    -> 0.0017s
-== 20180727042448 DropReplyKeySkippedSkippedReasonFromEmailLogs: migrated (0.0082s) 
+== 20180727042448 DropReplyKeySkippedSkippedReasonFromEmailLogs: migrated (0.0082s)
 
 == 20180729092926 RemoveTrackExternalRightClicks: migrating ===================
 -- execute("DELETE FROM site_settings WHERE name = 'track_external_right_clicks'")
@@ -8146,7 +8146,7 @@ Created database 'discourse_test_multisite'
 == 20181129094518 AddNotNullMinimumRequiredTagsOnCategories: migrating ========
 -- change_column_null(:categories, :minimum_required_tags, false, 0)
    -> 0.0045s
-== 20181129094518 AddNotNullMinimumRequiredTagsOnCategories: migrated (0.0065s) 
+== 20181129094518 AddNotNullMinimumRequiredTagsOnCategories: migrated (0.0065s)
 
 == 20181204123042 AddUploadedMetaIdToCategories: migrating ====================
 -- add_column(:categories, :uploaded_meta_id, :integer)
@@ -8213,7 +8213,7 @@ Created database 'discourse_test_multisite'
 == 20190110201340 RemoveGooglePlusFromShareLinksSiteSetting: migrating ========
 -- execute("UPDATE site_settings\nSET value = array_to_string(array_remove(regexp_split_to_array(value, '\\|'), 'google+'), '|')\nWHERE name = 'share_links'\n")
    -> 0.0003s
-== 20190110201340 RemoveGooglePlusFromShareLinksSiteSetting: migrated (0.0019s) 
+== 20190110201340 RemoveGooglePlusFromShareLinksSiteSetting: migrated (0.0019s)
 
 == 20190122132732 AddFieldsToRemoteThemes: migrating ==========================
 -- add_column(:remote_themes, :authors, :string)
@@ -8316,18 +8316,18 @@ Created database 'discourse_test_multisite'
 == 20190314144755 AddSummarizedAtColumnToIgnoredUsersTable: migrating =========
 -- add_column(:ignored_users, :summarized_at, :datetime)
    -> 0.0005s
-== 20190314144755 AddSummarizedAtColumnToIgnoredUsersTable: migrated (0.0018s) 
+== 20190314144755 AddSummarizedAtColumnToIgnoredUsersTable: migrated (0.0018s)
 
 == 20190315025804 MigrateBlankOverrideForUploadSiteSettings: migrating ========
-== 20190315025804 MigrateBlankOverrideForUploadSiteSettings: migrated (0.0091s) 
+== 20190315025804 MigrateBlankOverrideForUploadSiteSettings: migrated (0.0091s)
 
 == 20190315055432 MigrateNullOverrideForUploadSiteSettings: migrating =========
-== 20190315055432 MigrateNullOverrideForUploadSiteSettings: migrated (0.0034s) 
+== 20190315055432 MigrateNullOverrideForUploadSiteSettings: migrated (0.0034s)
 
 == 20190320091323 AddIndexPostActionTypeIdDisagreedAtOnPostActions: migrating =
 -- add_index(:post_actions, [:post_action_type_id, :disagreed_at], {:where=>"(disagreed_at IS NULL)"})
    -> 0.0017s
-== 20190320091323 AddIndexPostActionTypeIdDisagreedAtOnPostActions: migrated (0.0027s) 
+== 20190320091323 AddIndexPostActionTypeIdDisagreedAtOnPostActions: migrated (0.0027s)
 
 == 20190320104640 RemoveS3ForcePathStyle: migrating ===========================
 -- execute("DELETE FROM site_settings WHERE name = 's3_force_path_style'")
@@ -8337,7 +8337,7 @@ Created database 'discourse_test_multisite'
 == 20190321072029 AddIndexMethodEnabledOnUserSecondFactors: migrating =========
 -- add_index(:user_second_factors, [:method, :enabled])
    -> 0.0020s
-== 20190321072029 AddIndexMethodEnabledOnUserSecondFactors: migrated (0.0033s) 
+== 20190321072029 AddIndexMethodEnabledOnUserSecondFactors: migrated (0.0033s)
 
 == 20190322152347 ForceRebakeOnPostsWithLightboxes: migrating =================
 -- execute("UPDATE posts SET baked_version = 0\nWHERE cooked LIKE '%lightbox-wrapper%'\n")
@@ -8892,18 +8892,18 @@ Randomized with seed 36187
 [32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m2019-03-25 12:23:53.924 UTC [1678] ERROR:  Discourse: table_with_old_name is read only
 2019-03-25 12:23:53.924 UTC [1678] CONTEXT:  PL/pgSQL function discourse_functions.raise_table_with_old_name_readonly() line 3 at RAISE
 2019-03-25 12:23:53.924 UTC [1678] STATEMENT:  INSERT INTO table_with_old_name (topic_id) VALUES (2)
-	
+
 [32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m2019-03-25 12:24:15.739 UTC [1678] ERROR:  Discourse: email in table_with_readonly_column is readonly
 2019-03-25 12:24:15.739 UTC [1678] CONTEXT:  PL/pgSQL function discourse_functions.raise_table_with_readonly_column_email_readonly() line 3 at RAISE
 2019-03-25 12:24:15.739 UTC [1678] STATEMENT:  INSERT INTO table_with_readonly_column (topic_id, email)
 	VALUES (2, 'something@email.com');
-	
+
 [32m.[0m2019-03-25 12:24:15.742 UTC [1678] ERROR:  Discourse: email in table_with_readonly_column is readonly
 2019-03-25 12:24:15.742 UTC [1678] CONTEXT:  PL/pgSQL function discourse_functions.raise_table_with_readonly_column_email_readonly() line 3 at RAISE
 2019-03-25 12:24:15.742 UTC [1678] STATEMENT:  UPDATE table_with_readonly_column
 	SET email = 'testing@email.com'
 	WHERE topic_id = 1;
-	
+
 [32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m109:S 25 Mar 2019 12:24:15.850 * Before turning into a replica, using my master parameters to synthesize a cached master: I may be able to synchronize with the new master with just a partial transfer.
 109:S 25 Mar 2019 12:24:15.850 * REPLICAOF 10.0.0.1:99999 enabled (user request from 'id=37 addr=127.0.0.1:45068 fd=8 name= age=174 idle=0 flags=N db=1 sub=0 psub=0 multi=-1 qbuf=42 qbuf-free=32726 obl=0 oll=0 omem=0 events=r cmd=slaveof')
 109:M 25 Mar 2019 12:24:15.851 # Setting secondary replication ID to 844f49a24133dfc14102c5e3d0add745f326905f, valid up to offset: 1. New replication ID is 338ed22137359692b63f1804c11f76777e780c08
@@ -8913,25 +8913,25 @@ Randomized with seed 36187
 
 Top 10 slowest examples (45.97 seconds, 6.4% of total time):
   Theme can properly clean up color schemes
-    [1m29.32[0m [1mseconds[0m ./spec/models/theme_spec.rb:18
+    29.32 seconds ./spec/models/theme_spec.rb:18
   TopicViewSerializer when tags added to private message topics should not include the tag for normal users
-    [1m2.6[0m [1mseconds[0m ./spec/serializers/topic_view_serializer_spec.rb:91
+    2.6 seconds ./spec/serializers/topic_view_serializer_spec.rb:91
   CommonMark passes spec
-    [1m2.47[0m [1mseconds[0m ./spec/integrity/common_mark_spec.rb:5
+    2.47 seconds ./spec/integrity/common_mark_spec.rb:5
   Report user_flagging_ratio with data it works
-    [1m2.03[0m [1mseconds[0m ./spec/models/report_spec.rb:970
+    2.03 seconds ./spec/models/report_spec.rb:970
   Post rake tasks remap should remap posts
-    [1m1.78[0m [1mseconds[0m ./spec/tasks/posts_spec.rb:16
+    1.78 seconds ./spec/tasks/posts_spec.rb:16
   Report counting topics counts the correct records
-    [1m1.73[0m [1mseconds[0m ./spec/models/report_spec.rb:83
+    1.73 seconds ./spec/models/report_spec.rb:83
   Redis rake tasks clean up should clean up orphan Redis keys
-    [1m1.59[0m [1mseconds[0m ./spec/tasks/redis_spec.rb:17
+    1.59 seconds ./spec/tasks/redis_spec.rb:17
   Admin::ThemesController#import can import a theme from Git
-    [1m1.56[0m [1mseconds[0m ./spec/requests/admin/themes_controller_spec.rb:83
+    1.56 seconds ./spec/requests/admin/themes_controller_spec.rb:83
   SiteSettingsTask import will log that an error has occured
-    [1m1.46[0m [1mseconds[0m ./spec/services/site_settings_spec.rb:39
+    1.46 seconds ./spec/services/site_settings_spec.rb:39
   SiteSettingsTask import won't update a setting that doesn't exist
-    [1m1.43[0m [1mseconds[0m ./spec/services/site_settings_spec.rb:32
+    1.43 seconds ./spec/services/site_settings_spec.rb:32
 
 Top 10 slowest example groups:
   CommonMark
@@ -9369,23 +9369,23 @@ Starting background redis
 109:C 25 Mar 2019 12:37:38.570 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
 109:C 25 Mar 2019 12:37:38.570 # Redis version=5.0.4, bits=64, commit=00000000, modified=0, pid=109, just started
 109:C 25 Mar 2019 12:37:38.570 # Configuration loaded
-                _._                                                  
-           _.-``__ ''-._                                             
+                _._
+           _.-``__ ''-._
       _.-``    `.  `_.  ''-._           Redis 5.0.4 (00000000/0) 64 bit
-  .-`` .-```.  ```\/    _.,_ ''-._                                   
+  .-`` .-```.  ```\/    _.,_ ''-._
  (    '      ,       .-`  | `,    )     Running in standalone mode
  |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
  |    `-._   `._    /     _.-'    |     PID: 109
-  `-._    `-._  `-./  _.-'    _.-'                                   
- |`-._`-._    `-.__.-'    _.-'_.-'|                                  
- |    `-._`-._        _.-'_.-'    |           http://redis.io        
-  `-._    `-._`-.__.-'_.-'    _.-'                                   
- |`-._`-._    `-.__.-'    _.-'_.-'|                                  
- |    `-._`-._        _.-'_.-'    |                                  
-  `-._    `-._`-.__.-'_.-'    _.-'                                   
-      `-._    `-.__.-'    _.-'                                       
-          `-._        _.-'                                           
-              `-.__.-'                                               
+  `-._    `-._  `-./  _.-'    _.-'
+ |`-._`-._    `-.__.-'    _.-'_.-'|
+ |    `-._`-._        _.-'_.-'    |           http://redis.io
+  `-._    `-._`-.__.-'_.-'    _.-'
+ |`-._`-._    `-.__.-'    _.-'_.-'|
+ |    `-._`-._        _.-'_.-'    |
+  `-._    `-._`-.__.-'_.-'    _.-'
+      `-._    `-.__.-'    _.-'
+          `-._        _.-'
+              `-.__.-'
 
 109:M 25 Mar 2019 12:37:38.571 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
 109:M 25 Mar 2019 12:37:38.571 # Server initialized
@@ -11181,7 +11181,7 @@ Created database 'discourse_test'
    -> 0.0014s
 -- add_column(:site_customizations, :stylesheet_baked, :text, {:default=>"", :null=>false})
    -> 0.0015s
-== 20121216230719 AddOverrideDefaultStyleToSiteCustomization: migrated (0.0039s) 
+== 20121216230719 AddOverrideDefaultStyleToSiteCustomization: migrated (0.0039s)
 
 == 20121218205642 AddTopicsEnteredToUsers: migrating ==========================
 -- add_column(:users, :topics_entered, :integer, {:default=>0, :null=>false})
@@ -11314,7 +11314,7 @@ Created database 'discourse_test'
    -> 0.0012s
 -- execute("update topic_users set total_msecs_viewed =\n       (\n         select coalesce(sum(msecs) ,0)\n         from post_timings t\n         where topic_users.topic_id = t.topic_id and topic_users.user_id = t.user_id\n       )")
    -> 0.0003s
-== 20130122232825 AddAutoTrackAfterSecondsAndBanningAndDobToUser: migrated (0.0131s) 
+== 20130122232825 AddAutoTrackAfterSecondsAndBanningAndDobToUser: migrated (0.0131s)
 
 == 20130123070909 AutoTrackAllTopicsRepliedTo: migrating ======================
 -- execute("update topic_users set notification_level = 2, notifications_reason_id = 4\n      from posts p\n      where\n        notification_level = 1 and\n        notifications_reason_id is null and\n        p.topic_id = topic_users.topic_id and\n        p.user_id = topic_users.user_id\n    ")
@@ -11540,7 +11540,7 @@ Created database 'discourse_test'
    -> 0.0025s
 -- add_column(:users, :enable_quoting, :boolean, {:default=>true, :null=>false})
    -> 0.0023s
-== 20130313004922 AddExternalLinksInNewTabAnDisableQuotingToUser: migrated (0.0055s) 
+== 20130313004922 AddExternalLinksInNewTabAnDisableQuotingToUser: migrated (0.0055s)
 
 == 20130314093434 AddForegroundColorToCategories: migrating ===================
 -- add_column(:categories, :text_color, :string, {:limit=>6, :null=>false, :default=>"FFFFFF"})
@@ -11764,7 +11764,7 @@ Created database 'discourse_test'
    -> 0.0003s
 -- add_column(:incoming_links, :current_user_id, :int, {})
    -> 0.0003s
-== 20130426052257 AddIncomingIpCurrentUserIdToIncomingLinks: migrated (0.0014s) 
+== 20130426052257 AddIncomingIpCurrentUserIdToIncomingLinks: migrated (0.0014s)
 
 == 20130428194335 AddUnstarredAtToTopicUsers: migrating =======================
 -- add_column(:topic_users, :unstarred_at, :datetime, {})
@@ -12817,7 +12817,7 @@ Created database 'discourse_test'
    -> 0.0020s
 -- change_column_default(:categories, :topics_year, 0)
    -> 0.0019s
-== 20140206195001 AddDefaultsToCategoryPostsAndTopicsFields: migrated (0.0122s) 
+== 20140206195001 AddDefaultsToCategoryPostsAndTopicsFields: migrated (0.0122s)
 
 == 20140206215029 AddMailingListModeToUsers: migrating ========================
 -- rename_column(:users, :watch_new_topics, :mailing_list_mode)
@@ -12895,12 +12895,12 @@ Created database 'discourse_test'
    -> 0.0003s
 == 20140228005443 AddExternalUsernameToSingleSignOnRecord: migrated (0.0011s) =
 
-== 20140228173431 AddExternalEmailAndExternalNameToSingleSignOnRecord: migrating 
+== 20140228173431 AddExternalEmailAndExternalNameToSingleSignOnRecord: migrating
 -- add_column(:single_sign_on_records, :external_email, :string, {})
    -> 0.0004s
 -- add_column(:single_sign_on_records, :external_name, :string, {})
    -> 0.0002s
-== 20140228173431 AddExternalEmailAndExternalNameToSingleSignOnRecord: migrated (0.0016s) 
+== 20140228173431 AddExternalEmailAndExternalNameToSingleSignOnRecord: migrated (0.0016s)
 
 == 20140228205743 AddAdminOnlyToUserHistories: migrating ======================
 -- add_column(:user_histories, :admin_only, :boolean, {:default=>false})
@@ -13698,7 +13698,7 @@ Created database 'discourse_test'
    -> 0.0002s
 -- execute("      UPDATE post_actions\n         SET disagreed_at = deleted_at,\n             disagreed_by_id = deleted_by_id,\n             deleted_at = NULL,\n             deleted_by_id = NULL\n       WHERE deleted_by_id != user_id\n")
    -> 0.0002s
-== 20140730203029 AddDisagreedAtAndDisagreedByIdToPostAction: migrated (0.0015s) 
+== 20140730203029 AddDisagreedAtAndDisagreedByIdToPostAction: migrated (0.0015s)
 
 == 20140731011328 AddReplyQuotedToPosts: migrating ============================
 -- add_column(:posts, :reply_quoted, :boolean, {:null=>false, :default=>false})
@@ -13973,7 +13973,7 @@ Created database 'discourse_test'
 == 20140817011612 AddExternalAvatarUrlToSingleSignOnRecord: migrating =========
 -- add_column(:single_sign_on_records, :external_avatar_url, :string, {})
    -> 0.0003s
-== 20140817011612 AddExternalAvatarUrlToSingleSignOnRecord: migrated (0.0011s) 
+== 20140817011612 AddExternalAvatarUrlToSingleSignOnRecord: migrated (0.0011s)
 
 == 20140818023700 IndexEmailTokens: migrating =================================
 -- add_index(:email_tokens, [:user_id])
@@ -14040,10 +14040,10 @@ Created database 'discourse_test'
    -> 0.0011s
 == 20140828200231 MakeUrlColBiggerInPermalinks: migrated (0.0052s) ============
 
-== 20140831191346 RemoveCategoryGroupsOrphanedByRemovingCategoryOrGroup: migrating 
+== 20140831191346 RemoveCategoryGroupsOrphanedByRemovingCategoryOrGroup: migrating
 -- execute("DELETE FROM category_groups\n             WHERE group_id NOT IN (\n                 SELECT groups.id FROM groups)\n              OR category_id NOT IN (\n                 SELECT categories.id FROM categories)")
    -> 0.0003s
-== 20140831191346 RemoveCategoryGroupsOrphanedByRemovingCategoryOrGroup: migrated (0.0011s) 
+== 20140831191346 RemoveCategoryGroupsOrphanedByRemovingCategoryOrGroup: migrated (0.0011s)
 
 == 20140904055702 CorrectPostActionIndex: migrating ===========================
 -- execute("DELETE FROM post_actions pa\n                    USING post_actions pa2\n             WHERE pa.post_action_type_id IN (3,4,7,8) AND\n                   pa2.post_action_type_id IN (3,4,7,8) AND\n                   pa.deleted_at IS NULL AND\n                   pa2.deleted_at IS NULL AND\n                   pa.disagreed_at IS NULL AND\n                   pa2.disagreed_at IS NULL AND\n                   pa.deferred_at IS NULL AND\n                   pa2.deferred_at IS NULL AND\n                   pa.id < pa2.id AND\n                   pa.user_id = pa2.user_id AND\n                   pa.post_id = pa2.post_id AND\n                   pa.targets_topic = pa2.targets_topic")
@@ -14198,12 +14198,12 @@ Created database 'discourse_test'
    -> 0.0017s
 == 20141008181228 AddRequiredSignupToUserFields: migrated (0.0028s) ===========
 
-== 20141008192525 AddAutoCloseBasedOnLastPostAndAutoCloseHoursToTopics: migrating 
+== 20141008192525 AddAutoCloseBasedOnLastPostAndAutoCloseHoursToTopics: migrating
 -- add_column(:topics, :auto_close_based_on_last_post, :boolean, {:default=>false})
    -> 0.0028s
 -- add_column(:topics, :auto_close_hours, :float, {})
    -> 0.0003s
-== 20141008192525 AddAutoCloseBasedOnLastPostAndAutoCloseHoursToTopics: migrated (0.0040s) 
+== 20141008192525 AddAutoCloseBasedOnLastPostAndAutoCloseHoursToTopics: migrated (0.0040s)
 
 == 20141008192526 AddAutoCloseBasedOnLastPostToCategories: migrating ==========
 -- add_column(:categories, :auto_close_based_on_last_post, :boolean, {:default=>false})
@@ -14287,10 +14287,10 @@ Created database 'discourse_test'
 == 20141216112341 ResolveDuplicateGroupNames: migrating =======================
 == 20141216112341 ResolveDuplicateGroupNames: migrated (0.0025s) ==============
 
-== 20141222051622 RemoveOverrideDefaultStylesFromSiteCustomizations: migrating 
+== 20141222051622 RemoveOverrideDefaultStylesFromSiteCustomizations: migrating
 -- remove_column(:site_customizations, :override_default_style)
    -> 0.0003s
-== 20141222051622 RemoveOverrideDefaultStylesFromSiteCustomizations: migrated (0.0010s) 
+== 20141222051622 RemoveOverrideDefaultStylesFromSiteCustomizations: migrated (0.0010s)
 
 == 20141222224220 FixEmojiPathTake2: migrating ================================
 -- execute("      UPDATE posts\n         SET cooked = REPLACE(cooked, '/plugins/emoji/images/', '/images/emoji/')\n       WHERE cooked LIKE '%/plugins/emoji/images/%'\n")
@@ -14516,7 +14516,7 @@ Created database 'discourse_test'
 == 20150323062322 RemoveAllowPrivateMessagesFromUserProfile: migrating ========
 -- remove_column(:user_profiles, :allow_private_messages)
    -> 0.0004s
-== 20150323062322 RemoveAllowPrivateMessagesFromUserProfile: migrated (0.0015s) 
+== 20150323062322 RemoveAllowPrivateMessagesFromUserProfile: migrated (0.0015s)
 
 == 20150323234856 AddMutedUsers: migrating ====================================
 -- adapter_name()
@@ -14982,7 +14982,7 @@ Created database 'discourse_test'
    -> 0.0002s
 -- add_column(:site_customizations, :mobile_footer_baked, :text, {})
    -> 0.0002s
-== 20151127011837 AddHeaderAndFooterBakedToSiteCustomizations: migrated (0.0014s) 
+== 20151127011837 AddHeaderAndFooterBakedToSiteCustomizations: migrated (0.0014s)
 
 == 20151201035631 AddGroupMentions: migrating =================================
 -- adapter_name()
@@ -15048,7 +15048,7 @@ Created database 'discourse_test'
    -> 0.0009s
 -- add_index(:group_archived_messages, [:group_id, :topic_id], {:unique=>true})
    -> 0.0009s
-== 20151220232725 AddUserArchivedMessagesGroupArchivedMessages: migrated (0.0048s) 
+== 20151220232725 AddUserArchivedMessagesGroupArchivedMessages: migrated (0.0048s)
 
 == 20160108051129 FixIncorrectUserHistory: migrating ==========================
 -- execute("SELECT min(id) FROM user_histories WHERE (action = 16 AND previous_value in ('0','1','2','3','4')) OR\n(action = 19 AND target_user_id IS NULL AND details IS NOT NULL)\n")
@@ -15247,7 +15247,7 @@ Created database 'discourse_test'
 == 20160302104253 AddLikeNotificationFrequencyToUserOptions: migrating ========
 -- add_column(:user_options, :like_notification_frequency, :integer, {:null=>false, :default=>1})
    -> 0.0014s
-== 20160302104253 AddLikeNotificationFrequencyToUserOptions: migrated (0.0024s) 
+== 20160302104253 AddLikeNotificationFrequencyToUserOptions: migrated (0.0024s)
 
 == 20160302170230 RenameDigestAfterDaysToDigestAfterMinutes: migrating ========
 -- rename_column(:user_options, :digest_after_days, :digest_after_minutes)
@@ -15256,7 +15256,7 @@ Created database 'discourse_test'
    -> 0.0003s
 -- execute("UPDATE site_settings SET value = value::integer * 1440 WHERE name = 'default_email_digest_frequency' AND value IS NOT NULL")
    -> 0.0002s
-== 20160302170230 RenameDigestAfterDaysToDigestAfterMinutes: migrated (0.0085s) 
+== 20160302170230 RenameDigestAfterDaysToDigestAfterMinutes: migrated (0.0085s)
 
 == 20160303183607 ClearCommonPasswordsCache: migrating ========================
 == 20160303183607 ClearCommonPasswordsCache: migrated (0.0017s) ===============
@@ -15679,7 +15679,7 @@ Created database 'discourse_test'
    -> 0.0004s
 -- add_index(:web_hook_event_types_hooks, [:web_hook_event_type_id, :web_hook_id], {:name=>"idx_web_hook_event_types_hooks_on_ids", :unique=>true})
    -> 0.0010s
-== 20160905085445 CreateJoinTableWebHooksWebHookEventTypes: migrated (0.0022s) 
+== 20160905085445 CreateJoinTableWebHooksWebHookEventTypes: migrated (0.0022s)
 
 == 20160905091958 CreateJoinTableWebHooksGroups: migrating ====================
 -- create_join_table(:web_hooks, :groups, {:column_options=>{:type=>:integer}})
@@ -16286,12 +16286,12 @@ Created database 'discourse_test'
    -> 0.0002s
 == 20170501191912 AddUploadIdToThemeFields: migrated (0.0106s) ================
 
-== 20170505035229 MigrateMailingListDailyUpdatesUsersToDailySummary: migrating 
+== 20170505035229 MigrateMailingListDailyUpdatesUsersToDailySummary: migrating
 -- change_column_default(:user_options, :mailing_list_mode_frequency, 1)
    -> 0.0016s
 -- execute("UPDATE user_options\nSET digest_after_minutes = 1440, email_digests = 't', mailing_list_mode = 'f'\nWHERE mailing_list_mode_frequency = 0 AND mailing_list_mode\n")
    -> 0.0002s
-== 20170505035229 MigrateMailingListDailyUpdatesUsersToDailySummary: migrated (0.0026s) 
+== 20170505035229 MigrateMailingListDailyUpdatesUsersToDailySummary: migrated (0.0026s)
 
 == 20170508183819 AddCssClassNameToEmbeddableHosts: migrating =================
 -- add_column(:embeddable_hosts, :class_name, :string, {})
@@ -16306,7 +16306,7 @@ Created database 'discourse_test'
 == 20170511080007 RenameConvertPastedImagesQualitySiteSetting: migrating ======
 -- execute("UPDATE site_settings SET name = 'png_to_jpg_quality' WHERE name = 'convert_pasted_images_quality'")
    -> 0.0001s
-== 20170511080007 RenameConvertPastedImagesQualitySiteSetting: migrated (0.0008s) 
+== 20170511080007 RenameConvertPastedImagesQualitySiteSetting: migrated (0.0008s)
 
 == 20170511184842 RenameTopicStatusUpdatesToTopicTimers: migrating ============
 -- rename_table(:topic_status_updates, :topic_timers)
@@ -16434,7 +16434,7 @@ Created database 'discourse_test'
 == 20170725075535 CorrectDefaultEmailMailingListModeFrequency: migrating ======
 -- execute("UPDATE site_settings SET value = '1' WHERE value = '0' AND name = 'default_email_mailing_list_mode_frequency';")
    -> 0.0001s
-== 20170725075535 CorrectDefaultEmailMailingListModeFrequency: migrated (0.0012s) 
+== 20170725075535 CorrectDefaultEmailMailingListModeFrequency: migrated (0.0012s)
 
 == 20170728012754 SplitPublicInGroups: migrating ==============================
 -- add_column(:groups, :public_exit, :boolean, {:default=>false, :null=>false})
@@ -16645,7 +16645,7 @@ Created database 'discourse_test'
 == 20180207161422 AddSkippedCreatedAtUserIdIndexOnEmailLogs: migrating ========
 -- execute("CREATE INDEX idx_email_logs_user_created_filtered ON email_logs(user_id, created_at) WHERE skipped = 'f'")
    -> 0.0005s
-== 20180207161422 AddSkippedCreatedAtUserIdIndexOnEmailLogs: migrated (0.0033s) 
+== 20180207161422 AddSkippedCreatedAtUserIdIndexOnEmailLogs: migrated (0.0033s)
 
 == 20180207163946 CreateCategoryTagStats: migrating ===========================
 -- adapter_name()
@@ -16685,12 +16685,12 @@ Created database 'discourse_test'
    -> 0.0003s
 == 20180309014014 AddPrivateKeyToRemoteTheme: migrated (0.0012s) ==============
 
-== 20180316092939 AddExternalProfileAndCardBackgroundUrlToSingleSignOnRecord: migrating 
+== 20180316092939 AddExternalProfileAndCardBackgroundUrlToSingleSignOnRecord: migrating
 -- add_column(:single_sign_on_records, :external_profile_background_url, :string)
    -> 0.0003s
 -- add_column(:single_sign_on_records, :external_card_background_url, :string)
    -> 0.0002s
-== 20180316092939 AddExternalProfileAndCardBackgroundUrlToSingleSignOnRecord: migrated (0.0013s) 
+== 20180316092939 AddExternalProfileAndCardBackgroundUrlToSingleSignOnRecord: migrated (0.0013s)
 
 == 20180316165104 CreateSharedDrafts: migrating ===============================
 -- adapter_name()
@@ -16877,7 +16877,7 @@ Created database 'discourse_test'
 == 20180716062405 AddNavigateToFirstPostAfterReadToCategories: migrating ======
 -- add_column(:categories, :navigate_to_first_post_after_read, :bool, {:null=>false, :default=>false})
    -> 0.0031s
-== 20180716062405 AddNavigateToFirstPostAfterReadToCategories: migrated (0.0039s) 
+== 20180716062405 AddNavigateToFirstPostAfterReadToCategories: migrated (0.0039s)
 
 == 20180716072125 AlterBounceKeyOnEmailLogs: migrating ========================
 -- change_column(:email_logs, :bounce_key, "uuid USING bounce_key::uuid")
@@ -16959,7 +16959,7 @@ Created database 'discourse_test'
    -> 0.0002s
 -- add_index(:email_logs, [:user_id, :created_at])
    -> 0.0013s
-== 20180727042448 DropReplyKeySkippedSkippedReasonFromEmailLogs: migrated (0.0049s) 
+== 20180727042448 DropReplyKeySkippedSkippedReasonFromEmailLogs: migrated (0.0049s)
 
 == 20180729092926 RemoveTrackExternalRightClicks: migrating ===================
 -- execute("DELETE FROM site_settings WHERE name = 'track_external_right_clicks'")
@@ -17133,7 +17133,7 @@ Created database 'discourse_test'
 == 20181129094518 AddNotNullMinimumRequiredTagsOnCategories: migrating ========
 -- change_column_null(:categories, :minimum_required_tags, false, 0)
    -> 0.0038s
-== 20181129094518 AddNotNullMinimumRequiredTagsOnCategories: migrated (0.0048s) 
+== 20181129094518 AddNotNullMinimumRequiredTagsOnCategories: migrated (0.0048s)
 
 == 20181204123042 AddUploadedMetaIdToCategories: migrating ====================
 -- add_column(:categories, :uploaded_meta_id, :integer)
@@ -17200,7 +17200,7 @@ Created database 'discourse_test'
 == 20190110201340 RemoveGooglePlusFromShareLinksSiteSetting: migrating ========
 -- execute("UPDATE site_settings\nSET value = array_to_string(array_remove(regexp_split_to_array(value, '\\|'), 'google+'), '|')\nWHERE name = 'share_links'\n")
    -> 0.0002s
-== 20190110201340 RemoveGooglePlusFromShareLinksSiteSetting: migrated (0.0009s) 
+== 20190110201340 RemoveGooglePlusFromShareLinksSiteSetting: migrated (0.0009s)
 
 == 20190122132732 AddFieldsToRemoteThemes: migrating ==========================
 -- add_column(:remote_themes, :authors, :string)
@@ -17303,18 +17303,18 @@ Created database 'discourse_test'
 == 20190314144755 AddSummarizedAtColumnToIgnoredUsersTable: migrating =========
 -- add_column(:ignored_users, :summarized_at, :datetime)
    -> 0.0003s
-== 20190314144755 AddSummarizedAtColumnToIgnoredUsersTable: migrated (0.0013s) 
+== 20190314144755 AddSummarizedAtColumnToIgnoredUsersTable: migrated (0.0013s)
 
 == 20190315025804 MigrateBlankOverrideForUploadSiteSettings: migrating ========
-== 20190315025804 MigrateBlankOverrideForUploadSiteSettings: migrated (0.0081s) 
+== 20190315025804 MigrateBlankOverrideForUploadSiteSettings: migrated (0.0081s)
 
 == 20190315055432 MigrateNullOverrideForUploadSiteSettings: migrating =========
-== 20190315055432 MigrateNullOverrideForUploadSiteSettings: migrated (0.0017s) 
+== 20190315055432 MigrateNullOverrideForUploadSiteSettings: migrated (0.0017s)
 
 == 20190320091323 AddIndexPostActionTypeIdDisagreedAtOnPostActions: migrating =
 -- add_index(:post_actions, [:post_action_type_id, :disagreed_at], {:where=>"(disagreed_at IS NULL)"})
    -> 0.0011s
-== 20190320091323 AddIndexPostActionTypeIdDisagreedAtOnPostActions: migrated (0.0020s) 
+== 20190320091323 AddIndexPostActionTypeIdDisagreedAtOnPostActions: migrated (0.0020s)
 
 == 20190320104640 RemoveS3ForcePathStyle: migrating ===========================
 -- execute("DELETE FROM site_settings WHERE name = 's3_force_path_style'")
@@ -17324,7 +17324,7 @@ Created database 'discourse_test'
 == 20190321072029 AddIndexMethodEnabledOnUserSecondFactors: migrating =========
 -- add_index(:user_second_factors, [:method, :enabled])
    -> 0.0011s
-== 20190321072029 AddIndexMethodEnabledOnUserSecondFactors: migrated (0.0018s) 
+== 20190321072029 AddIndexMethodEnabledOnUserSecondFactors: migrated (0.0018s)
 
 == 20190322152347 ForceRebakeOnPostsWithLightboxes: migrating =================
 -- execute("UPDATE posts SET baked_version = 0\nWHERE cooked LIKE '%lightbox-wrapper%'\n")
