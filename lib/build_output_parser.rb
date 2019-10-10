@@ -3,6 +3,9 @@
 class BuildOutputParser
   def parse_raw_from(archive)
     state = archive.tests_report
+    state[:slowest_ruby_tests] ||= {}
+    state[:slowest_js_tests] ||= {}
+
     commit_hash = parse_commit_hash(archive)
     ruby_errors = parse_ruby_errors(state[:ruby_tests], archive, commit_hash)
     js_errors = parse_js_errors(state[:js_tests], archive, commit_hash)
