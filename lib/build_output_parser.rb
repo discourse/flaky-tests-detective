@@ -6,6 +6,8 @@ class BuildOutputParser
     commit_hash = parse_commit_hash(archive)
     ruby_errors = parse_ruby_errors(state[:ruby_tests], archive, commit_hash)
     js_errors = parse_js_errors(state[:js_tests], archive, commit_hash)
+    slowest_ruby_tests = parse_slowest_ruby_tests(state[:slowest_ruby_tests], archive, commit_hash)
+    slowest_js_tests = parse_slowest_js_tests(state[:slowest_js_tests], archive, commit_hash)
 
     {
       metadata: {
@@ -13,7 +15,10 @@ class BuildOutputParser
         last_commit_hash: commit_hash,
         new_errors: ruby_errors[:new_errors] || js_errors[:new_errors]
       },
-      ruby_tests: ruby_errors[:errors], js_tests: js_errors[:errors]
+      ruby_tests: ruby_errors[:errors],
+      js_tests: js_errors[:errors],
+      slowest_ruby_tests: slowest_ruby_tests,
+      slowest_js_tests: slowest_js_tests
     }
   end
 
@@ -81,7 +86,7 @@ class BuildOutputParser
         state[:test_number] += 1
       else
         tn = state[:test_number]
-        state[:results][tn] += "#{line} \n"
+        state[:results][tn] += "#{line}\n"
       end
     end
   end
@@ -91,8 +96,8 @@ class BuildOutputParser
       state[:new_errors] = true
 
       test_data = line.gsub('rspec', '').split('#')
-      test_key = test_data.first.strip
-        .tr('./', '_').tr('.', '_').tr('/', '_').tr(':', '_').to_sym
+      test_key = build_ruby_test_key(test_data.first)
+
       if state[:errors].key?(test_key)
         state[:errors][test_key][:failures] += 1
         state[:errors][test_key][:seed] = test_template[:seed]
@@ -129,7 +134,7 @@ class BuildOutputParser
       s[:current_module] = stripped_line if module_failed_line
 
       if test_line
-        s[:current_test_key] = build_test_key(stripped_line)
+        s[:current_test_key] = build_js_test_key(stripped_line)
         s[:new_errors] = true
 
         if s[:errors].key?(s[:current_test_key])
@@ -154,7 +159,107 @@ class BuildOutputParser
     results.slice(:new_errors, :errors)
   end
 
-  def build_test_key(raw)
+  def parse_slowest_ruby_tests(state, archive, commit_hash)
+    initial_s = {
+      slowest_tests: state,
+      watching: false,
+      line_count: 0,
+      last_key: nil
+    }
+
+    results = archive.raw_build_iterator.each_with_object(initial_s) do |line, s|
+      stripped_line = line.strip
+
+      slowest_tests_start = stripped_line.include? 'Top 10 slowest examples'
+      if slowest_tests_start
+        s[:watching] = true
+        next(s)
+      end
+
+      next(s) unless s[:watching]
+
+      s[:line_count] += 1
+      return s[:slowest_tests] if stripped_line == ''
+
+      if s[:line_count] % 2 != 0
+        s[:last_test_name] = stripped_line
+      else
+        split_line = stripped_line.split(' seconds ')
+
+        seconds = split_line[0].strip.to_f
+        trace = split_line[1]
+        key = build_ruby_test_key(trace)
+
+        test = find_test(s, key)
+
+        test[:seconds] = calculate_average_time(test, key, seconds)
+        test[:name] = s[:last_test_name]
+        test[:trace] = trace
+
+        s[:slowest_tests][key] = test
+      end
+    end
+  end
+
+  def parse_slowest_js_tests(state, archive, commit_hash)
+    initial_s = {
+      slowest_tests: state,
+      watching: false,
+      skip_next: false
+    }
+
+    results = archive.raw_build_iterator.each_with_object(initial_s) do |line, s|
+      stripped_line = line.strip
+
+      slowest_tests_start = stripped_line.include? 'Slowest tests'
+      if slowest_tests_start
+        s[:skip_next] = true
+        next(s)
+      end
+
+      if s[:skip_next]
+        s[:watching] = true
+        s[:skip_next] = false
+        next(s)
+      end
+
+      next(s) unless s[:watching]
+      return s[:slowest_tests] if stripped_line.include? 'Time:'
+
+      split_line = stripped_line.split(': ')
+      type = split_line[0]
+      name = split_line[1]
+      seconds = split_line[2].delete('ms').to_f
+      key = build_js_test_key(name)
+
+      test = find_test(s, key)
+
+      test[:seconds] = calculate_average_time(test, key, seconds)
+      test[:output] = "#{type}: #{name}"
+
+      s[:slowest_tests][key] = test
+    end
+  end
+
+  def find_test(state, key)
+    return { occurances: 1 } unless state[:slowest_tests].key?(key)
+
+    state[:slowest_tests][key].tap { |ss| ss[:occurances] += 1 }
+  end
+
+  def calculate_average_time(test, test_key, current_seconds)
+    existing_seconds = test[:seconds]
+    return current_seconds unless existing_seconds
+
+    occurances = test[:occurances]
+    existing_seconds + ((current_seconds - existing_seconds) / occurances)
+  end
+
+  def build_js_test_key(raw)
     raw.delete(':').downcase.gsub(/\s+/, '_').to_sym
+  end
+
+  def build_ruby_test_key(raw)
+    raw.strip.tr('./', '_').tr('.', '_').tr('/', '_').tr(':', '_').to_sym
   end
 end

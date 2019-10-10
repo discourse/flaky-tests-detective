@@ -5,23 +5,29 @@ require 'date'
 class MarkdownPrinter
   def print_from(report)
     title = <<~eos
-      ## Flakey tests report - #{Date.today.strftime('%m/%d/%Y')}
+      ## Tests report - #{Date.today.strftime('%m/%d/%Y')}
 
       >Total runs: #{report.dig(:metadata, :runs)}
       >Runs since last report: #{report.dig(:metadata, :report_runs)}
       >Last commit: #{report.dig(:metadata, :last_commit_hash)}
     eos
+    slowest_ruby_tests = build_slowest_tests(:ruby, report[:slowest_ruby_tests])
+    slowest_js_tests = build_slowest_tests(:js, report[:slowest_js_tests])
+
     if report[:ruby_tests].empty? && report[:js_tests].empty?
       <<~eos
         #{title}
 
         *Looks like I couldn't find any flakey tests this time :tada:*
+
+        #{slowest_ruby_tests}
+        #{slowest_js_tests}
       eos
     else
       <<~eos
         #{title}
 
-        ### New findings:
+        ### New Flakey Tests:
 
         ### Ruby [#{report[:ruby_tests].size} failures]
 
@@ -29,6 +35,9 @@ class MarkdownPrinter
         ### JS [#{report[:js_tests].size} failures]
 
         #{build_js_failures(report[:js_tests])}
+
+        #{slowest_ruby_tests}
+        #{slowest_js_tests}
       eos
     end
   end
@@ -60,6 +69,31 @@ class MarkdownPrinter
         Failures: #{test[:failures]}
         #{test[:module]}
         #{details(test)}
+      eos
+    end
+  end
+
+  def build_slowest_tests(type, slowest_tests)
+    ordered_tests = slowest_tests.values.sort_by { |t| -t[:seconds] }.first(5)
+    output = ordered_tests.reduce("") do |memo, test|
+      memo += slow_test_row(type, test)
+    end
+    <<~eos
+    ### Slowest #{type} tests
+
+    #{output}
+    eos
+  end
+
+  def slow_test_row(type, test)
+    if type == :ruby
+      <<~eos
+      #{test[:name]}
+        #{test[:seconds].round(2)} seconds #{test[:trace]}
+      eos
+    else
+      <<~eos
+      #{test[:output]}: #{test[:seconds] / 1000} seconds
       eos
     end
   end
