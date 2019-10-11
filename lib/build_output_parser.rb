@@ -202,6 +202,8 @@ class BuildOutputParser
         s[:slowest_tests][key] = test
       end
     end
+
+    results.slice(:slowest_tests)
   end
 
   def parse_slowest_js_tests(state, archive, commit_hash)
@@ -242,6 +244,8 @@ class BuildOutputParser
 
       s[:slowest_tests][key] = test
     end
+
+    results.slice(:slowest_tests)
   end
 
   def find_test(state, key)
