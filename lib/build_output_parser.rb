@@ -52,7 +52,7 @@ class BuildOutputParser
     }
 
     results = archive.raw_build_iterator.each_with_object(initial_s) do |line, s|
-      stripped_line = line.strip
+      stripped_line = strip_line(line)
 
       if stripped_line.include? 'Randomized with seed'
         test_template[:seed] = stripped_line.match(/\d+/)[0]
@@ -124,7 +124,7 @@ class BuildOutputParser
     }
 
     results = archive.raw_build_iterator.each_with_object(initial_s) do |line, s|
-      stripped_line = line.strip
+      stripped_line = strip_line(line)
       s[:seed] = stripped_line.match(/\d+/)[0] if stripped_line.include? 'Running: {"seed":'
       module_failed_line = stripped_line.include? 'Module Failed'
       test_line = stripped_line.include? 'Test Failed'
@@ -171,7 +171,7 @@ class BuildOutputParser
     }
 
     results = archive.raw_build_iterator.each_with_object(initial_s) do |line, s|
-      stripped_line = line.strip
+      stripped_line = strip_line(line)
 
       slowest_tests_start = stripped_line.include? 'Top 10 slowest examples'
       if slowest_tests_start
@@ -214,7 +214,7 @@ class BuildOutputParser
     }
 
     results = archive.raw_build_iterator.each_with_object(initial_s) do |line, s|
-      stripped_line = line.strip
+      stripped_line = strip_line(line)
 
       slowest_tests_start = stripped_line.include? 'Slowest tests'
       if slowest_tests_start
@@ -231,17 +231,14 @@ class BuildOutputParser
       next(s) unless s[:watching]
       return s[:slowest_tests] if stripped_line.include? 'Time:'
 
-      split_line = stripped_line.split(': ')
-      type = split_line[0]
-      name = split_line[1]
-      seconds = split_line[2].delete('ms').to_f
+      seconds_text = stripped_line.match(/\d+ms/)[0]
+      name = stripped_line.gsub(": #{seconds_text}", '')
       key = build_js_test_key(name)
 
       test = find_test(s, key)
 
-      test[:seconds] = calculate_average_time(test, key, seconds)
-      test[:output] = "#{type}: #{name}"
-
+      test[:seconds] = calculate_average_time(test, key, seconds_text.delete('ms').to_f)
+      test[:output] = name
       s[:slowest_tests][key] = test
     end
 
@@ -263,10 +260,14 @@ class BuildOutputParser
   end
 
   def build_js_test_key(raw)
-    raw.delete(':').downcase.gsub(/\s+/, '_').to_sym
+    raw.delete(':').downcase.gsub(/(\s+|[.\-\/:])/, '_').to_sym
   end
 
   def build_ruby_test_key(raw)
-    raw.strip.tr('./', '_').tr('.', '_').tr('/', '_').tr(':', '_').to_sym
+    raw.strip.gsub(/[.\-\/:]/, '_').to_sym
+  end
+
+  def strip_line(line)
+    line.strip.gsub(/\e\[([;\d]+)?m/, '')
   end
 end

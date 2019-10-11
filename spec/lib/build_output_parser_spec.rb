@@ -27,7 +27,7 @@ RSpec.describe BuildOutputParser do
     end
 
     it 'Returns the last stable commit hash' do
-      expected_commit_hash = 'f072da1'
+      expected_commit_hash = '9a81cb9'
 
       results = subject.parse_raw_from(@archive)
 
