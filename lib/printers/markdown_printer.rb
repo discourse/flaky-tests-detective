@@ -93,7 +93,7 @@ class MarkdownPrinter
       eos
     else
       <<~eos
-      #{test[:output]}: #{test[:seconds] / 1000} seconds
+      #{test[:output]}: #{(test[:seconds] / 1000).round(2)} seconds
       eos
     end
   end
