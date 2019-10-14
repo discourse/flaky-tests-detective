@@ -260,11 +260,11 @@ class BuildOutputParser
   end
 
   def build_js_test_key(raw)
-    raw.delete(':').downcase.gsub(/(\s+|[.\-\/:])/, '_').to_sym
+    raw.delete(':').downcase.gsub(/\W/, '_').to_sym
   end
 
   def build_ruby_test_key(raw)
-    raw.strip.gsub(/[.\-\/:]/, '_').to_sym
+    raw.strip.gsub(/\W/, '_').to_sym
   end
 
   def strip_line(line)
