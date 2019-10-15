@@ -74,7 +74,7 @@ class MarkdownPrinter
   end
 
   def build_slowest_tests(type, slowest_tests)
-    ordered_tests = slowest_tests.values.sort_by { |t| -t[:seconds] }.first(5)
+    ordered_tests = slowest_tests.values.sort_by { |t| -t[:average] }.first(5)
     output = ordered_tests.reduce("") do |memo, test|
       memo += slow_test_row(type, test)
     end
@@ -88,12 +88,16 @@ class MarkdownPrinter
   def slow_test_row(type, test)
     if type == :ruby
       <<~eos
-      #{test[:name]}
-        #{test[:seconds].round(2)} seconds #{test[:trace]}
+      _#{test[:name]}_
+      **Best: #{test[:best].round(2)} - Worst: #{test[:worst].round(2)} - Avg: #{test[:average].round(2)}**
+      #{test[:trace]}
+
       eos
     else
       <<~eos
-      #{test[:output]}: #{(test[:seconds] / 1000).round(2)} seconds
+      _#{test[:output]}_
+      **Best: #{test[:best].round(2)} - Worst: #{test[:worst].round(2)} - Avg: #{test[:average].round(2)}**
+
       eos
     end
   end
@@ -107,9 +111,7 @@ class MarkdownPrinter
       - **First seen:** #{test[:appeared_on]}
       - **Last seen:** #{test[:last_seen]}
       - **Assertion:** #{test[:assertion]}
-      - **Result:** ```
-        #{test[:result]}
-      ```
+      - **Result:** ```#{test[:result]}```
     </details>
     eos
   end

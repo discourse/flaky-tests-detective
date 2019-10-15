@@ -173,6 +173,8 @@ class BuildOutputParser
     results = archive.raw_build_iterator.each_with_object(initial_s) do |line, s|
       stripped_line = strip_line(line)
 
+      s[:watching] = false if s[:watching] && stripped_line == ''
+
       slowest_tests_start = stripped_line.include? 'Top 10 slowest examples'
       if slowest_tests_start
         s[:watching] = true
@@ -180,9 +182,7 @@ class BuildOutputParser
       end
 
       next(s) unless s[:watching]
-
       s[:line_count] += 1
-      return s[:slowest_tests] if stripped_line == ''
 
       if s[:line_count] % 2 != 0
         s[:last_test_name] = stripped_line
@@ -195,15 +195,18 @@ class BuildOutputParser
 
         test = find_test(s, key)
 
-        test[:seconds] = calculate_average_time(test, key, seconds)
+        test[:average] = calculate_average_time(test, key, seconds)
+        test[:worst] = seconds if test[:worst].to_f < seconds
+        test[:best] = seconds if test[:best].to_f.zero? || test[:best].to_f > seconds
         test[:name] = s[:last_test_name]
         test[:trace] = trace
 
         s[:slowest_tests][key] = test
+        s
       end
     end
 
-    results.slice(:slowest_tests)
+    results[:slowest_tests]
   end
 
   def parse_slowest_js_tests(state, archive, commit_hash)
@@ -232,12 +235,15 @@ class BuildOutputParser
       return s[:slowest_tests] if stripped_line.include? 'Time:'
 
       seconds_text = stripped_line.match(/\d+ms/)[0]
+      seconds = seconds_text.delete('ms').to_f / 1000
       name = stripped_line.gsub(": #{seconds_text}", '')
       key = build_js_test_key(name)
 
       test = find_test(s, key)
 
-      test[:seconds] = calculate_average_time(test, key, seconds_text.delete('ms').to_f)
+      test[:average] = calculate_average_time(test, key, seconds)
+      test[:worst] = seconds if test[:worst].to_f < seconds
+      test[:best] = seconds if test[:best].to_f.zero? || test[:best].to_f > seconds
       test[:output] = name
       s[:slowest_tests][key] = test
     end
@@ -252,7 +258,7 @@ class BuildOutputParser
   end
 
   def calculate_average_time(test, test_key, current_seconds)
-    existing_seconds = test[:seconds]
+    existing_seconds = test[:average]
     return current_seconds unless existing_seconds
 
     occurances = test[:occurances]

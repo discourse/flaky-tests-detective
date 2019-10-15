@@ -124,4 +124,36 @@ RSpec.describe BuildOutputParser do
       expect(failed_test[:seed]).to eq expected_seed
     end
   end
+
+  describe 'Parsing slowest RSpec test duration' do
+    let(:raw_output_path) { 'succesful_run.txt' }
+
+    it 'xxxxx' do
+      test_key = :__spec_requests_admin_themes_controller_spec_rb_104
+      duration = 40.13
+
+      output = subject.parse_raw_from(@archive)
+      test_duration = output.dig(:slowest_ruby_tests, test_key)
+
+      expect(test_duration[:worst]).to eq duration
+      expect(test_duration[:best]).to eq duration
+      expect(test_duration[:average]).to eq duration
+    end
+  end
+
+  describe 'Parsing slowest JS test duration' do
+    let(:raw_output_path) { 'succesful_run.txt' }
+
+    it 'xxxxx' do
+      test_key = :acceptance_composer_actionsinteractions
+      duration = 5.147
+
+      output = subject.parse_raw_from(@archive)
+      test_duration = output.dig(:slowest_js_tests, test_key)
+
+      expect(test_duration[:worst]).to eq duration
+      expect(test_duration[:best]).to eq duration
+      expect(test_duration[:average]).to eq duration
+    end
+  end
 end
