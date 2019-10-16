@@ -128,7 +128,7 @@ RSpec.describe BuildOutputParser do
   describe 'Parsing slowest RSpec test duration' do
     let(:raw_output_path) { 'succesful_run.txt' }
 
-    it 'xxxxx' do
+    it 'records the time of a RSpec slow test' do
       test_key = :__spec_requests_admin_themes_controller_spec_rb_104
       duration = 40.13
 
@@ -144,7 +144,7 @@ RSpec.describe BuildOutputParser do
   describe 'Parsing slowest JS test duration' do
     let(:raw_output_path) { 'succesful_run.txt' }
 
-    it 'xxxxx' do
+    it 'records the time of a JS slow test' do
       test_key = :acceptance_composer_actionsinteractions
       duration = 5.147
 

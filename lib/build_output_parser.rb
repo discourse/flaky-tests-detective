@@ -195,9 +195,8 @@ class BuildOutputParser
 
         test = find_test(s, key)
 
-        test[:average] = calculate_average_time(test, key, seconds)
-        test[:worst] = seconds if test[:worst].to_f < seconds
-        test[:best] = seconds if test[:best].to_f.zero? || test[:best].to_f > seconds
+        record_time(test, key, seconds)
+
         test[:name] = s[:last_test_name]
         test[:trace] = trace
 
@@ -241,9 +240,8 @@ class BuildOutputParser
 
       test = find_test(s, key)
 
-      test[:average] = calculate_average_time(test, key, seconds)
-      test[:worst] = seconds if test[:worst].to_f < seconds
-      test[:best] = seconds if test[:best].to_f.zero? || test[:best].to_f > seconds
+      record_time(test, key, seconds)
+
       test[:output] = name
       s[:slowest_tests][key] = test
     end
@@ -255,6 +253,12 @@ class BuildOutputParser
     return { occurances: 1 } unless state[:slowest_tests].key?(key)
 
     state[:slowest_tests][key].tap { |ss| ss[:occurances] += 1 }
+  end
+
+  def record_time(test, key, seconds)
+    test[:average] = calculate_average_time(test, key, seconds)
+    test[:worst] = seconds if test[:worst].to_f < seconds
+    test[:best] = seconds if test[:best].to_f.zero? || test[:best].to_f > seconds
   end
 
   def calculate_average_time(test, test_key, current_seconds)
