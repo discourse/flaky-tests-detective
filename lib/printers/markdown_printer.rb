@@ -74,14 +74,16 @@ class MarkdownPrinter
   end
 
   def build_slowest_tests(type, slowest_tests)
-    ordered_tests = slowest_tests.values.sort_by { |t| -t[:average] }.first(5)
+    ordered_tests = slowest_tests.values.sort_by { |t| -t[:average] }.first(20)
     output = ordered_tests.reduce("") do |memo, test|
       memo += slow_test_row(type, test)
     end
     <<~eos
-    ### Slowest #{type} tests
+    <details>
+      <summary>Slowest #{type} tests</summary>
 
     #{output}
+    </details>
     eos
   end
 
@@ -107,11 +109,11 @@ class MarkdownPrinter
     <details>
       <summary>Show details</summary>
 
-      - **Seed:** #{test[:seed]}
-      - **First seen:** #{test[:appeared_on]}
-      - **Last seen:** #{test[:last_seen]}
-      - **Assertion:** #{test[:assertion]}
-      - **Result:** ```#{test[:result]}```
+    - **Seed:** #{test[:seed]}
+    - **First seen:** #{test[:appeared_on]}
+    - **Last seen:** #{test[:last_seen]}
+    - **Assertion:** #{test[:assertion]}
+    - **Result:** ```#{test[:result]}```
     </details>
     eos
   end
