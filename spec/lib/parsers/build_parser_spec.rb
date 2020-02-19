@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-require_relative '../spec_helper.rb'
-require_relative '../../lib/build_output_parser.rb'
-require_relative '../../lib/archives/file_system_archive.rb'
+require_relative '../../spec_helper.rb'
+require_relative '../../../lib/parsers/build_parser.rb'
+require_relative '../../../lib/archives/file_system_archive.rb'
 
-RSpec.describe BuildOutputParser do
+RSpec.describe BuildParser do
   let(:clean_state) do
     { metadata: { runs: 0, last_commit_hash: nil }, ruby_tests: {}, js_tests: {} }
   end
 
   before do
-    working_dir = File.expand_path('../../examples', __FILE__)
+    working_dir = File.expand_path('../../../examples', __FILE__)
     @archive = FileSystemArchive.new(working_dir, raw_output_path)
   end
 

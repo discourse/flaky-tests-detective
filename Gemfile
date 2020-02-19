@@ -11,6 +11,7 @@ end
 
 group :development do
   gem 'rubocop', require: false
+  gem 'rubocop-discourse', require: false
 end
 
 gem 'discourse_api'
