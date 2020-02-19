@@ -41,7 +41,7 @@ class BuildParser
   def parse_commit_hash(archive)
     checked_latest = false
 
-    result = archive.raw_build_iterator.each do |line|
+    archive.raw_build_iterator.each do |line|
       checked_latest ||= line.include?("You are in 'detached HEAD' state.")
 
       if checked_latest && line.include?('HEAD is now at')

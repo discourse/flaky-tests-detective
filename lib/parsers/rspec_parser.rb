@@ -4,20 +4,20 @@ require_relative 'tests_parser.rb'
 
 class RSpecParser < TestsParser
   def errors(state, archive, commit_hash)
-    test_template = { failures: 1, appeared_on: commit_hash, last_seen: commit_hash }
-
     initial_s = {
       failure_zone: false, failure_list: false,
       errors: state, new_errors: false, test_number: 0,
       results: []
     }
 
+    template = test_template(commit_hash)
+
     results = archive.raw_build_iterator.each_with_object(initial_s) do |line, s|
       stripped_line = strip_line(line)
 
       if stripped_line.include? 'Randomized with seed'
+        template[:seed] = stripped_line.match(/\d+/)[0]
         break(s) if s[:failure_list] # We reached the final seed line
-        test_template[:seed] = stripped_line.match(/\d+/)[0]
       end
 
       s[:failure_zone] ||= stripped_line.include?('Failures:')
@@ -34,7 +34,7 @@ class RSpecParser < TestsParser
         gather_ruby_test_errors(s, new_test, stripped_line)
       elsif s[:failure_list]
         test_line = stripped_line.include? 'rspec'
-        update_errors_report(s, test_line, stripped_line, test_template)
+        update_errors_report(s, test_line, stripped_line, template)
       end
     end
 
@@ -108,7 +108,7 @@ class RSpecParser < TestsParser
     raw.strip.gsub(/\W/, '_').to_sym
   end
 
-  def update_errors_report(state, is_test_line, line, test_template)
+  def update_errors_report(state, is_test_line, line, template)
     if is_test_line
       state[:new_errors] = true
 
@@ -117,10 +117,10 @@ class RSpecParser < TestsParser
 
       if state[:errors].key?(test_key)
         state[:errors][test_key][:failures] += 1
-        state[:errors][test_key][:seed] = test_template[:seed]
-        state[:errors][test_key][:last_seen] = test_template[:last_seen]
+        state[:errors][test_key][:seed] = template[:seed]
+        state[:errors][test_key][:last_seen] = template[:last_seen]
       else
-        state[:errors][test_key] = test_template.merge(
+        state[:errors][test_key] = template.merge(
           module: test_data.first.strip,
           result: state[:results][state[:test_number]],
           assertion: test_data.last,

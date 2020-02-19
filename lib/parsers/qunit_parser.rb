@@ -5,36 +5,42 @@ require_relative 'tests_parser.rb'
 class QUnitParser < TestsParser
   def errors(state, archive, commit_hash)
     initial_s = {
-      watching_test: false, current_module: nil, seed: nil,
+      watching_test: false, current_module: nil,
       current_test_key: nil, errors: state, new_errors: false
     }
 
+    template = test_template(commit_hash)
+
     results = archive.raw_build_iterator.each_with_object(initial_s) do |line, s|
       stripped_line = strip_line(line)
-      s[:seed] = stripped_line.match(/\d+/)[0] if stripped_line.include? 'Running: {"seed":'
+      template[:seed] = stripped_line.match(/\d+/)[0] if stripped_line.include? 'Running: {"seed":'
       module_failed_line = stripped_line.include? 'Module Failed'
       test_line = stripped_line.include? 'Test Failed'
       s[:watching_test] = s[:watching_test] || module_failed_line || test_line
       next(s) unless s[:watching_test]
 
-      assertion_description_line = stripped_line.include? 'Assertion Failed'
-      assertion_line = stripped_line.include? 'Expected'
-
       s[:current_module] = stripped_line if module_failed_line
 
       if test_line
-        s[:current_test_key] = build_test_key(stripped_line)
+        current_test_key = build_test_key(stripped_line)
+        s[:current_test_key] = current_test_key
         s[:new_errors] = true
+        error = s[:errors][current_test_key]
 
-        if s[:errors].key?(s[:current_test_key])
-          s[:errors][s[:current_test_key]][:failures] += 1
-          s[:errors][s[:current_test_key]][:appeared_on] = commit_hash unless s[:errors][s[:current_test_key]][:appeared_on]
-          s[:errors][s[:current_test_key]][:last_seen] = commit_hash
-          s[:errors][s[:current_test_key]][:seed] = s[:seed]
+        if error
+          error[:failures] += 1
+          error[:appeared_on] = commit_hash unless error[:appeared_on]
+          error[:last_seen] = commit_hash
+          error[:seed] = s[:seed] unless s[:seed]
         else
-          s[:errors][s[:current_test_key]] = { module: s[:current_module], failures: 1, seed: s[:seed], appeared_on: commit_hash, last_seen: commit_hash }
+          error = template.merge(module: s[:current_module])
         end
+
+        s[:errors][current_test_key] = error
       end
+
+      assertion_description_line = stripped_line.include? 'Assertion Failed'
+      assertion_line = stripped_line.include? 'Expected'
 
       s[:errors][s[:current_test_key]][:assertion] = stripped_line if s[:current_test_key] && assertion_description_line
       s[:errors][s[:current_test_key]][:result] = stripped_line if s[:current_test_key] && assertion_line

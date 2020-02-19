@@ -38,4 +38,8 @@ class TestsParser
   def strip_line(line)
     line.strip.gsub(/\e\[([;\d]+)?m/, '')
   end
+
+  def test_template(commit_hash)
+    { failures: 1, appeared_on: commit_hash, last_seen: commit_hash }
+  end
 end
