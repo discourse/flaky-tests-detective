@@ -16,11 +16,12 @@ class RSpecParser < TestsParser
       stripped_line = strip_line(line)
 
       if stripped_line.include? 'Randomized with seed'
+        break(s) if s[:failure_list] # We reached the final seed line
         test_template[:seed] = stripped_line.match(/\d+/)[0]
       end
 
-      s[:failure_zone] = s[:failure_zone] || stripped_line.include?('Failures:')
-      s[:failure_list] = s[:failure_list] || stripped_line.include?('Failed examples:')
+      s[:failure_zone] ||= stripped_line.include?('Failures:')
+      s[:failure_list] ||= stripped_line.include?('Failed examples:')
       if s[:failure_list]
         s[:test_number] = 0
         s[:failure_zone] = false
@@ -28,7 +29,7 @@ class RSpecParser < TestsParser
 
       if s[:failure_zone]
         new_test = stripped_line.match?(/\d\)/)
-        s[:watching_test] = s[:watching_test] || new_test
+        s[:watching_test] ||= new_test
 
         gather_ruby_test_errors(s, new_test, stripped_line)
       elsif s[:failure_list]
