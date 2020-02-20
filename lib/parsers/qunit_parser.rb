@@ -13,7 +13,7 @@ class QUnitParser < TestsParser
 
     results = archive.raw_build_iterator.each_with_object(initial_s) do |line, s|
       stripped_line = strip_line(line)
-      template[:seed] = stripped_line.match(/\d+/)[0] if stripped_line.include? 'Running: {"seed":'
+      template[:seed] = stripped_line.match(/\d+/)[0] if stripped_line.include? '"seed":"'
       module_failed_line = stripped_line.include? 'Module Failed'
       test_line = stripped_line.include? 'Test Failed'
       s[:watching_test] = s[:watching_test] || module_failed_line || test_line
