@@ -35,7 +35,7 @@ class QUnitParser < TestsParser
           error[:failures] += 1
           error[:appeared_on] = commit_hash unless error[:appeared_on]
           error[:last_seen] = commit_hash
-          error[:seed] = s[:seed] unless s[:seed]
+          error[:seed] = template[:seed] unless template[:seed]
           error[:assertion] = s[:current_assertion] if s[:current_assertion]
         else
           error = template.merge(module: s[:current_module], assertion: s[:current_assertion])
