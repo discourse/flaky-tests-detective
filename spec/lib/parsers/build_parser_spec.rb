@@ -48,80 +48,150 @@ RSpec.describe BuildParser do
 
   describe 'Parsing a build with JS errors' do
     let(:raw_output_path) { 'qunit_failed_run.txt' }
-    let(:test_name) { :test_failed_user_card }
 
-    it 'Parses and stores failed tests' do
-      test_failed_assertion = 'Assertion Failed: user card is invisible by default'
-      test_assertion_result = 'Expected: true, Actual: false'
-      test_module = 'Module Failed: Acceptance: User Card'
+    context 'Discourse core tests' do
+      let(:test_name) { :test_failed_user_card }
 
-      parsed_output = subject.parse_raw_from(@archive)
-      failed_test = parsed_output.dig(:js_tests, test_name)
+      it 'Parses and stores failed tests' do
+        test_failed_assertion = 'Assertion Failed: user card is invisible by default'
+        test_assertion_result = 'Expected: true, Actual: false'
+        test_module = 'Module Failed: Acceptance: User Card'
 
-      expect(failed_test[:assertion]).to eq test_failed_assertion
-      expect(failed_test[:result]).to eq test_assertion_result
-      expect(failed_test[:module]).to eq test_module
-      expect(failed_test[:failures]).to eq 1
+        parsed_output = subject.parse_raw_from(@archive)
+        failed_test = parsed_output.dig(:js_tests, test_name)
+
+        expect(failed_test[:assertion]).to eq test_failed_assertion
+        expect(failed_test[:result]).to eq test_assertion_result
+        expect(failed_test[:module]).to eq test_module
+        expect(failed_test[:failures]).to eq 1
+      end
+
+      it 'Updates initial state and returns a new state when the failures counter is incremented' do
+        first_run_state = subject.parse_raw_from(@archive)
+        @archive.store_tests_report(first_run_state)
+        second_run = subject.parse_raw_from(@archive)
+        failed_test = second_run.dig(:js_tests, test_name)
+
+        expect(failed_test[:failures]).to eq 2
+        expect(second_run.dig(:metadata, :new_errors)).to eq true
+      end
+
+      it 'Stores the seed' do
+        expected_seed = '304691216275098133962654566400469666965'
+
+        parsed_output = subject.parse_raw_from(@archive)
+        failed_test = parsed_output.dig(:js_tests, test_name)
+
+        expect(failed_test[:seed]).to eq expected_seed
+      end
     end
 
-    it 'Updates initial state and returns a new state when the failures counter is incremented' do
-      first_run_state = subject.parse_raw_from(@archive)
-      @archive.store_tests_report(first_run_state)
-      second_run = subject.parse_raw_from(@archive)
-      failed_test = second_run.dig(:js_tests, test_name)
+    context 'Discourse plugin tests' do
+      let(:test_name) { :test_failed_anniversary_emoji }
 
-      expect(failed_test[:failures]).to eq 2
-      expect(second_run.dig(:metadata, :new_errors)).to eq true
-    end
+      it 'Parses and stores failed tests' do
+        test_failed_assertion = "Assertion Failed: TypeError: Cannot read property 'title' of undefined"
+        test_assertion_result = 'Expected: true, Actual: false'
+        test_module = 'Module Failed: Acceptance: Cakeday'
 
-    it 'Stores the seed' do
-      expected_seed = '304691216275098133962654566400469666965'
+        parsed_output = subject.parse_raw_from(@archive)
+        failed_test = parsed_output.dig(:js_tests, test_name)
 
-      parsed_output = subject.parse_raw_from(@archive)
-      failed_test = parsed_output.dig(:js_tests, test_name)
+        expect(failed_test[:assertion]).to eq test_failed_assertion
+        expect(failed_test[:result]).to eq test_assertion_result
+        expect(failed_test[:module]).to eq test_module
+        expect(failed_test[:failures]).to eq 1
+      end
 
-      expect(failed_test[:seed]).to eq expected_seed
+      it 'Stores the seed' do
+        expected_seed = '156541378386545196911765354344233399498'
+
+        parsed_output = subject.parse_raw_from(@archive)
+        failed_test = parsed_output.dig(:js_tests, test_name)
+
+        expect(failed_test[:seed]).to eq expected_seed
+      end
     end
   end
 
   describe 'Parsing a build with RSpec errors' do
     let(:raw_output_path) { 'rspec_failed_run.txt' }
-    let(:test_name) { :__spec_requests_finish_installation_controller_spec_rb_11 }
 
-    it 'Parses and stores failed tests' do
-      test_failed_assertion = "index has_login_hint is false doesn't allow access"
-      test_assertion_result = <<~EOS
-        Failure/Error: expect(response).not_to be_forbidden
-        expected `#<ActionDispatch::TestResponse:0x000055a703336698 @mon_mutex=#<Thread::Mutex:0x000055a703336620>, @mo..., @method=nil, @request_method=nil, @remote_ip=nil, @original_fullpath=nil, @fullpath=nil, @ip=nil>>.forbidden?` to return false, got true
-      EOS
-      test_module = './spec/requests/finish_installation_controller_spec.rb:11'
+    context 'Discourse core tests' do
+      let(:test_name) { :__spec_requests_finish_installation_controller_spec_rb_11 }
 
-      parsed_output = subject.parse_raw_from(@archive)
-      failed_test = parsed_output.dig(:ruby_tests, test_name)
+      it 'Parses and stores failed tests' do
+        test_failed_assertion = "index has_login_hint is false doesn't allow access"
+        test_assertion_result = <<~EOS
+          Failure/Error: expect(response).not_to be_forbidden
+          expected `#<ActionDispatch::TestResponse:0x000055a703336698 @mon_mutex=#<Thread::Mutex:0x000055a703336620>, @mo..., @method=nil, @request_method=nil, @remote_ip=nil, @original_fullpath=nil, @fullpath=nil, @ip=nil>>.forbidden?` to return false, got true
+        EOS
+        test_module = './spec/requests/finish_installation_controller_spec.rb:11'
 
-      expect(failed_test[:assertion]).to eq test_failed_assertion
-      expect(failed_test[:result]).to eq test_assertion_result
-      expect(failed_test[:module]).to eq test_module
-      expect(failed_test[:failures]).to eq 1
+        parsed_output = subject.parse_raw_from(@archive)
+        failed_test = parsed_output.dig(:ruby_tests, test_name)
+
+        expect(failed_test[:assertion]).to eq test_failed_assertion
+        expect(failed_test[:result]).to eq test_assertion_result
+        expect(failed_test[:module]).to eq test_module
+        expect(failed_test[:failures]).to eq 1
+      end
+
+      it 'Updates initial state and returns a new state when the failures counter is incremented' do
+        first_run_state = subject.parse_raw_from(@archive)
+        @archive.store_tests_report(first_run_state)
+        second_run = subject.parse_raw_from(@archive)
+        failed_test = second_run.dig(:ruby_tests, test_name)
+
+        expect(failed_test[:failures]).to eq 2
+        expect(second_run.dig(:metadata, :new_errors)).to eq true
+      end
+
+      it 'Stores the seed' do
+        expected_seed = '21827'
+
+        parsed_output = subject.parse_raw_from(@archive)
+        failed_test = parsed_output.dig(:ruby_tests, test_name)
+
+        expect(failed_test[:seed]).to eq expected_seed
+      end
     end
 
-    it 'Updates initial state and returns a new state when the failures counter is incremented' do
-      first_run_state = subject.parse_raw_from(@archive)
-      @archive.store_tests_report(first_run_state)
-      second_run = subject.parse_raw_from(@archive)
-      failed_test = second_run.dig(:ruby_tests, test_name)
+    context 'Discourse plugin tests' do
+      let(:test_name) { :__plugins_discourse_calendar_spec_jobs_ensure_expired_event_destruction_spec_rb_66 }
 
-      expect(failed_test[:failures]).to eq 2
-      expect(second_run.dig(:metadata, :new_errors)).to eq true
-    end
+      it 'Parses and stores failed tests' do
+        test_failed_assertion = "DiscourseCalendar::EnsuredExpiredEventDestruction wont destroy recurring events"
+        test_assertion_result = <<~EOS
+          Failure/Error:
+          expect(@op.calendar_details[@post.post_number.to_s]).to eq([
+          "Rome  to", "2018-06-05T10:20:00Z", "2018-06-06T11:20:00Z", @post.user.username_lower, "1.weeks"
+          ])
 
-    it 'Stores the seed' do
-      expected_seed = '21827'
+          expected: ["Rome  to", "2018-06-05T10:20:00Z", "2018-06-06T11:20:00Z", "bruce284", "1.weeks"]
+          got: ["Rome  to", "2018-06-05T10:20:00Z", "2018-06-06T11:20:00Z", "bruce284", "1.weeks", "/t/-/111/3"]
 
-      parsed_output = subject.parse_raw_from(@archive)
-      failed_test = parsed_output.dig(:ruby_tests, test_name)
+          (compared using ==)
+        EOS
+        test_module = './plugins/discourse-calendar/spec/jobs/ensure_expired_event_destruction_spec.rb:66'
 
-      expect(failed_test[:seed]).to eq expected_seed
+        parsed_output = subject.parse_raw_from(@archive)
+        failed_test = parsed_output.dig(:ruby_tests, test_name)
+
+        expect(failed_test[:assertion]).to eq test_failed_assertion
+        expect(failed_test[:result]).to eq test_assertion_result
+        expect(failed_test[:module]).to eq test_module
+        expect(failed_test[:failures]).to eq 1
+      end
+
+      it 'Stores the seed' do
+        expected_seed = '47979'
+
+        parsed_output = subject.parse_raw_from(@archive)
+        failed_test = parsed_output.dig(:ruby_tests, test_name)
+
+        expect(failed_test[:seed]).to eq expected_seed
+      end
     end
   end
 

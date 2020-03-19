@@ -9445,3 +9445,1146 @@ Terminating
 109:M 22 Mar 2019 19:27:34.592 # User requested shutdown...
 109:M 22 Mar 2019 19:27:34.592 # Redis is now ready to exit, bye bye...
 2019-03-22 19:27:34.592 UTC [129] LOG:  database system is shut down
+
+[2020-03-09 09:16:09] bundle exec rake plugin:qunit['*','900000']
+Running qunit tests for all plugins
+LOAD_PLUGINS=1 QUNIT_SKIP_CORE=1 /var/www/discourse/bundle/ruby/2.6.0/bin/rake qunit:test[900000]
+yarn install v1.22.1
+$ node -e "if(process.env.npm_execpath.indexOf('yarn') === -1) throw new Error('NPM is not supported, please use Yarn instead. ')"
+[1/4] Resolving packages...
+success Already up-to-date.
+Done in 0.28s.
+Warming up Rails server
+Rails server is warmed up
+node /var/www/discourse/test/run-qunit.js http://localhost:60099/qunit?hidepassed=1\&qunit_skip_core=1\&seed=156541378386545196911765354344233399498 900000
+navigate to http://localhost:60099/qunit?hidepassed=1&qunit_skip_core=1&seed=156541378386545196911765354344233399498
+DEBUG: -------------------------------
+DEBUG: Ember  : 3.12.2
+DEBUG: jQuery : 3.4.1
+DEBUG: -------------------------------
+[DEPRECATION] `ember-addons/ember-computed-decorators` is deprecated. Please use `discourse-common/utils/decorators` instead.
+
+Running: {"hidepassed":"1","qunit_skip_core":"1","seed":"156541378386545196911765354344233399498"}
+
+
+discourse-encrypt:lib:discourse::canEnableEncrypt
+.
+Acceptance: Chat Integration::Test channel works
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+Deprecation notice: Import the Route class instead of using Discourse.Route (deprecated since Discourse 2.4.0) (removal in Discourse 2.5.0)
+Deprecation notice: Import the Route class instead of using Discourse.Route (deprecated since Discourse 2.4.0) (removal in Discourse 2.5.0)
+Deprecation notice: Import the Route class instead of using Discourse.Route (deprecated since Discourse 2.4.0) (removal in Discourse 2.5.0)
+.
+controller:poll-ui-builder::pollMaxOptions
+DEPRECATION: The <(unknown):ember1492>#pollOptionsCount computed property was just overriden. This removes the computed property and replaces it with a plain value, and has been deprecated. If you want this behavior, consider defining a setter which does it manually. [deprecation id: computed-property.override] See https://emberjs.com/deprecations/v3.x#toc_computed-property-override for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at ComputedProperty.clobberSet (ember:17974:46)
+        at ComputedProperty.set (ember:17943:21)
+        at _set2 (ember:17316:18)
+.
+Acceptance: Chat Integration::Rules load successfully
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+.
+discourse-encrypt:lib:protocol_v0::_getPassphraseKey
+.
+discourse-encrypt:lib:protocol_v0::generateIdentity
+.
+Acceptance: Local Dates - composer::composer bbcode
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+[DEPRECATION] `ember-addons/ember-computed-decorators` is deprecated. Please use `discourse-common/utils/decorators` instead.
+[DEPRECATION] `ember-addons/ember-computed-decorators` is deprecated. Please use `discourse-common/utils/decorators` instead.
+[DEPRECATION] `ember-addons/ember-computed-decorators` is deprecated. Please use `discourse-common/utils/decorators` instead.
+Deprecation notice: `targetUsernames` is deprecated, use `targetRecipients` instead.
+.
+Acceptance: Saved Searches::Saved Search preferences
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+[DEPRECATION] `ember-addons/ember-computed-decorators` is deprecated. Please use `discourse-common/utils/decorators` instead.
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at eval (javascripts/discourse/controllers/preferences-saved-searches:57:7)
+        at obj (discourse-loader:320:31)
+.
+Acceptance: AdSense::can omit ads based on category
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+[DEPRECATION] `ember-addons/ember-computed-decorators` is deprecated. Please use `discourse-common/utils/decorators` instead.
+Deprecation notice: Import the User class instead of using User (deprecated since Discourse 2.4.0) (removal in Discourse 2.6.0)
+Deprecation notice: Import the Route class instead of using Discourse.Route (deprecated since Discourse 2.4.0) (removal in Discourse 2.5.0)
+.
+Acceptance: Canned Replies::Inserting canned replies
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+Deprecation notice: `targetUsernames` is deprecated, use `targetRecipients` instead.
+.
+discourse-encrypt:lib:base64::base64 to buffer
+.
+Acceptance: Rendering polls with bar charts - desktop::Public poll
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+.
+widget:discourse-poll-option::multi, not selected
+.
+Acceptance: Encrypt::activation works
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+.
+Acceptance: Encrypt::deactivation works
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+.
+Acceptance: Restricted Replies Category Edit::Restricted Editing the category
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+[DEPRECATION] `ember-addons/ember-computed-decorators` is deprecated. Please use `discourse-common/utils/decorators` instead.
+.
+Acceptance: Local Dates::today
+.
+Acceptance: Details Button::details button surrounds all selected text in a single details block
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+Deprecation notice: `targetUsernames` is deprecated, use `targetRecipients` instead.
+.
+Acceptance: Local Dates::test utils
+.
+Acceptance: DFP Ads::correct number of ads should show
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+[DEPRECATION] `ember-addons/ember-computed-decorators` is deprecated. Please use `discourse-common/utils/decorators` instead.
+.
+Acceptance: Chat Integration::Edit channel works
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+input-validation has been removed and should be replaced with `@ember/object`
+.
+widget:discourse-poll-standard-results::options in descending order
+.
+Acceptance: Mixed Ads::correct ads show
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+[DEPRECATION] `ember-addons/ember-computed-decorators` is deprecated. Please use `discourse-common/utils/decorators` instead.
+.
+discourse-encrypt:lib:protocol_v0::_exportPublicKey & _importPublicKey
+.
+discourse-encrypt:lib:database::Web Storage (localStorage) backend
+.
+Acceptance: DFP Ads::can omit ads based on category
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+.
+Acceptance: Local Dates::tomorrow - no time
+.
+Acceptance: Poll Builder - polls are enabled::regular user - insufficient trust level
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+.
+Acceptance: AdSense::can omit ads based on groups
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+.
+widget:discourse-poll-standard-results::multiple options in descending order
+.
+discourse-encrypt:lib:database::IndexedDB backend
+.
+Acceptance: Local Dates::default format - time specified
+.
+Acceptance: AdSense::no ads for trust level 3
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+.
+Acceptance: Poll Builder - polls are enabled::poll preview
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+.
+Acceptance: Canned Replies::Editing a canned reply
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+[DEPRECATION] `ember-addons/ember-computed-decorators` is deprecated. Please use `discourse-common/utils/decorators` instead.
+.
+Acceptance: Discourse Tooltips::display and hide
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+.
+widget:discourse-poll-standard-results::options in ascending order
+.
+controller:poll-ui-builder::number pollOutput
+.
+discourse-encrypt:lib:protocol::generateKey
+.
+discourse-encrypt:lib:protocol_v0::buffer to string to buffer
+.
+Acceptance: Chat Integration::Create rule works
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+DEPRECATION: You called <@ember/component:ember21065>.sendAction("action") but Component#sendAction is deprecated. Please use closure actions instead. [deprecation id: ember-component.send-action] See https://emberjs.com/deprecations/v3.x#toc_ember-component-send-action for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Class.sendAction (ember:33361:46)
+        at Class.click (discourse/components/d-button:98:16)
+        at Class.trigger (ember:35188:23)
+.
+widget:discourse-poll-option::single, selected
+.
+controller:poll-ui-builder::regular pollOutput
+.
+Acceptance: House Ads::correct ads show
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+.
+Acceptance: Poll Builder - polls are disabled::staff
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+.
+Acceptance: Chat Integration::Edit rule works
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+DEPRECATION: You called <@ember/component:ember23954>.sendAction("action") but Component#sendAction is deprecated. Please use closure actions instead. [deprecation id: ember-component.send-action] See https://emberjs.com/deprecations/v3.x#toc_ember-component-send-action for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Class.sendAction (ember:33361:46)
+        at Class.click (discourse/components/d-button:98:16)
+        at Class.trigger (ember:35188:23)
+.
+controller:poll-ui-builder::staff_only option is present for staff
+.
+discourse-encrypt:lib:uploadHander::getMetadata - image file
+.
+Acceptance: Encrypt::encrypt settings visible only to allowed groups
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+.
+Acceptance: To Markdown::to-markdown
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+.
+Acceptance: AdSense::correct number of ads should show
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+.
+Acceptance: Quick access assignments panel::Quick access assignments panel
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+.
+Acceptance: Encrypt::enabling works
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+.
+Acceptance: Canned Replies::Creating a new canned reply
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+[DEPRECATION] `ember-addons/ember-computed-decorators` is deprecated. Please use `discourse-common/utils/decorators` instead.
+.
+controller:poll-ui-builder::disableInsert
+DEPRECATION: The <(unknown):ember29757>#pollOptionsCount computed property was just overriden. This removes the computed property and replaces it with a plain value, and has been deprecated. If you want this behavior, consider defining a setter which does it manually. [deprecation id: computed-property.override] See https://emberjs.com/deprecations/v3.x#toc_computed-property-override for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at ComputedProperty.clobberSet (ember:17974:46)
+        at ComputedProperty.set (ember:17943:21)
+        at _set2 (ember:17316:18)
+.
+Acceptance: Local Dates::format
+.
+Acceptance: Local Dates::calendar off
+.
+discourse-encrypt:lib:protocol::encrypt & decrypt
+.
+Acceptance: Local Dates::displayedTimezone
+.
+controller:poll-ui-builder::pollMinOptions
+DEPRECATION: The <(unknown):ember31866>#pollOptionsCount computed property was just overriden. This removes the computed property and replaces it with a plain value, and has been deprecated. If you want this behavior, consider defining a setter which does it manually. [deprecation id: computed-property.override] See https://emberjs.com/deprecations/v3.x#toc_computed-property-override for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at ComputedProperty.clobberSet (ember:17974:46)
+        at ComputedProperty.set (ember:17943:21)
+        at _set2 (ember:17316:18)
+.
+Acceptance: Poll Builder - polls are enabled::regular user - sufficient trust level
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+.
+widget:discourse-poll::can vote
+.
+controller:poll-ui-builder::showMinMax
+.
+initializer:checklist::checkbox before a code block
+.
+Acceptance: Encrypt::new draft for public topic is not encrypted
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+Deprecation notice: `targetUsernames` is deprecated, use `targetRecipients` instead.
+.
+Acceptance: Canned Replies::Reset modal content
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+.
+Acceptance: review desktop::shows approve button by default
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+.
+Acceptance: Cakeday::Anniversary emoji
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+TypeError: Cannot read property 'title' of undefined
+    at eval (acceptance/cakeday-test:199:36)
+    at Class.andThen (ember:57517:33)
+    at eval (ember:57442:19)
+    at isolate (ember:58617:17)
+    at onFulfillment (ember:58554:16)
+    at invokeCallback (ember:63104:17)
+    at publish (ember:63087:9)
+    at eval (ember:57463:16)
+    at invoke (ember:55664:16)
+    at Queue.flush (ember:55556:13)
+F
+Acceptance: Local Dates::today - no time
+.
+Acceptance: review desktop::hides approve button if user is self
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+.
+discourse-encrypt:lib:protocol_v1::generateIdentity
+.
+initializer:checklist::checkbox before a multiline code block
+.
+controller:poll-ui-builder::multiple pollOutput
+DEPRECATION: The <(unknown):ember38556>#isMultiple computed property was just overriden. This removes the computed property and replaces it with a plain value, and has been deprecated. If you want this behavior, consider defining a setter which does it manually. [deprecation id: computed-property.override] See https://emberjs.com/deprecations/v3.x#toc_computed-property-override for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at ComputedProperty.clobberSet (ember:17974:46)
+        at ComputedProperty.set (ember:17943:21)
+        at _set2 (ember:17316:18)
+.
+controller:poll-ui-builder::isMultiple
+DEPRECATION: The <(unknown):ember38562>#pollOptionsCount computed property was just overriden. This removes the computed property and replaces it with a plain value, and has been deprecated. If you want this behavior, consider defining a setter which does it manually. [deprecation id: computed-property.override] See https://emberjs.com/deprecations/v3.x#toc_computed-property-override for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at ComputedProperty.clobberSet (ember:17974:46)
+        at ComputedProperty.set (ember:17943:21)
+        at _set2 (ember:17316:18)
+.
+discourse-encrypt:lib:base64::buffer to base64
+.
+lib:details-cooked-test::details
+.
+widget:discourse-poll::cannot vote if not member of the right group
+.
+Acceptance: Chat Integration::Delete channel works
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+.
+Acceptance: Github Webhook Configuration::Should send requests to change each unconfigured webhook
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+Deprecation notice: Import the Route class instead of using Discourse.Route (deprecated since Discourse 2.4.0) (removal in Discourse 2.5.0)
+.
+widget:discourse-poll-option::single, not selected
+.
+discourse-encrypt:lib:protocol::exportKey & importKey
+.
+Acceptance: Restricted Replies Category Edit::Restricted Can open the category modal
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+.
+Acceptance: DFP Ads::can omit ads based on groups
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+.
+Acceptance: Local Dates::recurring
+.
+Acceptance: review mobile::shows approve button by default
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+.
+Acceptance: Rendering polls with bar charts - mobile::Public number poll
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+.
+Acceptance: Encrypt::topic titles in notification panel are decrypted
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+.
+Acceptance: Local Dates::tomorrow
+.
+Acceptance: Cakeday - disconnected::User is not logged in
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+.
+Acceptance: Assign disabled mobile::Footer dropdown does not contain button
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+.
+Acceptance: Encrypt::user preferences connector works for other users
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+.
+discourse-encrypt:lib:protocol_v0::_getSalt
+.
+Acceptance: UnAssign/Re-assign from the topics list::Unassing/Re-assign options are visible
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+.
+discourse-encrypt:lib:uploadHander::getMetadata - other file
+.
+Acceptance: DFP Ads::no ads for trust level 3
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+.
+controller:poll-ui-builder::pollOptionsCount
+.
+Acceptance: Details Button::details button
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+Deprecation notice: `targetUsernames` is deprecated, use `targetRecipients` instead.
+.
+Acceptance: Spoiler Button::spoiler button
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+Deprecation notice: `targetUsernames` is deprecated, use `targetRecipients` instead.
+.
+initializer:checklist::checkboxes in an unordered list
+.
+initializer:checklist::checkboxes in italic/bold-like blocks
+.
+Acceptance: Rendering polls with pie charts - desktop::Polls
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+.
+discourse-encrypt:lib:protocol_v0::buffer to string
+.
+Acceptance: Discourse Perspective::Create a normal topic
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+Deprecation notice: `targetUsernames` is deprecated, use `targetRecipients` instead.
+.
+Acceptance: Local Dates::yesterday - no time
+.
+Acceptance: Poll Builder - polls are enabled::staff - with insufficient trust level
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+.
+Acceptance: Rendering polls with bar charts - desktop::Public number poll
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+.
+Acceptance: Chat Integration::Delete rule works
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+.
+Acceptance: Local Dates::default format - no time specified
+.
+discourse-encrypt:lib:protocol_v0::string to buffer
+.
+Acceptance: Rendering polls with bar charts - desktop::Polls
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+.
+Acceptance: Github Webhook Configuration::Should display correctly
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+.
+Acceptance: review mobile::hides approve button if user is self
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+.
+initializer:checklist::checkbox before italic/bold sequence
+.
+controller:poll-ui-builder::staff_only option is not present for non-staff
+.
+discourse-encrypt:lib:protocol_v0::_exportPrivateKey & _importPrivateKey
+.
+Acceptance: Local Dates::yesterday
+.
+Acceptance: Encrypt::meta: leak checker works
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+Deprecation notice: `targetUsernames` is deprecated, use `targetRecipients` instead.
+.
+widget:discourse-poll-option::multi, selected
+.
+Acceptance: Local Dates::tooltip
+.
+Acceptance: Local Dates::today - no time with different zones
+.
+Acceptance: Discourse Solved Plugin::A topic with an accepted answer shows an excerpt of the answer, if provided
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+.
+Acceptance: Poll Builder - polls are disabled::regular user - insufficient trust level
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+.
+Acceptance: Encrypt::posting does not leak plaintext
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+Deprecation notice: `targetUsernames` is deprecated, use `targetRecipients` instead.
+.
+controller:poll-ui-builder::isNumber
+.
+Acceptance: Canned Replies::Replacing variables
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+Deprecation notice: `targetUsernames` is deprecated, use `targetRecipients` instead.
+.
+Acceptance: Discourse Perspective::Create a toxic topic without api keys filled
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+Deprecation notice: `targetUsernames` is deprecated, use `targetRecipients` instead.
+.
+initializer:checklist::correct checkbox is selected
+.
+controller:poll-ui-builder::pollStepOptions
+.
+Acceptance: Poll Builder - polls are disabled::regular user - sufficient trust level
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+.
+discourse-encrypt:lib:base64::buffer to base64 to buffer
+.
+discourse-encrypt:lib:protocol_v1::exportIdentity & importIdentity
+.
+Acceptance: Assign mobile::Footer dropdown contains button
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+.
+Acceptance: Chat Integration::Create channel works
+DEPRECATION: Function prototype extensions have been deprecated, please migrate from function(){}.property('bar') to computed('bar', function() {}). [deprecation id: function-prototype-extensions.property] See https://deprecations.emberjs.com/v3.x#toc_function-prototype-extensions-property for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Function.value (ember:27558:50)
+        at initializeSavedSearches (javascripts/discourse/initializers/apply-saved-searches:13:9)
+        at withPluginApi (discourse/lib/plugin-api:470:14)
+DEPRECATION: You called <@ember/component:ember76604>.sendAction("action") but Component#sendAction is deprecated. Please use closure actions instead. [deprecation id: ember-component.send-action] See https://emberjs.com/deprecations/v3.x#toc_ember-component-send-action for more details.
+        at logDeprecationStackTrace (ember:38048:23)
+        at HANDLERS.<computed> (ember:38142:11)
+        at raiseOnDeprecation (ember:38075:11)
+        at HANDLERS.<computed> (ember:38142:11)
+        at invoke (ember:38154:11)
+        at deprecate (ember:38113:30)
+        at Class.sendAction (ember:33361:46)
+        at Class.click (discourse/components/d-button:98:16)
+        at Class.trigger (ember:35188:23)
+.
+
+Module Failed: Acceptance: Cakeday
+  Test Failed: Anniversary emoji
+    Assertion Failed: TypeError: Cannot read property 'title' of undefined
+      Expected: true, Actual: false
+
+Slowest tests
+----------------------------------------------
+Acceptance: Encrypt::posting does not leak plaintext: 2699ms
+Acceptance: Encrypt::new draft for public topic is not encrypted: 1931ms
+Acceptance: Encrypt::activation works: 1595ms
+Acceptance: Spoiler Button::spoiler button: 1276ms
+discourse-encrypt:lib:database::IndexedDB backend: 1245ms
+Acceptance: Details Button::details button: 1110ms
+discourse-encrypt:lib:database::Web Storage (localStorage) backend: 1033ms
+Acceptance: Discourse Perspective::Create a toxic topic without api keys filled: 1026ms
+discourse-encrypt:lib:protocol_v1::generateIdentity: 1017ms
+Acceptance: Encrypt::meta: leak checker works: 1012ms
+Acceptance: Encrypt::enabling works: 967ms
+Acceptance: Encrypt::topic titles in notification panel are decrypted: 899ms
+Acceptance: Discourse Perspective::Create a normal topic: 873ms
+discourse-encrypt:lib:protocol_v1::exportIdentity & importIdentity: 860ms
+Acceptance: Canned Replies::Replacing variables: 821ms
+Acceptance: Canned Replies::Reset modal content: 756ms
+Acceptance: House Ads::correct ads show: 628ms
+Acceptance: Canned Replies::Creating a new canned reply: 626ms
+Acceptance: Poll Builder - polls are disabled::regular user - sufficient trust level: 623ms
+Acceptance: Encrypt::deactivation works: 618ms
+Acceptance: Restricted Replies Category Edit::Restricted Editing the category: 572ms
+Acceptance: Poll Builder - polls are disabled::regular user - insufficient trust level: 570ms
+discourse-encrypt:lib:protocol::exportKey & importKey: 553ms
+Acceptance: Poll Builder - polls are enabled::staff - with insufficient trust level: 531ms
+Acceptance: Canned Replies::Editing a canned reply: 516ms
+Acceptance: Restricted Replies Category Edit::Restricted Can open the category modal: 489ms
+Acceptance: Mixed Ads::correct ads show: 472ms
+Acceptance: Chat Integration::Test channel works: 468ms
+Acceptance: Assign mobile::Footer dropdown contains button: 457ms
+Acceptance: Local Dates - composer::composer bbcode: 447ms
+Time: 41345ms, Total: 469, Passed: 468, Failed: 1
+rake aborted!
+Command failed with status (1): [node /var/www/discourse/test/run-qunit.js ...]
+/var/www/discourse/lib/tasks/qunit.rake:93:in `block in <main>'
+/var/www/discourse/bundle/ruby/2.6.0/gems/rake-13.0.1/exe/rake:27:in `<top (required)>'
+Tasks: TOP => qunit:test
+(See full trace by running task with --trace)
+rake aborted!

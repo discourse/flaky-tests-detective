@@ -59,3 +59,98 @@ rspec ./spec/integration/flags_spec.rb:5 # PostAction triggers the 'flag_reviewe
 
 Randomized with seed 21827
 
+[2020-03-11 01:02:59] RSPEC_FAILFAST=1 bundle exec rake plugin:spec
+LOAD_PLUGINS=1 /usr/local/bin/ruby -S rspec ./plugins/discourse-prometheus/spec/lib/collector_spec.rb ./plugins/discourse-prometheus/spec/lib/reporter/global_spec.rb ./plugins/discourse-prometheus/spec/lib/reporter/process_spec.rb ./plugins/discourse-prometheus/spec/lib/internal_metric/custom_spec.rb ./plugins/discourse-prometheus/spec/lib/internal_metric/global_spec.rb ./plugins/discourse-prometheus/spec/lib/internal_metric/web_spec.rb ./plugins/discourse-prometheus/spec/lib/internal_metric/base_spec.rb ./plugins/discourse-prometheus/spec/middleware/metrics_spec.rb ./plugins/discourse-assign/spec/models/group_spec.rb ./plugins/discourse-assign/spec/models/user_custom_field_spec.rb ./plugins/discourse-assign/spec/components/topic_query_spec.rb ./plugins/discourse-assign/spec/requests/assign_controller_spec.rb ./plugins/discourse-assign/spec/serializers/topic_list_serializer_spec.rb ./plugins/discourse-assign/spec/lib/topic_assigner_spec.rb ./plugins/discourse-assign/spec/lib/pending_assigns_reminder_spec.rb ./plugins/discourse-assign/spec/jobs/scheduled/enqueue_reminders_spec.rb ./plugins/discourse-assign/spec/jobs/regular/remind_user_spec.rb ./plugins/discourse-assign/spec/integration/assign_spec.rb ./plugins/discourse-restricted-replies/spec/integration/restricted_replies_spec.rb ./plugins/discourse-checklist/spec/pretty_text_spec.rb ./plugins/discourse-code-review/spec/plugin_spec.rb ./plugins/discourse-code-review/spec/discourse_code_review/lib/state/commit_topics_spec.rb ./plugins/discourse-code-review/spec/discourse_code_review/lib/github_pr_syncer_spec.rb ./plugins/discourse-code-review/spec/discourse_code_review/lib/github_pr_service_spec.rb ./plugins/discourse-code-review/spec/discourse_code_review/lib/github_repo_spec.rb ./plugins/discourse-code-review/spec/discourse_code_review/lib/importer_spec.rb ./plugins/discourse-code-review/spec/requests/discourse_code_review/code_review_controller_spec.rb ./plugins/discourse-code-review/spec/requests/discourse_code_review/repos_controller_spec.rb ./plugins/discourse-code-review/spec/requests/discourse_code_review/list_controller_spec.rb ./plugins/discourse-code-review/spec/lib/enumerators_spec.rb ./plugins/discourse-chat-integration/spec/helpers/helper_spec.rb ./plugins/discourse-chat-integration/spec/models/rule_spec.rb ./plugins/discourse-chat-integration/spec/models/channel_spec.rb ./plugins/discourse-chat-integration/spec/requests/chat_controller_spec.rb ./plugins/discourse-chat-integration/spec/requests/public_controller_spec.rb ./plugins/discourse-chat-integration/spec/services/manager_spec.rb ./plugins/discourse-chat-integration/spec/lib/discourse_chat/provider/gitter/gitter_provider_spec.rb ./plugins/discourse-chat-integration/spec/lib/discourse_chat/provider/slack/slack_provider_spec.rb ./plugins/discourse-chat-integration/spec/lib/discourse_chat/provider/slack/slack_transcript_spec.rb ./plugins/discourse-chat-integration/spec/lib/discourse_chat/provider/slack/slack_message_formatter_spec.rb ./plugins/discourse-chat-integration/spec/lib/discourse_chat/provider/slack/slack_command_controller_spec.rb ./plugins/discourse-chat-integration/spec/lib/discourse_chat/provider/telegram/telegram_provider_spec.rb ./plugins/discourse-chat-integration/spec/lib/discourse_chat/provider/telegram/telegram_command_controller_spec.rb ./plugins/discourse-chat-integration/spec/lib/discourse_chat/provider/mattermost/mattermost_command_controller_spec.rb ./plugins/discourse-chat-integration/spec/lib/discourse_chat/provider/mattermost/mattermost_provider_spec.rb ./plugins/discourse-chat-integration/spec/lib/discourse_chat/provider/flowdock/flowdock_provider_spec.rb ./plugins/discourse-chat-integration/spec/lib/discourse_chat/provider/matrix/matrix_provider_spec.rb ./plugins/discourse-chat-integration/spec/lib/discourse_chat/provider/zulip/zulip_provider_spec.rb ./plugins/discourse-chat-integration/spec/lib/discourse_chat/provider/rocketchat/rocketchat_provider_spec.rb ./plugins/discourse-chat-integration/spec/lib/discourse_chat/provider/discord/discord_provider_spec.rb ./plugins/discourse-chat-integration/spec/jobs/onceoff/migrate_from_slack_official_spec.rb ./plugins/discourse-chat-integration/spec/jobs/regular/notify_chats_spec.rb ./plugins/discourse-zendesk-plugin/spec/jobs/onceoff/migrate_zendesk_enabled_categories_site_settings_spec.rb ./plugins/discourse-zendesk-plugin/spec/integration/zendesk_plugin_spec.rb ./plugins/discourse-tooltips/spec/integration/rate_limiting_spec.rb ./plugins/discourse-no-bump/spec/components/no_bump_validator_spec.rb ./plugins/discourse-spoiler-alert/spec/pretty_text_spec.rb ./plugins/discourse-spoiler-alert/spec/topic_excerpt_spec.rb ./plugins/discourse-login-with-amazon/spec/lib/validators/enable_login_with_amazon_validator_spec.rb ./plugins/discourse-github/spec/models/github_repo_spec.rb ./plugins/discourse-github/spec/lib/commits_populator_spec.rb ./plugins/discourse-github/spec/lib/github_badges_spec.rb ./plugins/discourse-github/spec/lib/github_linkback_access_token_setting_validator_spec.rb ./plugins/discourse-github/spec/lib/github_badges_repo_setting_validator_spec.rb ./plugins/discourse-github/spec/lib/github_linkback_spec.rb ./plugins/discourse-github/spec/jobs/create_github_linkback_spec.rb ./plugins/discourse-github/spec/jobs/replace_github_non_permalinks_spec.rb ./plugins/discourse-footnote/spec/pretty_text_spec.rb ./plugins/discourse-encrypt/spec/models/topic_spec.rb ./plugins/discourse-encrypt/spec/models/post_spec.rb ./plugins/discourse-encrypt/spec/plugin_spec.rb ./plugins/discourse-encrypt/spec/requests/encrypt_controller_spec.rb ./plugins/discourse-encrypt/spec/requests/posts_controller_spec.rb ./plugins/discourse-encrypt/spec/requests/topics_controller_spec.rb ./plugins/discourse-encrypt/spec/serializers/topic_view_serializer_spec.rb ./plugins/discourse-encrypt/spec/serializers/topic_serializers_spec.rb ./plugins/discourse-encrypt/spec/serializers/current_user_serialier_spec.rb ./plugins/discourse-encrypt/spec/lib/encrypted_post_creator_spec.rb ./plugins/discourse-encrypt/spec/jobs/encrypt_consistency_spec.rb ./plugins/discourse-affiliate/spec/lib/affiliate_processor_spec.rb ./plugins/discourse-internet-explorer/spec/requests/bootstrap_request_spec.rb ./plugins/discourse-internet-explorer/spec/middleware/anonymous_cache_spec.rb ./plugins/discourse-logster-transporter/spec/requests/discourse_logster_transporter/receiver_controller_spec.rb ./plugins/discourse-logster-transporter/spec/lib/discourse_logster_transporter/store_spec.rb ./plugins/discourse-logster-transporter/spec/lib/ring_buffer_spec.rb ./plugins/discourse-math/spec/pretty_text_spec.rb ./plugins/discourse-math/spec/lib/math_renderer_spec.rb ./plugins/discourse-steam-login/spec/components/validators/enable_steam_logins_validator_spec.rb ./plugins/discourse-bbcode/spec/pretty_text_spec.rb ./plugins/discourse-prometheus-alert-receiver/spec/serializers/site_serializer_spec.rb ./plugins/discourse-prometheus-alert-receiver/spec/lib/opsgenie_schedule_spec.rb ./plugins/discourse-prometheus-alert-receiver/spec/lib/topic_query_spec.rb ./plugins/discourse-prometheus-alert-receiver/spec/model/category_spec.rb ./plugins/discourse-prometheus-alert-receiver/spec/integration/discourse_prometheus_alert_receiver/receiver_controller_spec.rb ./plugins/discourse-sitemap/spec/requests/sitemap_controller_spec.rb ./plugins/discourse-adplugin/spec/models/house_ad_spec.rb ./plugins/discourse-adplugin/spec/models/house_ad_setting_spec.rb ./plugins/discourse-adplugin/spec/requests/house_ad_settings_controller_spec.rb ./plugins/discourse-rss-polling/spec/models/feed_item_spec.rb ./plugins/discourse-rss-polling/spec/models/feed_setting_spec.rb ./plugins/discourse-rss-polling/spec/requests/feed_settings_controller_spec.rb ./plugins/discourse-rss-polling/spec/services/feed_setting_finder_spec.rb ./plugins/discourse-rss-polling/spec/jobs/poll_feed_spec.rb ./plugins/discourse-rss-polling/spec/jobs/fix_topic_embed_authors_spec.rb ./plugins/discourse-rss-polling/spec/jobs/poll_all_feeds_spec.rb ./plugins/discourse-moderator-attention/spec/integration/read_time_spec.rb ./plugins/docker_manager/spec/requests/admin_controller_spec.rb ./plugins/docker_manager/spec/lib/git_repo_spec.rb ./plugins/discourse-canned-replies/spec/plugin_spec.rb ./plugins/discourse-canned-replies/spec/integration/canned_reply/canned_replies_spec.rb ./plugins/discourse-calendar/spec/lib/event_updater_spec.rb ./plugins/discourse-calendar/spec/lib/dynamic_calendar_spec.rb ./plugins/discourse-calendar/spec/lib/event_destroyer_spec.rb ./plugins/discourse-calendar/spec/lib/group_timezones_spec.rb ./plugins/discourse-calendar/spec/lib/static_calendar_spec.rb ./plugins/discourse-calendar/spec/lib/calendar_settings_validator_spec.rb ./plugins/discourse-calendar/spec/serializers/post_serializer_spec.rb ./plugins/discourse-calendar/spec/jobs/update_holiday_usernames_spec.rb ./plugins/discourse-calendar/spec/jobs/check_next_regional_holidays_spec.rb ./plugins/discourse-calendar/spec/jobs/ensure_consistency_spec.rb ./plugins/discourse-calendar/spec/jobs/ensure_expired_event_destruction_spec.rb ./plugins/discourse-solved/spec/models/site_spec.rb ./plugins/discourse-solved/spec/requests/topics_controller_spec.rb ./plugins/discourse-solved/spec/serializers/topic_answer_mixin_spec.rb ./plugins/discourse-solved/spec/integration/solved_spec.rb ./plugins/discourse-narrative-bot/spec/user_spec.rb ./plugins/discourse-narrative-bot/spec/requests/discobot_certificate_spec.rb ./plugins/discourse-narrative-bot/spec/requests/discobot_welcome_post_spec.rb ./plugins/discourse-narrative-bot/spec/lib/certificate_generator_spec.rb ./plugins/discourse-narrative-bot/spec/discourse_narrative_bot/new_user_narrative_spec.rb ./plugins/discourse-narrative-bot/spec/discourse_narrative_bot/track_selector_spec.rb ./plugins/discourse-narrative-bot/spec/discourse_narrative_bot/advanced_user_narrative_spec.rb ./plugins/discourse-narrative-bot/spec/discourse_narrative_bot/store_spec.rb ./plugins/discourse-narrative-bot/spec/jobs/send_advanced_tutorial_message_spec.rb ./plugins/discourse-narrative-bot/spec/jobs/onceoff/remap_old_bot_iamges_spec.rb ./plugins/discourse-narrative-bot/spec/jobs/onceoff/grant_badges_spec.rb ./plugins/discourse-narrative-bot/spec/jobs/send_default_welcome_message_spec.rb ./plugins/discourse-perspective-api/spec/discourse_perspective_spec.rb ./plugins/discourse-perspective-api/spec/requests/post_toxicity_controller_spec.rb ./plugins/discourse-perspective-api/spec/jobs/flag_toxic_post_spec.rb ./plugins/discourse-perspective-api/spec/jobs/inspect_toxic_post_spec.rb ./plugins/discourse-voting/spec/requests/votes_controller_spec.rb ./plugins/discourse-voting/spec/ensure_consistency_spec.rb ./plugins/discourse-voting/spec/voting_spec.rb ./plugins/discourse-auto-deactivate/spec/plugin_spec.rb ./plugins/discourse-cakeday/spec/models/user_spec.rb ./plugins/discourse-cakeday/spec/serializers/post_serializer_spec.rb ./plugins/discourse-cakeday/spec/serializers/user_serializer_spec.rb ./plugins/discourse-cakeday/spec/jobs/migrate_date_of_birth_to_users_table_spec.rb ./plugins/discourse-cakeday/spec/integration/cakeday_spec.rb ./plugins/discourse-openid-connect/spec/lib/omniauth_open_id_connect_spec.rb ./plugins/discourse-openid-connect/spec/lib/openid_connect_authenticator_spec.rb ./plugins/discourse-presence/spec/presence_manager_spec.rb ./plugins/discourse-presence/spec/requests/presence_controller_spec.rb ./plugins/discourse-akismet/spec/models/reviewable_akismet_post_spec.rb ./plugins/discourse-akismet/spec/models/user_profile_spec.rb ./plugins/discourse-akismet/spec/models/reviewable_akismet_user_spec.rb ./plugins/discourse-akismet/spec/lib/akismet_spec.rb ./plugins/discourse-akismet/spec/lib/users_bouncer_spec.rb ./plugins/discourse-akismet/spec/lib/tasks/reviewables_spec.rb ./plugins/discourse-akismet/spec/lib/posts_bouncer_spec.rb ./plugins/discourse-akismet/spec/jobs/scheduled/check_for_spam_users_spec.rb ./plugins/discourse-akismet/spec/jobs/regular/check_users_for_spam_spec.rb ./plugins/discourse-akismet/spec/jobs/regular/confirm_akismet_flagged_posts_spec.rb ./plugins/discourse-akismet/spec/jobs/regular/check_akismet_post_spec.rb ./plugins/discourse-yearly-review/spec/jobs/yearly_review_spec.rb ./plugins/poll/spec/models/poll_spec.rb ./plugins/poll/spec/requests/users_controller_spec.rb ./plugins/poll/spec/lib/polls_updater_spec.rb ./plugins/poll/spec/lib/pretty_text_spec.rb ./plugins/poll/spec/lib/polls_validator_spec.rb ./plugins/poll/spec/lib/new_post_manager_spec.rb ./plugins/poll/spec/jobs/regular/close_poll_spec.rb ./plugins/poll/spec/controllers/posts_controller_spec.rb ./plugins/poll/spec/controllers/polls_controller_spec.rb ./plugins/poll/spec/db/post_migrate/migrate_polls_data_spec.rb ./plugins/poll/spec/integration/poll_endpoints_spec.rb ./plugins/discourse-push-notifications/spec/requests/users_controller_spec.rb ./plugins/discourse-policy/spec/models/policy_user_spec.rb ./plugins/discourse-policy/spec/requests/policy_controller_spec.rb ./plugins/discourse-policy/spec/serializers/post_serializer_spec.rb ./plugins/discourse-policy/spec/lib/pretty_text_spec.rb ./plugins/discourse-policy/spec/lib/check_policy_spec.rb ./plugins/discourse-local-dates/spec/models/post_spec.rb ./plugins/discourse-local-dates/spec/lib/pretty_text_spec.rb ./plugins/discourse-local-dates/spec/integration/local_dates_spec.rb ./plugins/discourse-saved-searches/spec/jobs/regular/saved_search_notification_spec.rb ./plugins/discourse-details/spec/components/pretty_text_spec.rb ./plugins/discourse-invite-tokens/spec/models/invite_spec.rb ./plugins/discourse-invite-tokens/spec/requests/discourse_invite_tokens_controller_spec.rb ./plugins/discourse-categories-suppressed/spec/components/topic_query_spec.rb ./plugins/discourse-user-notes/spec/user_warning_spec.rb ./plugins/discourse-user-notes/spec/user_history_spec.rb ./plugins/discourse-data-explorer/spec/guardian_spec.rb ./plugins/discourse-data-explorer/spec/controllers/queries_controller_spec.rb ./plugins/discourse-bbcode-color/spec/pretty_text_spec.rb ./plugins/discourse-backup-uploads-to-s3/spec/models/upload_spec.rb ./plugins/discourse-backup-uploads-to-s3/spec/services/file_encryptor_spec.rb ./plugins/discourse-backup-uploads-to-s3/spec/jobs/remove_upload_from_s3_spec.rb ./plugins/discourse-backup-uploads-to-s3/spec/jobs/backup_upload_to_s3_spec.rb ./plugins/discourse-user-card-badges/spec/controllers/user_card_badge_controller_spec.rb ./plugins/discourse-patreon/spec/patreon_spec.rb ./plugins/discourse-patreon/spec/api_spec.rb ./plugins/discourse-patreon/spec/requests/patreon_admin_controller_spec.rb ./plugins/discourse-patreon/spec/requests/patreon_webhook_controller_spec.rb ./plugins/discourse-patreon/spec/patron_spec.rb ./plugins/discourse-patreon/spec/campaign_spec.rb ./plugins/discourse-patreon/spec/seed_spec.rb ./plugins/discourse-patreon/spec/jobs/patreon_update_tokens_spec.rb ./plugins/discourse-patreon/spec/jobs/update_brand_images_spec.rb ./plugins/discourse-patreon/spec/jobs/migrate_patreon_user_infos_spec.rb ./plugins/discourse-translator/spec/models/post_spec.rb ./plugins/discourse-translator/spec/serializers/post_serializer_spec.rb ./plugins/discourse-translator/spec/services/yandex_spec.rb ./plugins/discourse-translator/spec/services/microsoft_spec.rb ./plugins/discourse-translator/spec/services/google_spec.rb ./plugins/discourse-translator/spec/controllers/translator_controller_spec.rb ./plugins/discourse-oauth2-basic/spec/plugin_spec.rb --profile --fail-fast
+
+Randomized with seed 47979
+............................2020-03-11 01:03:17.022 UTC [991] ERROR:  cannot execute SELECT FOR UPDATE in a read-only transaction
+2020-03-11 01:03:17.022 UTC [991] STATEMENT:  /*
+	 * DataExplorer Query
+	 * Query: /admin/plugins/explorerNULLid=7
+	 * Started by: anne38
+	 */
+	WITH query AS (
+	SELECT id FROM posts FOR UPDATE
+	) SELECT * FROM query
+	LIMIT 1000
+	
+.2020-03-11 01:03:17.420 UTC [991] ERROR:  cannot execute SELECT in a read-only transaction
+2020-03-11 01:03:17.420 UTC [991] STATEMENT:  /*
+	 * DataExplorer Query
+	 * Query: /admin/plugins/explorerNULLid=8
+	 * Started by: anne39
+	 */
+	WITH query AS (
+	UPDATE posts SET cooked = '<p>you may already be a winner!</p>' WHERE id = 18
+	RETURNING id
+	) SELECT * FROM query
+	LIMIT 1000
+	
+.2020-03-11 01:03:17.451 UTC [991] ERROR:  syntax error at or near "COMMIT" at character 110
+2020-03-11 01:03:17.451 UTC [991] STATEMENT:  /*
+	 * DataExplorer Query
+	 * Query: /admin/plugins/explorerNULLid=9
+	 * Started by: anne41
+	 */
+	WITH query AS (
+	COMMIT
+	) SELECT * FROM query
+	LIMIT 1000
+	
+2020-03-11 01:03:17.454 UTC [991] ERROR:  syntax error at or near "COMMIT" at character 110
+2020-03-11 01:03:17.454 UTC [991] STATEMENT:  /*
+	 * DataExplorer Query
+	 * Query: /admin/plugins/explorerNULLid=9
+	 * Started by: anne41
+	 */
+	WITH query AS (
+	COMMIT
+	) SELECT * FROM query
+	LIMIT 1000
+	
+2020-03-11 01:03:17.460 UTC [991] ERROR:  syntax error at or near "COMMIT" at character 110
+2020-03-11 01:03:17.460 UTC [991] STATEMENT:  /*
+	 * DataExplorer Query
+	 * Query: /admin/plugins/explorerNULLid=9
+	 * Started by: anne41
+	 */
+	WITH query AS (
+	COMMIT
+	) SELECT * FROM query
+	LIMIT 1000
+	
+...2020-03-11 01:03:17.635 UTC [991] ERROR:  syntax error at or near "CREATE" at character 111
+2020-03-11 01:03:17.635 UTC [991] STATEMENT:  /*
+	 * DataExplorer Query
+	 * Query: /admin/plugins/explorerNULLid=12
+	 * Started by: anne44
+	 */
+	WITH query AS (
+	CREATE TABLE mytable (id serial)
+	) SELECT * FROM query
+	LIMIT 1000
+	
+.............................................................................................................................................................................F
+
+Failures:
+
+  1) DiscourseCalendar::EnsuredExpiredEventDestruction wont destroy recurring events
+     Failure/Error:
+       expect(@op.calendar_details[@post.post_number.to_s]).to eq([
+         "Rome  to", "2018-06-05T10:20:00Z", "2018-06-06T11:20:00Z", @post.user.username_lower, "1.weeks"
+       ])
+
+       expected: ["Rome  to", "2018-06-05T10:20:00Z", "2018-06-06T11:20:00Z", "bruce284", "1.weeks"]
+            got: ["Rome  to", "2018-06-05T10:20:00Z", "2018-06-06T11:20:00Z", "bruce284", "1.weeks", "/t/-/111/3"]
+
+       (compared using ==)
+     # ./plugins/discourse-calendar/spec/jobs/ensure_expired_event_destruction_spec.rb:76:in `block (2 levels) in <main>'
+
+Finished in 47.4 seconds (files took 5.97 seconds to load)
+207 examples, 1 failure
+
+Failed examples:
+
+rspec ./plugins/discourse-calendar/spec/jobs/ensure_expired_event_destruction_spec.rb:66 # DiscourseCalendar::EnsuredExpiredEventDestruction wont destroy recurring events
+
+Randomized with seed 47979

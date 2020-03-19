@@ -17,7 +17,10 @@ class RSpecParser < TestsParser
 
       if stripped_line.include? 'Randomized with seed'
         template[:seed] = stripped_line.match(/\d+/)[0]
-        break(s) if s[:failure_list] # We reached the final seed line
+        if s[:failure_list] # We reached the final seed line
+          s.merge!(failure_zone: false, failure_list: false, watching_test: false, results: [])
+          next(s)
+        end
       end
 
       s[:failure_zone] ||= stripped_line.include?('Failures:')
@@ -69,7 +72,7 @@ class RSpecParser < TestsParser
         split_line = stripped_line.split(' seconds ')
 
         seconds = split_line[0].strip.to_f
-        trace = split_line[1]
+        trace = split_line[1].strip
         key = build_test_key(trace)
 
         test = find_test(s, key)
@@ -123,7 +126,7 @@ class RSpecParser < TestsParser
         state[:errors][test_key] = template.merge(
           module: test_data.first.strip,
           result: state[:results][state[:test_number]],
-          assertion: test_data.last,
+          assertion: test_data.last.strip,
         )
       end
 
