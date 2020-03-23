@@ -12,6 +12,10 @@ class Detective
 
     curate_report!(filtered_report, previous_report, :ruby_tests, threshold)
     curate_report!(filtered_report, previous_report, :js_tests, threshold)
+
+    failures_since_last_report!(filtered_report, previous_report, :ruby_tests)
+    failures_since_last_report!(filtered_report, previous_report, :js_tests)
+
     filtered_report[:metadata][:report_runs] = runs(filtered_report) - runs(previous_report)
 
     report_printer.print_from(filtered_report)
@@ -36,6 +40,12 @@ class Detective
       test[:failures] < threshold ||
       (!previous_report.dig(test_key).empty? &&
       report.dig(test_key, test_name, :failures) == previous_report.dig(test_key, test_name, :failures))
+    end
+  end
+
+  def failures_since_last_report!(report, previous_report, test_key)
+    report[test_key].each do |test_name, test|
+      report[test_key][test_name][:failures] -= previous_report.dig(test_key, test_name, :failures).to_i
     end
   end
 end

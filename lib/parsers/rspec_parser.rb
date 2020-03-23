@@ -130,6 +130,8 @@ class RSpecParser < TestsParser
         )
       end
 
+      state[:errors][test_key][:last_seen_at] = Time.now.utc.to_s
+
       state[:test_number] += 1
     end
   end

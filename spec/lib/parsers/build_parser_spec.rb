@@ -64,6 +64,7 @@ RSpec.describe BuildParser do
         expect(failed_test[:result]).to eq test_assertion_result
         expect(failed_test[:module]).to eq test_module
         expect(failed_test[:failures]).to eq 1
+        expect(failed_test[:last_seen_at]).not_to eq(nil)
       end
 
       it 'Updates initial state and returns a new state when the failures counter is incremented' do
@@ -101,6 +102,7 @@ RSpec.describe BuildParser do
         expect(failed_test[:result]).to eq test_assertion_result
         expect(failed_test[:module]).to eq test_module
         expect(failed_test[:failures]).to eq 1
+        expect(failed_test[:last_seen_at]).not_to eq(nil)
       end
 
       it 'Stores the seed' do
@@ -135,6 +137,7 @@ RSpec.describe BuildParser do
         expect(failed_test[:result]).to eq test_assertion_result
         expect(failed_test[:module]).to eq test_module
         expect(failed_test[:failures]).to eq 1
+        expect(failed_test[:last_seen_at]).not_to eq(nil)
       end
 
       it 'Updates initial state and returns a new state when the failures counter is incremented' do
@@ -182,6 +185,7 @@ RSpec.describe BuildParser do
         expect(failed_test[:result]).to eq test_assertion_result
         expect(failed_test[:module]).to eq test_module
         expect(failed_test[:failures]).to eq 1
+        expect(failed_test[:last_seen_at]).not_to eq(nil)
       end
 
       it 'Stores the seed' do

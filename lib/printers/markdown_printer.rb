@@ -20,6 +20,8 @@ class MarkdownPrinter
 
         *Looks like I couldn't find any flakey tests this time :tada:*
 
+        ---
+
         #{slowest_ruby_tests}
         #{slowest_js_tests}
       eos
@@ -35,6 +37,8 @@ class MarkdownPrinter
         ### JS [#{report[:js_tests].size} failures]
 
         #{build_js_failures(report[:js_tests])}
+
+        ---
 
         #{slowest_ruby_tests}
         #{slowest_js_tests}
@@ -113,7 +117,11 @@ class MarkdownPrinter
     - **First seen:** #{test[:appeared_on]}
     - **Last seen:** #{test[:last_seen]}
     - **Assertion:** #{test[:assertion]}
-    - **Result:** ```#{test[:result]}```
+    - **Last seen at:** #{test[:last_seen_at]}
+    - **Result:**
+    ```
+    #{test[:result]}
+    ```
     </details>
     eos
   end

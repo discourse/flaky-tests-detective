@@ -42,6 +42,7 @@ class QUnitParser < TestsParser
         end
 
         error[:result] = stripped_line
+        error[:last_seen_at] = Time.now.utc.to_s
         s[:errors][s[:current_test_key]] = error
 
         s[:new_errors] = true
