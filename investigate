@@ -3,9 +3,18 @@
 mkdir -p ./reports
 touch ./reports/last_build.txt
 
+RUNS=0
+
 while :
 do
-  docker run -t --rm -e SKIP_LINT=1 -e RUBY_ONLY=1 -e COMMIT_HASH=origin/tests-passed -e WARMUP_TMP_FOLDER=1 discourse/discourse_test:release | tee ./reports/last_build.txt
-  docker run -t --rm -e SKIP_LINT=1 -e JS_ONLY=1 -e COMMIT_HASH=origin/tests-passed  discourse/discourse_test:release | tee -a ./reports/last_build.txt
+  if [[ RUNS -eq 300 ]]; then
+    docker rmi discourse/discourse_test:release
+    ((RUNS=0))
+  fi  
+  
+  docker run -t --rm -e SKIP_LINT=1 -e RUBY_ONLY=1 -e COMMIT_HASH=origin/tests-passed -e WARMUP_TMP_FOLDER=1 -e UPDATE_ALL_PLUGINS=1 discourse/discourse_test:release | tee ./reports/last_build.txt
+  docker run -t --rm -e SKIP_LINT=1 -e JS_ONLY=1 -e COMMIT_HASH=origin/tests-passed -e UPDATE_ALL_PLUGINS=1  discourse/discourse_test:release | tee -a ./reports/last_build.txt
   ruby ./investigate.rb '../reports' 'last_build.txt'
+  
+  ((RUNS=RUNS+1))
 done
