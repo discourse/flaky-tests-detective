@@ -45,7 +45,9 @@ class Detective
 
   def failures_since_last_report!(report, previous_report, test_key)
     report[test_key].each do |test_name, test|
-      report[test_key][test_name][:failures] -= previous_report.dig(test_key, test_name, :failures).to_i
+      new_failures = report.dig(test_key, test_name, :failures) - previous_report.dig(test_key, test_name, :failures).to_i
+      
+      report[test_key][test_name][:new_failures] = new_failures
     end
   end
 end

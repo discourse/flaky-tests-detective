@@ -55,7 +55,8 @@ class MarkdownPrinter
       memo += <<~eos
         #### #{test[:module]}
 
-        Failures: #{test[:failures]}
+        Total failures: #{test[:failures]}
+        Failures since last report: #{test[:new_failures]}
         #{details(test)}
       eos
     end
@@ -70,7 +71,8 @@ class MarkdownPrinter
       memo += <<~eos
         #### #{test[:test].to_s.gsub('_', ' ')}
 
-        Failures: #{test[:failures]}
+        Total failures: #{test[:failures]}
+        Failures since last report: #{test[:new_failures]}
         #{test[:module]}
         #{details(test)}
       eos
