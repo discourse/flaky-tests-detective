@@ -73,6 +73,7 @@ class MarkdownPrinter
 
         Total failures: #{test[:failures]}
         Failures since last report: #{test[:new_failures]}
+        Last seen at: #{test[:last_seen_at]}
         #{test[:module]}
         #{details(test)}
       eos
@@ -119,7 +120,6 @@ class MarkdownPrinter
     - **First seen:** #{test[:appeared_on]}
     - **Last seen:** #{test[:last_seen]}
     - **Assertion:** #{test[:assertion]}
-    - **Last seen at:** #{test[:last_seen_at]}
     - **Result:**
     ```
     #{test[:result]}
