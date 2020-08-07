@@ -50,12 +50,12 @@ RSpec.describe BuildParser do
     let(:raw_output_path) { 'qunit_failed_run.txt' }
 
     context 'Discourse core tests' do
-      let(:test_name) { :test_failed_user_card }
+      let(:test_name) { :test_failed_display_and_hide }
 
       it 'Parses and stores failed tests' do
-        test_failed_assertion = 'Assertion Failed: user card is invisible by default'
+        test_failed_assertion = 'Assertion Failed: "abort"'
         test_assertion_result = 'Expected: true, Actual: false'
-        test_module = 'Module Failed: Acceptance: User Card'
+        test_module = 'Acceptance: Discourse Tooltips::display and hide'
 
         parsed_output = subject.parse_raw_from(@archive)
         failed_test = parsed_output.dig(:js_tests, test_name)
@@ -78,35 +78,7 @@ RSpec.describe BuildParser do
       end
 
       it 'Stores the seed' do
-        expected_seed = '304691216275098133962654566400469666965'
-
-        parsed_output = subject.parse_raw_from(@archive)
-        failed_test = parsed_output.dig(:js_tests, test_name)
-
-        expect(failed_test[:seed]).to eq expected_seed
-      end
-    end
-
-    context 'Discourse plugin tests' do
-      let(:test_name) { :test_failed_anniversary_emoji }
-
-      it 'Parses and stores failed tests' do
-        test_failed_assertion = "Assertion Failed: TypeError: Cannot read property 'title' of undefined"
-        test_assertion_result = 'Expected: true, Actual: false'
-        test_module = 'Module Failed: Acceptance: Cakeday'
-
-        parsed_output = subject.parse_raw_from(@archive)
-        failed_test = parsed_output.dig(:js_tests, test_name)
-
-        expect(failed_test[:assertion]).to eq test_failed_assertion
-        expect(failed_test[:result]).to eq test_assertion_result
-        expect(failed_test[:module]).to eq test_module
-        expect(failed_test[:failures]).to eq 1
-        expect(failed_test[:last_seen_at]).not_to eq(nil)
-      end
-
-      it 'Stores the seed' do
-        expected_seed = '156541378386545196911765354344233399498'
+        expected_seed = '244504690341935418402669109164211076907'
 
         parsed_output = subject.parse_raw_from(@archive)
         failed_test = parsed_output.dig(:js_tests, test_name)

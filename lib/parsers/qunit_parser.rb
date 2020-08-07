@@ -10,16 +10,17 @@ class QUnitParser < TestsParser
     }
 
     template = test_template(commit_hash)
+    failed_modules = []
 
     results = archive.raw_build_iterator.each_with_object(initial_s) do |line, s|
       stripped_line = strip_line(line)
       template[:seed] = stripped_line.match(/(?<="seed":")[0-9]+/)[0] if stripped_line.include? '"seed":"'
-      module_failed_line = stripped_line.include? 'Module Failed'
-      test_line = stripped_line.include? 'Test Failed'
-      s[:watching_test] ||= module_failed_line || test_line
-      next(s) unless s[:watching_test]
 
-      s[:current_module] = stripped_line if module_failed_line
+      failed_modules << stripped_line if stripped_line.include? '[✘]'
+
+      test_line = stripped_line.include? 'Test Failed'
+      s[:watching_test] ||= test_line
+      next(s) unless s[:watching_test]
 
       s[:current_test_key] = build_test_key(stripped_line) if test_line
 
@@ -30,6 +31,8 @@ class QUnitParser < TestsParser
 
       if assertion_line && s[:current_test_key]
         error = s[:errors][s[:current_test_key]]
+        module_match = s[:current_test_key].to_s.gsub('_', ' ').gsub('test failed ', '')
+        test_module = (failed_modules.detect { |m| m.include? module_match } || '').gsub(/(↪|\[✘\])/, '').strip
 
         if error
           error[:failures] += 1
@@ -37,8 +40,9 @@ class QUnitParser < TestsParser
           error[:last_seen] = commit_hash
           error[:seed] = template[:seed] if template[:seed]
           error[:assertion] = s[:current_assertion] if s[:current_assertion]
+          error[:module] = test_module if test_module
         else
-          error = template.merge(module: s[:current_module], assertion: s[:current_assertion])
+          error = template.merge(module: test_module, assertion: s[:current_assertion])
         end
 
         error[:result] = stripped_line
