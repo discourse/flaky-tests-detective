@@ -17,6 +17,6 @@ class MemoryArchive
   end
 
   def clean_report
-    { metadata: { runs: 0, last_commit_hash: nil }, ruby_tests: {}, js_tests: {} }
+    { metadata: { runs: 0, last_commit_hash: nil }, ruby_tests: {}, js_tests: {}, js_timeouts: [] }
   end
 end

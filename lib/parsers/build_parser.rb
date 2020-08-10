@@ -14,6 +14,7 @@ class BuildParser
     state = archive.tests_report
     state[:slowest_ruby_tests] ||= {}
     state[:slowest_js_tests] ||= {}
+    state[:js_timeouts] ||= []
 
     commit_hash = parse_commit_hash(archive)
     ruby_errors = rspec_parser.errors(state[:ruby_tests], archive, commit_hash)
@@ -30,7 +31,8 @@ class BuildParser
       ruby_tests: ruby_errors[:errors],
       js_tests: js_errors[:errors],
       slowest_ruby_tests: slowest_ruby_tests,
-      slowest_js_tests: slowest_js_tests
+      slowest_js_tests: slowest_js_tests,
+      js_timeouts: qunit_parser.timeouts(state[:js_timeouts], archive, commit_hash)
     }
   end
 

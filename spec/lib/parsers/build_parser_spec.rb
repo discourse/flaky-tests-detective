@@ -47,9 +47,8 @@ RSpec.describe BuildParser do
   end
 
   describe 'Parsing a build with JS errors' do
-    let(:raw_output_path) { 'qunit_failed_run.txt' }
-
     context 'Discourse core tests' do
+      let(:raw_output_path) { 'qunit_failed_run.txt' }
       let(:test_name) { :test_failed_display_and_hide }
 
       it 'Parses and stores failed tests' do
@@ -84,6 +83,20 @@ RSpec.describe BuildParser do
         failed_test = parsed_output.dig(:js_tests, test_name)
 
         expect(failed_test[:seed]).to eq expected_seed
+      end
+    end
+
+    context 'Recording timeouts' do
+      let(:raw_output_path) { 'qunit_timeout.txt' }
+      let(:seed) { '211290936237121533750562887328962064397' }
+
+      it 'stores the last ten JS timeouts' do
+        commit_sha = '9a81cb9'
+        parsed_output = subject.parse_raw_from(@archive)
+
+        timeouts = parsed_output.dig(:js_timeouts)
+
+        expect(timeouts).to contain_exactly([commit_sha, seed])
       end
     end
   end

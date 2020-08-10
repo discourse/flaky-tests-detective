@@ -27,12 +27,27 @@ class FileSystemArchive
   end
 
   def update_last_report_sent
-    File.write(last_report_path, tests_report.to_json)
+    current_report = tests_report
+    File.write(last_report_path, current_report.to_json)
+    
+    # Clear JS timeouts and tests duration so they don't impact next report.
+    current_report[:js_timeouts] = []
+    current_report[:slowest_ruby_tests] = {}
+    current_report[:slowest_js_tests] =  {}
+    store_tests_report(current_report)
+    
     @last_report_sent = tests_report
   end
 
   def clean_report
-    { metadata: { runs: 0, last_commit_hash: nil }, ruby_tests: {}, js_tests: {}, slowest_ruby_tests: {}, slowest_js_tests: {} }
+    {
+      metadata: { runs: 0, last_commit_hash: nil },
+      ruby_tests: {},
+      js_tests: {},
+      js_timeouts: [],
+      slowest_ruby_tests: {},
+      slowest_js_tests: {},
+    }
   end
 
   def raw_build_iterator

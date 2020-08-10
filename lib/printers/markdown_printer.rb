@@ -38,6 +38,10 @@ class MarkdownPrinter
 
         #{build_js_failures(report[:js_tests])}
 
+        ### JS Timeouts
+
+        #{build_js_timeouts(report[:js_timeouts])}
+
         ---
 
         #{slowest_ruby_tests}
@@ -77,6 +81,16 @@ class MarkdownPrinter
         Last seen at: #{test[:last_seen_at]}
         #{test[:module] if test[:module]}
         #{details(test)}
+      eos
+    end
+  end
+
+  def build_js_timeouts(js_json)
+    return 'No timeouts' if js_json.empty?
+
+    js_json.reduce('') do |memo, timeout|
+      memo += <<~eos
+        - Commit: #{timeout[0]}  Seed: #{timeout[1]}
       eos
     end
   end

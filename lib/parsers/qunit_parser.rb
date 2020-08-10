@@ -14,7 +14,7 @@ class QUnitParser < TestsParser
 
     results = archive.raw_build_iterator.each_with_object(initial_s) do |line, s|
       stripped_line = strip_line(line)
-      template[:seed] = stripped_line.match(/(?<="seed":")[0-9]+/)[0] if stripped_line.include? '"seed":"'
+      template[:seed] = extract_seed(stripped_line) if stripped_line.include? '"seed":"'
 
       failed_modules << stripped_line if stripped_line.include? '[✘]'
 
@@ -100,7 +100,26 @@ class QUnitParser < TestsParser
     results.slice(:slowest_tests)
   end
 
+  def timeouts(state, archive, commit_hash)
+    timed_out = archive.raw_build_iterator.reduce({ seed: nil, found: false }) do |memo, line|
+      stripped_line = strip_line(line)
+
+      memo.tap do |m|
+        m[:seed] = extract_seed(stripped_line) if stripped_line.include? '"seed":"'
+        m[:found] ||= stripped_line.include? 'Tests timed out'
+      end
+    end
+
+    return state unless timed_out[:found]
+
+    state.last(9) << [commit_hash, timed_out[:seed]]
+  end
+
   private
+
+  def extract_seed(line)
+    line.match(/(?<="seed":")[0-9]+/)[0]
+  end
 
   def build_test_key(raw)
     raw.delete(':').downcase.gsub(/\W/, '_').to_sym
