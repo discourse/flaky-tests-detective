@@ -96,7 +96,10 @@ class MarkdownPrinter
   end
 
   def build_slowest_tests(type, slowest_tests)
-    ordered_tests = slowest_tests.values.sort_by { |t| -t[:average].to_i }.first(20)
+    ordered_tests = slowest_tests.values
+      .select { |t| t[:occurances] >= 10 }
+      .sort_by { |t| -t[:average].to_i }
+      .first(20)
     output = ordered_tests.reduce("") do |memo, test|
       memo += slow_test_row(type, test)
     end
