@@ -1,0 +1,9 @@
+#!/bin/bash
+
+url=
+api_key=
+username=
+topic_id=
+
+ruby ../flaky-tests-detective/publish_report.rb $url $api_key $username $topic_id
+ruby ../flaky-tests-detective/update_last_report_sent.rb
