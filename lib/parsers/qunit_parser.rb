@@ -81,7 +81,7 @@ class QUnitParser < TestsParser
         next(s)
       end
 
-      next(s) unless s[:watching]
+      next(s) if !s[:watching] || stripped_line == ''
       return s[:slowest_tests] if stripped_line.include? 'Time:'
 
       seconds_text = stripped_line.match(/\d+ms/)[0]

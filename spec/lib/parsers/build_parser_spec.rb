@@ -27,7 +27,7 @@ RSpec.describe BuildParser do
     end
 
     it 'Returns the last stable commit hash' do
-      expected_commit_hash = '9a81cb9'
+      expected_commit_hash = '886d619d3f'
 
       results = subject.parse_raw_from(@archive)
 
@@ -205,7 +205,7 @@ RSpec.describe BuildParser do
 
     it 'records the time of a JS slow test' do
       test_key = :acceptance_composer_actionsinteractions
-      duration = 5.147
+      duration = 0.849
 
       output = subject.parse_raw_from(@archive)
       test_duration = output.dig(:slowest_js_tests, test_key)
