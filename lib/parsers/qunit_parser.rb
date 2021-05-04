@@ -3,9 +3,25 @@
 require_relative 'tests_parser.rb'
 
 class QUnitParser < TestsParser
-  def errors(state, archive, commit_hash)
+  def attatch_to_report(report, archive, commit_hash)
+    errors_report = errors(archive, commit_hash)
+
+    report.tap do |r|
+      r[:js_tests] = errors_report[:errors]
+
+      if errors_report[:new_errors]
+        r[:metadata][:new_errors] = true
+      end
+
+      r[:slowest_js_tests] = slowest_tests(archive, commit_hash)
+      r[:js_timeouts] = timeouts(archive, commit_hash)
+    end
+  end
+
+  def errors(archive, commit_hash)
+    state = archive.tests_report[:js_tests] || {}
     initial_s = {
-      watching_test: false, current_module: nil, current_assertion: nil,
+      watching_test: false, current_assertion: nil,
       current_test_key: nil, errors: state, new_errors: false
     }
 
@@ -31,8 +47,7 @@ class QUnitParser < TestsParser
 
       if assertion_line && s[:current_test_key]
         error = s[:errors][s[:current_test_key]]
-        module_match = s[:current_test_key].to_s.gsub('_', ' ').gsub('test failed ', '')
-        test_module = (failed_modules.detect { |m| m.include? module_match } || '').gsub(/(↪|\[✘\])/, '').strip
+        test_name = s[:current_test_key].to_s.gsub('_', ' ').gsub('test failed ', '')
 
         if error
           error[:failures] += 1
@@ -40,9 +55,9 @@ class QUnitParser < TestsParser
           error[:last_seen] = commit_hash
           error[:seed] = template[:seed] if template[:seed]
           error[:assertion] = s[:current_assertion] if s[:current_assertion]
-          error[:module] = test_module if test_module
+          error[:test] = test_name if test_name
         else
-          error = template.merge(module: test_module, assertion: s[:current_assertion])
+          error = template.merge(test: test_name, assertion: s[:current_assertion])
         end
 
         error[:result] = stripped_line
@@ -59,7 +74,8 @@ class QUnitParser < TestsParser
     results.slice(:new_errors, :errors)
   end
 
-  def slowest_tests(state, archive, commit_hash)
+  def slowest_tests(archive, commit_hash)
+    state = archive.tests_report[:slowest_js_tests] || {}
     initial_s = {
       slowest_tests: state,
       watching: false,
@@ -93,14 +109,16 @@ class QUnitParser < TestsParser
 
       record_time(test, key, seconds)
 
-      test[:output] = name
+      test[:name] = name
       s[:slowest_tests][key] = test
     end
 
-    results.slice(:slowest_tests)
+    results[:slowest_tests]
   end
 
-  def timeouts(state, archive, commit_hash)
+  def timeouts(archive, commit_hash)
+    state = archive.tests_report[:js_timeouts] || []
+
     timed_out = archive.raw_build_iterator.reduce({ seed: nil, found: false }) do |memo, line|
       stripped_line = strip_line(line)
 

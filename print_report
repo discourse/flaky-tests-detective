@@ -1,3 +1,0 @@
-#!/bin/bash
-
-ruby ../flaky-tests-detective/print_report.rb '../../reports' 'build_report.json'

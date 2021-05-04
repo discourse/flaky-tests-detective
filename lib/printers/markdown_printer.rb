@@ -4,95 +4,89 @@ require 'date'
 
 class MarkdownPrinter
   def print_from(report)
-    title = <<~eos
+    title = <<~EOS
       ## Tests report - #{Date.today.strftime('%m/%d/%Y')}
 
       >Total runs: #{report.dig(:metadata, :runs)}
       >Runs since last report: #{report.dig(:metadata, :report_runs)}
       >Last commit: #{report.dig(:metadata, :last_commit_hash)}
-    eos
-    slowest_ruby_tests = build_slowest_tests(:ruby, report[:slowest_ruby_tests])
-    slowest_js_tests = build_slowest_tests(:js, report[:slowest_js_tests])
+    EOS
 
-    if report[:ruby_tests].empty? && report[:js_tests].empty?
-      <<~eos
-        #{title}
+    <<~EOS
+      #{title}
 
-        *Looks like I couldn't find any flakey tests this time :tada:*
+      #{flaky_tests(report)}
 
-        ---
+      #{build_js_timeouts(report)}
 
-        #{slowest_ruby_tests}
-        #{slowest_js_tests}
-      eos
-    else
-      <<~eos
-        #{title}
+      ---
 
-        ### New Flakey Tests:
+      #{build_slowest_tests('Ruby', report[:slowest_ruby_tests])}
+      #{build_slowest_tests('JS', report[:slowest_js_tests])}
+      #{build_slowest_tests('Ember CLI', report[:slowest_ember_cli_tests])}
 
-        ### Ruby [#{report[:ruby_tests].size} failures]
-
-        #{build_ruby_failures(report[:ruby_tests])}
-        ### JS [#{report[:js_tests].size} failures]
-
-        #{build_js_failures(report[:js_tests])}
-
-        ### JS Timeouts
-
-        #{build_js_timeouts(report[:js_timeouts])}
-
-        ---
-
-        #{slowest_ruby_tests}
-        #{slowest_js_tests}
-      eos
-    end
+    EOS
   end
 
   private
 
-  def build_ruby_failures(ruby_json)
-    ordered_tests = ruby_json.values.sort_by { |r| -r[:failures] }
+  def flaky_tests(report)
+    if !report.dig(:metadata, :new_errors)
+      return "*Looks like I couldn't find any flaky tests this time :tada:*"
+    end
 
-    ordered_tests.reduce('') do |memo, test|
-      memo += <<~eos
-        #### #{test[:module]}
+    <<~EOS
 
-        Total failures: #{test[:failures]}
-        Failures since last report: #{test[:new_failures]}
-        Last seen at: #{test[:last_seen_at]}
-        #{details(test)}
-      eos
+    #{flaky_tests_title(report, 'Ruby', :ruby_tests)}
+
+    #{build_failures(report[:ruby_tests])}
+    #{flaky_tests_title(report, 'JS', :js_tests)}
+
+    #{build_failures(report[:js_tests])}
+    #{flaky_tests_title(report, 'Ember CLI', :ember_cli_tests)}
+
+    #{build_failures(report[:ember_cli_tests])}
+    EOS
+  end
+
+  def flaky_tests_title(report, type, key)
+    if report[key].size > 0
+      "### #{type} [#{report[key].size} failures]"
+    else
+      "### #{type} :white_check_mark:"
     end
   end
 
-  def build_js_failures(js_json)
-    with_test_data = js_json
-    with_test_data.each { |t, r| r[:test] = t }
-    ordered_tests = with_test_data.values.sort_by { |r| -r[:failures] }
+  def build_failures(json)
+    ordered_tests = json.values.sort_by { |r| -r[:failures] }
 
     ordered_tests.reduce('') do |memo, test|
       memo += <<~eos
-        #### #{test[:test].to_s.gsub('_', ' ')}
+        #### #{test[:test]}
 
         Total failures: #{test[:failures]}
         Failures since last report: #{test[:new_failures]}
         Last seen at: #{test[:last_seen_at]}
-        #{test[:module] if test[:module]}
         #{details(test)}
       eos
     end
   end
 
   def build_js_timeouts(js_json)
-    return 'No timeouts' if js_json.empty?
+    return nil if js_json.empty?
 
-    js_json.reduce('') do |memo, timeout|
+    timeouts = js_json.reduce('') do |memo, timeout|
       memo += <<~eos
         - Commit: #{timeout[0]}  Seed: #{timeout[1]}
       eos
     end
+
+    <<~EOS
+      ### JS Timeouts
+
+      #{timeouts}
+
+    EOS
   end
 
   def build_slowest_tests(type, slowest_tests)
@@ -101,7 +95,7 @@ class MarkdownPrinter
       .sort_by { |t| -t[:average].to_i }
       .first(20)
     output = ordered_tests.reduce("") do |memo, test|
-      memo += slow_test_row(type, test)
+      memo += slow_test_row(test)
     end
     <<~eos
     <details>
@@ -112,21 +106,13 @@ class MarkdownPrinter
     eos
   end
 
-  def slow_test_row(type, test)
-    if type == :ruby
-      <<~eos
-      _#{test[:name]}_
-      **Best: #{test[:best].round(2)} - Worst: #{test[:worst].round(2)} - Avg: #{test[:average].round(2)}**
-      #{test[:trace]}
-
-      eos
-    else
-      <<~eos
-      _#{test[:output]}_
-      **Best: #{test[:best].round(2)} - Worst: #{test[:worst].round(2)} - Avg: #{test[:average].round(2)}**
-
-      eos
-    end
+  def slow_test_row(test)
+    name = test[:name] || test[:output]
+    <<~EOS
+    _#{NAME}_
+    **Best: #{test[:best].round(2)} - Worst: #{test[:worst].round(2)} - Avg: #{test[:average].round(2)}**
+    #{test[:trace]}
+    EOS
   end
 
   def details(test)

@@ -3,7 +3,22 @@
 require_relative 'tests_parser.rb'
 
 class RSpecParser < TestsParser
-  def errors(state, archive, commit_hash)
+  def attatch_to_report(report, archive, commit_hash)
+    errors_report = errors(archive, commit_hash)
+
+    report.tap do |r|
+      r[:ruby_tests] = errors_report[:errors]
+
+      if errors_report[:new_errors]
+        r[:metadata][:new_errors] = true
+      end
+
+      r[:slowest_ruby_tests] = slowest_tests(archive, commit_hash)
+    end
+  end
+
+  def errors(archive, commit_hash)
+    state = archive.tests_report[:ruby_tests] || {}
     initial_s = {
       failure_zone: false, failure_list: false,
       errors: state, new_errors: false, test_number: 0,
@@ -44,7 +59,8 @@ class RSpecParser < TestsParser
     results.slice(:new_errors, :errors)
   end
 
-  def slowest_tests(state, archive, commit_hash)
+  def slowest_tests(archive, commit_hash)
+    state = archive.tests_report[:slowest_ruby_tests] || {}
     initial_s = {
       slowest_tests: state,
       watching: false,
