@@ -44,9 +44,11 @@ class FileSystemArchive
       metadata: { runs: 0, last_commit_hash: nil },
       ruby_tests: {},
       js_tests: {},
+      ember_cli_tests: {},
       js_timeouts: [],
       slowest_ruby_tests: {},
       slowest_js_tests: {},
+      slowest_ember_cli_tests: {},
     }
   end
 

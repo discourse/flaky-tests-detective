@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 class TestsParser
+  def attatch_to_report(report, archive, commit_hash)
+    raise NotImplemented
+  end
+
   def errors(state, archive, commit_hash)
     raise NotImplemented
   end

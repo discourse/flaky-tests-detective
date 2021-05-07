@@ -1,0 +1,1389 @@
+yarn run v1.22.5
+$ /Users/romeer/projects/discourse/app/assets/javascripts/node_modules/.bin/ember test
+WARNING: Node v15.14.0 is not tested against Ember CLI on your platform. We recommend that you use the most-recent "Active LTS" version of Node.js. See https://git.io/v7S5n for details.
+DEPRECATION: The integration of jQuery into Ember has been deprecated and will be removed with Ember 4.0. You can either opt-out of using jQuery, or install the `@ember/jquery` addon to provide the jQuery integration. Please consult the deprecation guide for further details: https://emberjs.com/deprecations/v3.x#toc_jquery-apis
+Environment: test
+cleaning up...
+Built project successfully. Stored in "/var/folders/8s/r5jpj6955sxddtl1m0h4rn3h0000gn/T/tests-dist-2021330-15518-1ntmie8.5lov".
+ok 1 Chrome 90.0 - [473 ms] - Acceptance: About: viewing
+    ---
+        browser log: |
+            {"type":"warn","text":"Integration | Component | slow-mode-info doesn't render if the topic is closed skipped; template must be compiled and not a string"}
+            {"type":"warn","text":"Integration | Component | slow-mode-info doesn't render if the slow mode is disabled skipped; template must be compiled and not a string"}
+            {"type":"warn","text":"Integration | Component | slow-mode-info renders if slow mode is enabled skipped; template must be compiled and not a string"}
+            {"type":"warn","text":"Integration | Component | slow-mode-info staff and TL4 users can disable slow mode skipped; template must be compiled and not a string"}
+            {"type":"warn","text":"Integration | Component | slow-mode-info regular users can't disable slow mode skipped; template must be compiled and not a string"}
+    ...
+ok 2 Chrome 90.0 - [195 ms] - Acceptance: Account Created: account created - message
+ok 3 Chrome 90.0 - [211 ms] - Acceptance: Account Created: account created - resend email
+ok 4 Chrome 90.0 - [230 ms] - Acceptance: Account Created: account created - update email - cancel
+ok 5 Chrome 90.0 - [232 ms] - Acceptance: Account Created: account created - update email - submit
+ok 6 Chrome 90.0 - [317 ms] - Acceptance: Admin - Badges - Show: new badge page
+ok 7 Chrome 90.0 - [234 ms] - Acceptance: Admin - Badges - Show: existing badge that has an icon
+ok 8 Chrome 90.0 - [289 ms] - Acceptance: Admin - Badges - Show: existing badge that has an image URL
+ok 9 Chrome 90.0 - [286 ms] - Acceptance: Admin - Badges - Show: existing badge that has both an icon and image URL
+ok 10 Chrome 90.0 - [283 ms] - Acceptance: Admin - Emails: shows selected and elided text
+ok 11 Chrome 90.0 - [489 ms] - Acceptance: Admin - Themes - Install modal: closing the modal resets the modal inputs
+ok 12 Chrome 90.0 - [416 ms] - Acceptance: Admin - Themes - Install modal: show public key for valid ssh theme urls
+ok 13 Chrome 90.0 - [272 ms] - Acceptance: Admin - Themes - Install modal: modal can be auto-opened with the right query params
+ok 14 Chrome 90.0 - [311 ms] - Acceptance: Admin - Themes - Install modal: installed themes are matched with the popular list by URL
+ok 15 Chrome 90.0 - [269 ms] - Acceptance: Admin - Search Log Term: show search log term details
+ok 16 Chrome 90.0 - [301 ms] - Acceptance: Admin - Search Logs: show search logs
+ok 17 Chrome 90.0 - [250 ms] - Acceptance: Admin - Site Settings: upload site setting
+ok 18 Chrome 90.0 - [254 ms] - Acceptance: Admin - Site Settings: links to staff action log
+ok 19 Chrome 90.0 - [434 ms] - Acceptance: Admin - Site Settings: changing value updates dirty state
+ok 20 Chrome 90.0 - [547 ms] - Acceptance: Admin - Site Settings: always shows filtered site settings if a filter is set
+ok 21 Chrome 90.0 - [331 ms] - Acceptance: Admin - Site Settings: filter settings by plugin name
+ok 22 Chrome 90.0 - [230 ms] - Acceptance: Admin - Site Settings: category name is preserved
+ok 23 Chrome 90.0 - [361 ms] - Acceptance: Admin - Site Settings: shows all_results if current category has none
+ok 24 Chrome 90.0 - [288 ms] - Acceptance: Admin - Site Texts: search for a key
+ok 25 Chrome 90.0 - [312 ms] - Acceptance: Admin - Site Texts: edit and revert a site text by key
+ok 26 Chrome 90.0 - [307 ms] - Acceptance: Admin - Suspend User: suspend a user - cancel
+ok 27 Chrome 90.0 - [354 ms] - Acceptance: Admin - Suspend User: suspend a user - cancel with input
+ok 28 Chrome 90.0 - [480 ms] - Acceptance: Admin - Suspend User: suspend, then unsuspend a user
+ok 29 Chrome 90.0 - [200 ms] - Acceptance: Admin - Users Badges: lists badges
+ok 30 Chrome 90.0 - [224 ms] - Acceptance: Admin - User Emails: viewing self without secondary emails
+ok 31 Chrome 90.0 - [222 ms] - Acceptance: Admin - User Emails: viewing self with multiple secondary emails
+ok 32 Chrome 90.0 - [238 ms] - Acceptance: Admin - User Emails: viewing another user with no secondary email
+ok 33 Chrome 90.0 - [240 ms] - Acceptance: Admin - User Emails: viewing another account with secondary emails
+ok 34 Chrome 90.0 - [321 ms] - Acceptance: Admin - User Index: can edit username
+ok 35 Chrome 90.0 - [363 ms] - Acceptance: Admin - User Index: will clear unsaved groups when switching user
+ok 36 Chrome 90.0 - [223 ms] - Acceptance: Admin - Users List: lists users
+ok 37 Chrome 90.0 - [356 ms] - Acceptance: Admin - Users List: sorts users
+ok 38 Chrome 90.0 - [295 ms] - Acceptance: Admin - Users List: toggles email visibility
+ok 39 Chrome 90.0 - [347 ms] - Acceptance: Admin - Users List: switching tabs
+ok 40 Chrome 90.0 - [369 ms] - Acceptance: Admin - Watched Words: list words in groups
+ok 41 Chrome 90.0 - [250 ms] - Acceptance: Admin - Watched Words: add words
+ok 42 Chrome 90.0 - [266 ms] - Acceptance: Admin - Watched Words: remove words
+ok 43 Chrome 90.0 - [454 ms] - Acceptance: Auth Complete: when login not required
+ok 44 Chrome 90.0 - [183 ms] - Acceptance: Auth Complete: when login required
+ok 45 Chrome 90.0 - [489 ms] - Acceptance: Badges: Visit Badge Pages
+ok 46 Chrome 90.0 - [471 ms] - Acceptance: Badges: shows correct badge titles to choose from
+ok 47 Chrome 90.0 - [623 ms] - Acceptance: Bookmarking: Bookmarks modal opening
+ok 48 Chrome 90.0 - [1378 ms] - Acceptance: Bookmarking: Bookmarks modal selecting reminder type
+ok 49 Chrome 90.0 - [743 ms] - Acceptance: Bookmarking: Saving a bookmark with a reminder
+ok 50 Chrome 90.0 - [854 ms] - Acceptance: Bookmarking: Opening the options panel and remembering the option
+ok 51 Chrome 90.0 - [723 ms] - Acceptance: Bookmarking: Saving a bookmark with no reminder or name
+ok 52 Chrome 90.0 - [945 ms] - Acceptance: Bookmarking: Deleting a bookmark with a reminder
+ok 53 Chrome 90.0 - [791 ms] - Acceptance: Bookmarking: Cancelling saving a bookmark
+ok 54 Chrome 90.0 - [911 ms] - Acceptance: Bookmarking: Editing a bookmark
+ok 55 Chrome 90.0 - [923 ms] - Acceptance: Bookmarking: Using a post date for the reminder date
+ok 56 Chrome 90.0 - [537 ms] - Acceptance: Bookmarking: Cannot use the post date for a reminder when the post date is in the past
+ok 57 Chrome 90.0 - [353 ms] - Acceptance: Category Banners: Does not display category banners when not set
+ok 58 Chrome 90.0 - [222 ms] - Acceptance: Category Banners: Displays category banners when set
+ok 59 Chrome 90.0 - [189 ms] - Acceptance: Anonymous Category Banners: Does not display category banners when set
+ok 60 Chrome 90.0 - [605 ms] - Acceptance: CategoryChooser: does not display uncategorized if not allowed
+ok 61 Chrome 90.0 - [581 ms] - Acceptance: CategoryChooser: prefill category when category_id is set
+ok 62 Chrome 90.0 - [342 ms] - Acceptance: Category Edit - security: default
+ok 63 Chrome 90.0 - [423 ms] - Acceptance: Category Edit - security: removing a permission
+ok 64 Chrome 90.0 - [390 ms] - Acceptance: Category Edit - security: adding a permission
+ok 65 Chrome 90.0 - [537 ms] - Acceptance: Category Edit - security: adding a previously removed permission
+ok 66 Chrome 90.0 - [473 ms] - Acceptance: Category Edit - security: editing permissions
+ok 67 Chrome 90.0 - [717 ms] - Acceptance: Category Edit: Editing the category
+ok 68 Chrome 90.0 - [326 ms] - Acceptance: Category Edit: Index Route
+ok 69 Chrome 90.0 - [332 ms] - Acceptance: Category Edit: Slugless Route
+ok 70 Chrome 90.0 - [391 ms] - Acceptance: Category Edit: Error Saving
+ok 71 Chrome 90.0 - [446 ms] - Acceptance: Category Edit: Subcategory list settings
+ok 72 Chrome 90.0 - [606 ms] - Acceptance: Category New: Creating a new category
+ok 73 Chrome 90.0 - [487 ms] - Acceptance: Click Track: Do not track mentions
+ok 74 Chrome 90.0 - [750 ms] - Acceptance: Composer Actions: creating new topic and then reply_as_private_message keeps attributes
+ok 75 Chrome 90.0 - [783 ms] - Acceptance: Composer Actions: replying to post
+ok 76 Chrome 90.0 - [918 ms] - Acceptance: Composer Actions: replying to post - reply_as_private_message
+ok 77 Chrome 90.0 - [912 ms] - Acceptance: Composer Actions: replying to post - reply_to_topic
+ok 78 Chrome 90.0 - [929 ms] - Acceptance: Composer Actions: replying to post - toggle_whisper
+ok 79 Chrome 90.0 - [1015 ms] - Acceptance: Composer Actions: replying to post - reply_as_new_topic
+ok 80 Chrome 90.0 - [916 ms] - Acceptance: Composer Actions: reply_as_new_topic without a new_topic draft
+ok 81 Chrome 90.0 - [618 ms] - Acceptance: Composer Actions: reply_as_new_group_message
+ok 82 Chrome 90.0 - [640 ms] - Acceptance: Composer Actions: hide component if no content
+ok 83 Chrome 90.0 - [1091 ms] - Acceptance: Composer Actions: interactions
+ok 84 Chrome 90.0 - [767 ms] - Acceptance: Composer Actions: replying to post - toggle_topic_bump
+ok 85 Chrome 90.0 - [782 ms] - Acceptance: Composer Actions: replying to post - whisper and no bump
+ok 86 Chrome 90.0 - [768 ms] - Acceptance: Composer Actions: replying to post as staff
+ok 87 Chrome 90.0 - [797 ms] - Acceptance: Composer Actions: replying to post as TL3 user
+ok 88 Chrome 90.0 - [813 ms] - Acceptance: Composer Actions: replying to post as TL4 user
+ok 89 Chrome 90.0 - [826 ms] - Acceptance: Composer Actions: replying to first post - reply_as_private_message
+ok 90 Chrome 90.0 - [827 ms] - Acceptance: Composer Actions: editing post
+ok 91 Chrome 90.0 - [777 ms] - Acceptance: Composer Actions With New Topic Draft: shared draft
+ok 92 Chrome 90.0 - [861 ms] - Acceptance: Composer Actions With New Topic Draft: reply_as_new_topic with new_topic draft
+ok 93 Chrome 90.0 - [723 ms] - Acceptance: Composer Attachment: attachments are cooked properly
+ok 94 Chrome 90.0 - [878 ms] - Acceptance: Composer Attachment - Secure Media Enabled: attachments are cooked properly when secure media is enabled
+ok 95 Chrome 90.0 - [1243 ms] - Acceptance: Composer - Edit conflict: Edit a post that causes an edit conflict
+ok 96 Chrome 90.0 - [712 ms] - Acceptance: Composer - Edit conflict: Should not send originalText when posting a new reply
+ok 97 Chrome 90.0 - [1048 ms] - Acceptance: Composer - Edit conflict: Should send originalText when editing a reply
+ok 98 Chrome 90.0 - [1318 ms] - Acceptance: Composer - Hyperlink: add a hyperlink to a reply
+ok 99 Chrome 90.0 - [1173 ms] - Acceptance: Composer - Onebox: Preview update should respect max_oneboxes_per_post site setting
+ok 100 Chrome 90.0 - [1130 ms] - Acceptance: Composer - Tags: staff bypass tag validation rule
+ok 101 Chrome 90.0 - [1166 ms] - Acceptance: Composer - Tags: users do not bypass tag validation rule
+ok 102 Chrome 90.0 - [1206 ms] - Acceptance: Composer - Tags: users do not bypass min required tags in tag group validation rule
+skip 103 Chrome 90.0 - [0 ms] - Acceptance: Composer: Tests the Composer controls
+ok 104 Chrome 90.0 - [685 ms] - Acceptance: Composer: Composer upload placeholder
+ok 105 Chrome 90.0 - [904 ms] - Acceptance: Composer: Create a topic with server side errors
+ok 106 Chrome 90.0 - [984 ms] - Acceptance: Composer: Create a Topic
+ok 107 Chrome 90.0 - [680 ms] - Acceptance: Composer: Create an enqueued Topic
+ok 108 Chrome 90.0 - [687 ms] - Acceptance: Composer: Can display a message and route to a URL
+ok 109 Chrome 90.0 - [1079 ms] - Acceptance: Composer: Create a Reply
+ok 110 Chrome 90.0 - [1258 ms] - Acceptance: Composer: Can edit a post after starting a reply
+ok 111 Chrome 90.0 - [1317 ms] - Acceptance: Composer: Posting on a different topic
+ok 112 Chrome 90.0 - [1126 ms] - Acceptance: Composer: Discard draft modal works when switching topics
+ok 113 Chrome 90.0 - [1138 ms] - Acceptance: Composer: Create an enqueued Reply
+ok 114 Chrome 90.0 - [1404 ms] - Acceptance: Composer: Edit the first post
+ok 115 Chrome 90.0 - [814 ms] - Acceptance: Composer: Composer can switch between edits
+ok 116 Chrome 90.0 - [917 ms] - Acceptance: Composer: Composer with dirty edit can toggle to another edit
+ok 117 Chrome 90.0 - [862 ms] - Acceptance: Composer: Composer can toggle between edit and reply
+ok 118 Chrome 90.0 - [741 ms] - Acceptance: Composer: Composer can toggle whispers
+ok 119 Chrome 90.0 - [979 ms] - Acceptance: Composer: Composer can toggle layouts (open, fullscreen and draft)
+ok 120 Chrome 90.0 - [1245 ms] - Acceptance: Composer: Composer can toggle between reply and createTopic
+ok 121 Chrome 90.0 - [1004 ms] - Acceptance: Composer: Composer with dirty reply can toggle to edit
+ok 122 Chrome 90.0 - [1205 ms] - Acceptance: Composer: Composer draft with dirty reply can toggle to edit
+ok 123 Chrome 90.0 - [1123 ms] - Acceptance: Composer: Composer draft can switch to draft in new context without destroying current draft
+ok 124 Chrome 90.0 - [1193 ms] - Acceptance: Composer: Checks for existing draft
+ok 125 Chrome 90.0 - [1094 ms] - Acceptance: Composer: Can switch states without abandon popup
+ok 126 Chrome 90.0 - [525 ms] - Acceptance: Composer: Loading draft also replaces the recipients
+ok 127 Chrome 90.0 - [678 ms] - Acceptance: Composer: Loads tags and category from draft payload
+ok 128 Chrome 90.0 - [603 ms] - Acceptance: Composer: Deleting the text content of the first post in a private message
+ok 129 Chrome 90.0 - [508 ms] - Acceptance: Composer: reply button has envelope icon when replying to private message
+ok 130 Chrome 90.0 - [802 ms] - Acceptance: Composer: edit button when editing a post in a PM
+ok 131 Chrome 90.0 - [1090 ms] - Acceptance: Composer: Image resizing buttons
+skip 132 Chrome 90.0 - [0 ms] - Acceptance: Composer: Shows duplicate_link notice
+ok 133 Chrome 90.0 - [939 ms] - Acceptance: Composer: Shows the 'group_mentioned' notice
+ok 134 Chrome 90.0 - [860 ms] - Acceptance: Composer topic featured links: onebox with title
+ok 135 Chrome 90.0 - [889 ms] - Acceptance: Composer topic featured links: onebox result doesn't include a title
+ok 136 Chrome 90.0 - [860 ms] - Acceptance: Composer topic featured links: YouTube onebox with title
+ok 137 Chrome 90.0 - [926 ms] - Acceptance: Composer topic featured links: no onebox result
+ok 138 Chrome 90.0 - [699 ms] - Acceptance: Composer topic featured links: ignore internal links
+ok 139 Chrome 90.0 - [806 ms] - Acceptance: Composer topic featured links: link is longer than max title length
+ok 140 Chrome 90.0 - [673 ms] - Acceptance: Composer topic featured links: onebox with title but extra words in title field
+ok 141 Chrome 90.0 - [821 ms] - Acceptance: Composer topic featured links: blank title for Twitter link
+ok 142 Chrome 90.0 - [813 ms] - Acceptance: Composer topic featured links when uncategorized is not allowed: Pasting a link enables the text input area
+ok 143 Chrome 90.0 - [891 ms] - Acceptance: Composer disabled, uncategorized not allowed when any topic_template present: Disable body until category is selected
+ok 144 Chrome 90.0 - [782 ms] - Acceptance: Composer enabled, uncategorized not allowed when topic_template not present: Enable composer/body if no topic templates present
+ok 145 Chrome 90.0 - [451 ms] - Acceptance: Create Account - external auth: when skip is disabled (default)
+ok 146 Chrome 90.0 - [433 ms] - Acceptance: Create Account - external auth: when skip is enabled
+ok 147 Chrome 90.0 - [1080 ms] - Acceptance: Create Account - User Fields: create account with user fields
+ok 148 Chrome 90.0 - [280 ms] - Acceptance: Invites - Create & Edit Invite Modal: basic functionality
+ok 149 Chrome 90.0 - [272 ms] - Acceptance: Invites - Create & Edit Invite Modal: saving
+ok 150 Chrome 90.0 - [259 ms] - Acceptance: Invites - Create & Edit Invite Modal: copying saves invite
+ok 151 Chrome 90.0 - [261 ms] - Acceptance: Invites - Create & Edit Invite Modal: copying an email invite without an email shows error message
+ok 152 Chrome 90.0 - [225 ms] - Acceptance: Invites - Link Invites: invite links
+ok 153 Chrome 90.0 - [306 ms] - Acceptance: Invites - Email Invites: invite email
+ok 154 Chrome 90.0 - [165 ms] - Acceptance: CustomHTML set: has no custom HTML in the top
+ok 155 Chrome 90.0 - [170 ms] - Acceptance: CustomHTML set: renders set HTML
+ok 156 Chrome 90.0 - [162 ms] - Acceptance: CustomHTML set: renders preloaded HTML
+ok 157 Chrome 90.0 - [151 ms] - Acceptance: CustomHTML template: renders custom template
+ok 158 Chrome 90.0 - [348 ms] - Acceptance: Dashboard: default
+ok 159 Chrome 90.0 - [299 ms] - Acceptance: Dashboard: tabs
+ok 160 Chrome 90.0 - [348 ms] - Acceptance: Dashboard: general tab
+ok 161 Chrome 90.0 - [319 ms] - Acceptance: Dashboard: activity metrics
+ok 162 Chrome 90.0 - [447 ms] - Acceptance: Dashboard: reports tab
+ok 163 Chrome 90.0 - [416 ms] - Acceptance: Dashboard: reports filters
+ok 164 Chrome 90.0 - [424 ms] - Acceptance: Dashboard: new features
+ok 165 Chrome 90.0 - [259 ms] - Acceptance: Dashboard: dashboard_visible_tabs: visible tabs
+ok 166 Chrome 90.0 - [274 ms] - Acceptance: Dashboard: dashboard_hidden_reports: hidden reports
+ok 167 Chrome 90.0 - [508 ms] - Acceptance: Do not disturb: when turned off, it is turned on from modal
+ok 168 Chrome 90.0 - [437 ms] - Acceptance: Do not disturb: when turned on, it can be turned off
+ok 169 Chrome 90.0 - [387 ms] - Acceptance: Email Disabled Banner: when disabled
+ok 170 Chrome 90.0 - [345 ms] - Acceptance: Email Disabled Banner: when enabled
+ok 171 Chrome 90.0 - [380 ms] - Acceptance: Email Disabled Banner: when non-staff
+ok 172 Chrome 90.0 - [1377 ms] - Acceptance: EmojiPicker: emoji picker can be opened/closed
+ok 173 Chrome 90.0 - [1446 ms] - Acceptance: EmojiPicker: emoji picker triggers event when picking emoji
+ok 174 Chrome 90.0 - [1493 ms] - Acceptance: EmojiPicker: emoji picker adds leading whitespace before emoji
+ok 175 Chrome 90.0 - [1397 ms] - Acceptance: EmojiPicker: emoji picker has a list of recently used emojis
+ok 176 Chrome 90.0 - [1736 ms] - Acceptance: EmojiPicker: emoji picker correctly orders recently used emojis
+ok 177 Chrome 90.0 - [2415 ms] - Acceptance: EmojiPicker: emoji picker persists state
+ok 178 Chrome 90.0 - [957 ms] - Acceptance: Emoji: emoji is cooked properly
+ok 179 Chrome 90.0 - [963 ms] - Acceptance: Emoji: skin toned emoji is cooked properly
+ok 180 Chrome 90.0 - [774 ms] - Acceptance: Encoded Sub Category Discovery: Visit subcategory by slug
+ok 181 Chrome 90.0 - [308 ms] - Acceptance: Enforce Second Factor: as an admin
+ok 182 Chrome 90.0 - [272 ms] - Acceptance: Enforce Second Factor: as a user
+ok 183 Chrome 90.0 - [390 ms] - Acceptance: Enforce Second Factor: as an anonymous user
+ok 184 Chrome 90.0 - [691 ms] - Acceptance: flagging: Flag modal opening
+ok 185 Chrome 90.0 - [759 ms] - Acceptance: flagging: Flag take action dropdown exists
+ok 186 Chrome 90.0 - [852 ms] - Acceptance: flagging: Can silence from take action
+ok 187 Chrome 90.0 - [1143 ms] - Acceptance: flagging: Gets dismissable warning from canceling incomplete silence from take action
+ok 188 Chrome 90.0 - [633 ms] - Acceptance: Forgot password: requesting password reset
+ok 189 Chrome 90.0 - [222 ms] - Acceptance: Group Members - Anonymous: Viewing Members as anon user
+ok 190 Chrome 90.0 - [275 ms] - Acceptance: Group Members: Viewing Members as a group owner
+ok 191 Chrome 90.0 - [273 ms] - Acceptance: Group Members: Viewing Members as an admin user
+ok 192 Chrome 90.0 - [366 ms] - Acceptance: Group Members: Shows bulk actions
+ok 193 Chrome 90.0 - [222 ms] - Acceptance: Managing Group Category Notification Defaults: As an anonymous user
+ok 194 Chrome 90.0 - [217 ms] - Acceptance: Managing Group Category Notification Defaults: As an admin
+ok 195 Chrome 90.0 - [212 ms] - Acceptance: Managing Group Category Notification Defaults: As a group owner
+ok 196 Chrome 90.0 - [395 ms] - Acceptance: Managing Group Interaction Settings: As an admin
+ok 197 Chrome 90.0 - [350 ms] - Acceptance: Managing Group Interaction Settings: As a group owner
+ok 198 Chrome 90.0 - [217 ms] - Acceptance: Group logs: Browsing group logs
+ok 199 Chrome 90.0 - [317 ms] - Acceptance: Managing Group Membership: As an admin
+ok 200 Chrome 90.0 - [171 ms] - Acceptance: Managing Group Membership: As a group owner
+ok 201 Chrome 90.0 - [196 ms] - Acceptance: Managing Group Profile: As an anonymous user
+ok 202 Chrome 90.0 - [445 ms] - Acceptance: Managing Group Profile: As an admin
+ok 203 Chrome 90.0 - [403 ms] - Acceptance: Managing Group Profile: As a group owner
+ok 204 Chrome 90.0 - [201 ms] - Acceptance: Managing Group Tag Notification Defaults: As an anonymous user
+ok 205 Chrome 90.0 - [195 ms] - Acceptance: Managing Group Tag Notification Defaults: As an admin
+ok 206 Chrome 90.0 - [190 ms] - Acceptance: Managing Group Tag Notification Defaults: As a group owner
+ok 207 Chrome 90.0 - [223 ms] - Acceptance: Group Requests: Group Requests
+ok 208 Chrome 90.0 - [613 ms] - Acceptance: Group - Anonymous: Anonymous Viewing Group
+ok 209 Chrome 90.0 - [157 ms] - Acceptance: Group - Anonymous: Anonymous Viewing Automatic Group
+ok 210 Chrome 90.0 - [1099 ms] - Acceptance: Group - Authenticated: User Viewing Group
+    ---
+        browser log: |
+            {"type":"warn","text":"Deprecation notice: Accessing the global function `exists` is deprecated. Import it instead. (deprecated since Discourse 2.6.0.beta.4) (removal in Discourse 2.6.0)"}
+    ...
+ok 211 Chrome 90.0 - [239 ms] - Acceptance: Group - Authenticated: Admin viewing group messages when there are no messages
+ok 212 Chrome 90.0 - [316 ms] - Acceptance: Group - Authenticated: Admin viewing group messages
+ok 213 Chrome 90.0 - [749 ms] - Acceptance: Group - Authenticated: Admin Viewing Group
+    ---
+        browser log: |
+            {"type":"warn","text":"Deprecation notice: Use `destroyGroup` action instead of `destroy`. (deprecated since Discourse 2.5.0) (removal in Discourse 2.6.0)"}
+    ...
+ok 214 Chrome 90.0 - [298 ms] - Acceptance: Group - Authenticated: Moderator Viewing Group
+ok 215 Chrome 90.0 - [428 ms] - Acceptance: Groups: Browsing Groups
+ok 216 Chrome 90.0 - [180 ms] - Acceptance: New Group - Anonymous: As an anon user
+ok 217 Chrome 90.0 - [696 ms] - Acceptance: New Group - Authenticated: Creating a new group
+ok 218 Chrome 90.0 - [416 ms] - Acceptance: Opening the hamburger menu with some reviewables: As a staff member
+ok 219 Chrome 90.0 - [923 ms] - Acceptance: Category and Tag Hashtags: hashtags are cooked properly
+ok 220 Chrome 90.0 - [186 ms] - Acceptance: Invite accept: email invite link
+ok 221 Chrome 90.0 - [267 ms] - Acceptance: Invite accept: invite link
+ok 222 Chrome 90.0 - [175 ms] - Acceptance: Invite accept when local login is disabled: invite link
+ok 223 Chrome 90.0 - [171 ms] - Acceptance: Invite accept when local login is disabled: email invite link
+ok 224 Chrome 90.0 - [166 ms] - Acceptance: Invite accept when DiscourseConnect SSO is enabled and local login is disabled: invite link
+ok 225 Chrome 90.0 - [166 ms] - Acceptance: Invite accept when DiscourseConnect SSO is enabled and local login is disabled: email invite link
+ok 226 Chrome 90.0 - [168 ms] - Acceptance: Invite accept when DiscourseConnect SSO is enabled and local login is enabled (bad config): invite link
+ok 227 Chrome 90.0 - [167 ms] - Acceptance: Invite link with authentication data: form elements and buttons are correct
+ok 228 Chrome 90.0 - [170 ms] - Acceptance: Email Invite link with authentication data: email invite link with authentication data when email does not match
+ok 229 Chrome 90.0 - [303 ms] - Acceptance: Email Invite link with valid authentication data: confirm form and buttons
+ok 230 Chrome 90.0 - [549 ms] - Acceptance: Accept Invite - User Fields: accept invite with user fields
+ok 231 Chrome 90.0 - [694 ms] - Acceptance: Jump to: default
+ok 232 Chrome 90.0 - [1188 ms] - Acceptance: Jump to: invalid date
+ok 233 Chrome 90.0 - [836 ms] - Acceptance: Keyboard Shortcuts: go to first suggested topic
+ok 234 Chrome 90.0 - [393 ms] - Acceptance: Login redirect - anonymous: redirects login to default homepage
+ok 235 Chrome 90.0 - [236 ms] - Acceptance: Login redirect - categories default: when site setting is categories
+ok 236 Chrome 90.0 - [230 ms] - Acceptance: Login Required: redirect
+ok 237 Chrome 90.0 - [421 ms] - Acceptance: Login with email - hide email address taken: with hide_email_address_taken enabled
+ok 238 Chrome 90.0 - [376 ms] - Acceptance: Login with email - no social logins: with login with email enabled
+ok 239 Chrome 90.0 - [391 ms] - Acceptance: Login with email - no social logins: with login with email disabled
+ok 240 Chrome 90.0 - [374 ms] - Acceptance: Login with email disabled: with email button
+ok 241 Chrome 90.0 - [483 ms] - Acceptance: Login with email: with email button
+ok 242 Chrome 90.0 - [572 ms] - Acceptance: Topic Discovery - Mobile: Visit Discovery Pages
+ok 243 Chrome 90.0 - [305 ms] - Acceptance: Signing In - Mobile: sign in
+ok 244 Chrome 90.0 - [562 ms] - Acceptance: User Directory - Mobile: Visit Page
+skip 245 Chrome 90.0 - [0 ms] - Acceptance: Modal: modal
+ok 246 Chrome 90.0 - [388 ms] - Acceptance: Modal: rawTitle in modal panels
+ok 247 Chrome 90.0 - [963 ms] - Acceptance: Modal: modal title
+ok 248 Chrome 90.0 - [1525 ms] - Acceptance: Modal Keyboard Events: modal-keyboard-events
+ok 249 Chrome 90.0 - [412 ms] - Acceptance: New Message - Anonymous: accessing new-message route when logged out
+ok 250 Chrome 90.0 - [821 ms] - Acceptance: New Message - Authenticated: accessing new-message route when logged in
+ok 251 Chrome 90.0 - [364 ms] - Acceptance: New Topic - Anonymous: accessing new-topic route when logged out
+ok 252 Chrome 90.0 - [799 ms] - Acceptance: New Topic - Authenticated: accessing new-topic route when logged in
+ok 253 Chrome 90.0 - [202 ms] - Acceptance: Notifications filter: Notifications filter true
+ok 254 Chrome 90.0 - [282 ms] - Acceptance: Notifications filter: Notifications filter read
+ok 255 Chrome 90.0 - [285 ms] - Acceptance: Notifications filter: Notifications filter unread
+ok 256 Chrome 90.0 - [438 ms] - Acceptance: Opengraph Tag Updater: updates OG title and URL
+ok 257 Chrome 90.0 - [678 ms] - Acceptance: Page Publishing: can publish a page via modal
+ok 258 Chrome 90.0 - [223 ms] - Acceptance: Password Reset: Password Reset Page
+ok 259 Chrome 90.0 - [240 ms] - Acceptance: Password Reset: Password Reset Page With Second Factor
+ok 260 Chrome 90.0 - [300 ms] - Acceptance: Personal Message: footer edit button
+ok 261 Chrome 90.0 - [290 ms] - Acceptance: Personal Message: suggested messages
+ok 262 Chrome 90.0 - [547 ms] - Acceptance: Plugin Keyboard Shortcuts - Logged In: a plugin can add a keyboard shortcut
+ok 263 Chrome 90.0 - [795 ms] - Acceptance: Plugin Keyboard Shortcuts - Anonymous: a plugin can add a keyboard shortcut with an option
+ok 264 Chrome 90.0 - [246 ms] - Acceptance: Plugin Outlet - Connector Class: Renders a template into the outlet
+ok 265 Chrome 90.0 - [788 ms] - Acceptance: Plugin Outlet - Decorator: Calls the plugin callback with the rendered outlet
+ok 266 Chrome 90.0 - [189 ms] - Acceptance: Plugin Outlet - Multi Template: Renders a template into the outlet
+ok 267 Chrome 90.0 - [204 ms] - Acceptance: Plugin Outlet - Single Template: Renders a template into the outlet
+ok 268 Chrome 90.0 - [497 ms] - Acceptance: Post - Admin Menu - Anonymous: Enter as a anon user
+ok 269 Chrome 90.0 - [339 ms] - Acceptance: Post - Admin Menu - Authenticated: Enter as a user with group moderator permissions
+ok 270 Chrome 90.0 - [759 ms] - Acceptance: User Preferences: update some fields
+ok 271 Chrome 90.0 - [180 ms] - Acceptance: User Preferences: username
+ok 272 Chrome 90.0 - [187 ms] - Acceptance: User Preferences: email
+ok 273 Chrome 90.0 - [342 ms] - Acceptance: User Preferences: email field always shows up
+ok 274 Chrome 90.0 - [286 ms] - Acceptance: User Preferences: connected accounts
+ok 275 Chrome 90.0 - [254 ms] - Acceptance: User Preferences: second factor totp
+ok 276 Chrome 90.0 - [249 ms] - Acceptance: User Preferences: second factor security keys
+ok 277 Chrome 90.0 - [312 ms] - Acceptance: User Preferences: default avatar selector
+ok 278 Chrome 90.0 - [254 ms] - Acceptance: Second Factor Backups: second factor backup
+ok 279 Chrome 90.0 - [637 ms] - Acceptance: Avatar selector when selectable avatars is enabled: selectable avatars
+ok 280 Chrome 90.0 - [269 ms] - Acceptance: User Preferences when badges are disabled: visit my preferences
+ok 281 Chrome 90.0 - [293 ms] - Acceptance: User can select a topic to feature on profile if site setting in enabled: setting featured topic on profile
+ok 282 Chrome 90.0 - [279 ms] - Acceptance: Custom User Fields: can select an option from a dropdown
+ok 283 Chrome 90.0 - [383 ms] - Acceptance: User Preferences, selecting bookmarks discovery as user's default homepage: selecting bookmarks as home directs home to bookmarks
+ok 284 Chrome 90.0 - [213 ms] - Acceptance: Ignored users: when trust level < min level to ignore
+ok 285 Chrome 90.0 - [206 ms] - Acceptance: Ignored users: when trust level >= min level to ignore
+ok 286 Chrome 90.0 - [208 ms] - Acceptance: Ignored users: staff can always see ignored users
+ok 287 Chrome 90.0 - [440 ms] - Acceptance: Security: recently connected devices
+ok 288 Chrome 90.0 - [455 ms] - Acceptance: Raw Plugin Outlet: Renders the raw plugin outlet
+ok 289 Chrome 90.0 - [363 ms] - Acceptance: Redirect to Top: redirects categories to weekly top
+ok 290 Chrome 90.0 - [346 ms] - Acceptance: Redirect to Top: redirects latest to monthly top
+ok 291 Chrome 90.0 - [358 ms] - Acceptance: Redirect to Top: redirects root to All top
+ok 292 Chrome 90.0 - [187 ms] - Acceptance: Reports: Visit reports page
+ok 293 Chrome 90.0 - [259 ms] - Acceptance: Reports: Visit report page
+ok 294 Chrome 90.0 - [320 ms] - Acceptance: Review: It returns a list of reviewable items
+ok 295 Chrome 90.0 - [258 ms] - Acceptance: Review: Grouped by topic
+not ok 296 Chrome 90.0 - [805 ms] - Acceptance: Review: Reject user
+    ---
+        actual: >
+            false
+        expected: >
+            true
+        stack: >
+                at Object.<anonymous> (http://localhost:7357/assets/tests.js:5524:14)
+        message: >
+            it opens reject reason modal when user is rejected and blocked
+        negative: >
+            false
+        browser log: |
+    ...
+ok 297 Chrome 90.0 - [238 ms] - Acceptance: Review: Settings
+ok 298 Chrome 90.0 - [289 ms] - Acceptance: Review: Flag related
+ok 299 Chrome 90.0 - [170 ms] - Acceptance: Review: Flag related
+ok 300 Chrome 90.0 - [285 ms] - Acceptance: Review: Clicking the buttons triggers actions
+ok 301 Chrome 90.0 - [721 ms] - Acceptance: Review: Editing a reviewable
+ok 302 Chrome 90.0 - [409 ms] - Acceptance: Search - Full Page: perform various searches
+ok 303 Chrome 90.0 - [297 ms] - Acceptance: Search - Full Page: search for personal messages
+ok 304 Chrome 90.0 - [251 ms] - Acceptance: Search - Full Page: escape search term
+skip 305 Chrome 90.0 - [0 ms] - Acceptance: Search - Full Page: update username through advanced search ui
+ok 306 Chrome 90.0 - [369 ms] - Acceptance: Search - Full Page: update category through advanced search ui
+ok 307 Chrome 90.0 - [312 ms] - Acceptance: Search - Full Page: update in:title filter through advanced search ui
+ok 308 Chrome 90.0 - [313 ms] - Acceptance: Search - Full Page: update in:likes filter through advanced search ui
+ok 309 Chrome 90.0 - [280 ms] - Acceptance: Search - Full Page: update in:personal filter through advanced search ui
+ok 310 Chrome 90.0 - [252 ms] - Acceptance: Search - Full Page: update in:seen filter through advanced search ui
+ok 311 Chrome 90.0 - [314 ms] - Acceptance: Search - Full Page: update in filter through advanced search ui
+ok 312 Chrome 90.0 - [281 ms] - Acceptance: Search - Full Page: update status through advanced search ui
+ok 313 Chrome 90.0 - [729 ms] - Acceptance: Search - Full Page: doesn't update status filter header if wrong value entered through searchbox
+ok 314 Chrome 90.0 - [474 ms] - Acceptance: Search - Full Page: doesn't update in filter header if wrong value entered through searchbox
+ok 315 Chrome 90.0 - [268 ms] - Acceptance: Search - Full Page: update post time through advanced search ui
+ok 316 Chrome 90.0 - [235 ms] - Acceptance: Search - Full Page: update min post count through advanced search ui
+ok 317 Chrome 90.0 - [234 ms] - Acceptance: Search - Full Page: update max post count through advanced search ui
+ok 318 Chrome 90.0 - [255 ms] - Acceptance: Search - Full Page: validate advanced search when initially empty
+ok 319 Chrome 90.0 - [435 ms] - Acceptance: Search - Mobile: search
+ok 320 Chrome 90.0 - [503 ms] - Acceptance: Search - Anonymous: search
+ok 321 Chrome 90.0 - [433 ms] - Acceptance: Search - Anonymous: search for a tag
+ok 322 Chrome 90.0 - [981 ms] - Acceptance: Search - Anonymous: search scope checkbox
+ok 323 Chrome 90.0 - [1417 ms] - Acceptance: Search - Anonymous: Search with context
+ok 324 Chrome 90.0 - [227 ms] - Acceptance: Search - Anonymous: Right filters are shown to anonymous users
+ok 325 Chrome 90.0 - [272 ms] - Acceptance: Search - Authenticated: Right filters are shown to logged-in users
+ok 326 Chrome 90.0 - [440 ms] - Acceptance: Search - with tagging enabled: displays tags
+ok 327 Chrome 90.0 - [594 ms] - Acceptance: Share and Invite modal: Topic footer button
+ok 328 Chrome 90.0 - [881 ms] - Acceptance: Share and Invite modal: Post date link
+ok 329 Chrome 90.0 - [1333 ms] - Acceptance: Share and Invite modal - mobile: Topic footer mobile button
+ok 330 Chrome 90.0 - [716 ms] - Acceptance: Share url with badges disabled - desktop: topic footer button - badges disabled - desktop
+ok 331 Chrome 90.0 - [354 ms] - Acceptance: Shared Drafts: Viewing and publishing
+ok 332 Chrome 90.0 - [446 ms] - Acceptance: Shared Drafts: Updating category
+ok 333 Chrome 90.0 - [550 ms] - Acceptance: Signing In: sign in
+ok 334 Chrome 90.0 - [589 ms] - Acceptance: Signing In: sign in - not activated
+ok 335 Chrome 90.0 - [560 ms] - Acceptance: Signing In: sign in - not activated - edit email
+skip 336 Chrome 90.0 - [0 ms] - Acceptance: Signing In: second factor
+skip 337 Chrome 90.0 - [0 ms] - Acceptance: Signing In: security key
+ok 338 Chrome 90.0 - [600 ms] - Acceptance: Signing In: create account
+ok 339 Chrome 90.0 - [534 ms] - Acceptance: Signing In: second factor backup - valid token
+ok 340 Chrome 90.0 - [627 ms] - Acceptance: Signing In: second factor backup - invalid token
+ok 341 Chrome 90.0 - [692 ms] - Acceptance: Static: Static Pages
+ok 342 Chrome 90.0 - [479 ms] - Acceptance: Tag Groups: tag groups can be saved and deleted
+ok 343 Chrome 90.0 - [565 ms] - Acceptance: Tag Groups: tag groups can have multiple groups added to them
+ok 344 Chrome 90.0 - [888 ms] - Acceptance: Tags intersection: Populate tags when creating new topic
+ok 345 Chrome 90.0 - [157 ms] - Acceptance: Tags: list the tags
+ok 346 Chrome 90.0 - [249 ms] - Acceptance: Tags: dismiss notifications
+    ---
+        browser log: |
+            {"type":"warn","text":"Deprecation notice: route:tags-show was replaced with route:tag-show (deprecated since Discourse 2.6.0)"}
+            {"type":"warn","text":"Deprecation notice: controller:tags-show was replaced with controller:tag-show (deprecated since Discourse 2.6.0)"}
+    ...
+ok 347 Chrome 90.0 - [544 ms] - Acceptance: Tags: hide tag notifications menu
+ok 348 Chrome 90.0 - [336 ms] - Acceptance: Tags listed by group: list the tags in groups
+ok 349 Chrome 90.0 - [312 ms] - Acceptance: Tags listed by group: new topic button is not available for staff-only tags
+ok 350 Chrome 90.0 - [199 ms] - Acceptance: Tag info: tag info can show synonyms
+ok 351 Chrome 90.0 - [299 ms] - Acceptance: Tag info: can filter tags page by category
+ok 352 Chrome 90.0 - [239 ms] - Acceptance: Tag info: admin can manage tags
+ok 353 Chrome 90.0 - [671 ms] - Acceptance: Tag info: composer will not set tags if user cannot create them
+ok 354 Chrome 90.0 - [512 ms] - Acceptance: Topic - Admin Menu Anonymous Users: Enter as a regular user
+ok 355 Chrome 90.0 - [347 ms] - Acceptance: Topic - Admin Menu: Enter as a user with group moderator permissions
+ok 356 Chrome 90.0 - [520 ms] - Acceptance: Topic - Admin Menu: Enter as a user with moderator and admin permissions
+ok 357 Chrome 90.0 - [571 ms] - Acceptance: Topic - Admin Menu: Toggle the menu as admin focuses the first item
+ok 358 Chrome 90.0 - [435 ms] - Acceptance: Topic - Anonymous: Enter a Topic
+ok 359 Chrome 90.0 - [447 ms] - Acceptance: Topic - Anonymous: Enter without an id
+ok 360 Chrome 90.0 - [176 ms] - Acceptance: Topic - Anonymous: Enter a 404 topic
+ok 361 Chrome 90.0 - [177 ms] - Acceptance: Topic - Anonymous: Enter without access
+ok 362 Chrome 90.0 - [178 ms] - Acceptance: Topic - Anonymous: Enter with 500 errors
+ok 363 Chrome 90.0 - [1666 ms] - Acceptance: Topic - Bulk Actions: bulk select - modal
+ok 364 Chrome 90.0 - [1133 ms] - Acceptance: Topic - Bulk Actions: bulk select - delete topics
+ok 365 Chrome 90.0 - [1569 ms] - Acceptance: Topic Discovery: Visit Discovery Pages
+ok 366 Chrome 90.0 - [657 ms] - Acceptance: Topic Discovery: Clearing state after leaving a category
+ok 367 Chrome 90.0 - [348 ms] - Acceptance: Topic Discovery: Live update unread state
+ok 368 Chrome 90.0 - [652 ms] - Acceptance: Topic Discovery: Using period chooser when query params are present
+ok 369 Chrome 90.0 - [704 ms] - Acceptance: Topic - Edit timer: autoclose - specific time
+ok 370 Chrome 90.0 - [829 ms] - Acceptance: Topic - Edit timer: autoclose
+ok 371 Chrome 90.0 - [780 ms] - Acceptance: Topic - Edit timer: close temporarily
+ok 372 Chrome 90.0 - [795 ms] - Acceptance: Topic - Edit timer: schedule
+ok 373 Chrome 90.0 - [1133 ms] - Acceptance: Topic - Edit timer: schedule - last custom date and time
+    ---
+        browser log: |
+            {"type":"warn","text":"Deprecation notice: Accessing the global function `exists` is deprecated. Import it instead. (deprecated since Discourse 2.6.0.beta.4) (removal in Discourse 2.6.0)"}
+            {"type":"warn","text":"Deprecation notice: Accessing the global function `exists` is deprecated. Import it instead. (deprecated since Discourse 2.6.0.beta.4) (removal in Discourse 2.6.0)"}
+    ...
+ok 374 Chrome 90.0 - [601 ms] - Acceptance: Topic - Edit timer: TL4 can't auto-delete
+ok 375 Chrome 90.0 - [670 ms] - Acceptance: Topic - Edit timer: auto delete
+ok 376 Chrome 90.0 - [701 ms] - Acceptance: Topic - Edit timer: Inline delete timer
+ok 377 Chrome 90.0 - [530 ms] - Acceptance: Topic footer buttons mobile: default
+ok 378 Chrome 90.0 - [354 ms] - Acceptance: Topic list tracking: Navigation
+ok 379 Chrome 90.0 - [1468 ms] - Acceptance: Topic move posts: default
+ok 380 Chrome 90.0 - [721 ms] - Acceptance: Topic move posts: moving all posts
+ok 381 Chrome 90.0 - [378 ms] - Acceptance: Topic move posts: moving posts from personal message
+ok 382 Chrome 90.0 - [409 ms] - Acceptance: Topic move posts: group moderator moving posts
+ok 383 Chrome 90.0 - [652 ms] - Acceptance: Topic Notifications button: Updating topic notification level
+ok 384 Chrome 90.0 - [528 ms] - Acceptance: Topic - Quote button - logged in: Does not show the quote share buttons by default
+ok 385 Chrome 90.0 - [499 ms] - Acceptance: Topic - Quote button - logged in: Shows quote share buttons with the right site settings
+ok 386 Chrome 90.0 - [440 ms] - Acceptance: Topic - Quote button - anonymous: Shows quote share buttons with the right site settings
+ok 387 Chrome 90.0 - [467 ms] - Acceptance: Topic - Quote button - anonymous: Shows single share button when site setting only has one item
+ok 388 Chrome 90.0 - [485 ms] - Acceptance: Topic - Quote button - anonymous: Shows nothing when visibility is disabled
+ok 389 Chrome 90.0 - [1412 ms] - Acceptance: Topic: Reply as new topic
+ok 390 Chrome 90.0 - [1236 ms] - Acceptance: Topic: Reply as new message
+ok 391 Chrome 90.0 - [753 ms] - Acceptance: Topic: Share Modal
+ok 392 Chrome 90.0 - [543 ms] - Acceptance: Topic: Showing and hiding the edit controls
+ok 393 Chrome 90.0 - [702 ms] - Acceptance: Topic: Updating the topic title and category
+ok 394 Chrome 90.0 - [628 ms] - Acceptance: Topic: Marking a topic as wiki
+ok 395 Chrome 90.0 - [1164 ms] - Acceptance: Topic: Visit topic routes
+ok 396 Chrome 90.0 - [562 ms] - Acceptance: Topic: Updating the topic title with emojis
+ok 397 Chrome 90.0 - [548 ms] - Acceptance: Topic: Updating the topic title with unicode emojis
+ok 398 Chrome 90.0 - [551 ms] - Acceptance: Topic: Updating the topic title with unicode emojis without whitespaces
+ok 399 Chrome 90.0 - [475 ms] - Acceptance: Topic: Suggested topics
+ok 400 Chrome 90.0 - [664 ms] - Acceptance: Topic: Deleting a topic
+ok 401 Chrome 90.0 - [903 ms] - Acceptance: Topic: Deleting a popular topic displays confirmation modal
+ok 402 Chrome 90.0 - [291 ms] - Acceptance: Topic: Group category moderator posts
+ok 403 Chrome 90.0 - [456 ms] - Acceptance: Topic: Converting to a public topic
+ok 404 Chrome 90.0 - [884 ms] - Acceptance: Topic: Unpinning unlisted topic
+ok 405 Chrome 90.0 - [624 ms] - Acceptance: Topic: selecting posts
+ok 406 Chrome 90.0 - [729 ms] - Acceptance: Topic: select below
+ok 407 Chrome 90.0 - [525 ms] - Acceptance: Topic: View Hidden Replies
+ok 408 Chrome 90.0 - [1341 ms] - Acceptance: Topic: Quoting a quote keeps the original poster name
+ok 409 Chrome 90.0 - [1186 ms] - Acceptance: Topic: Quoting a quote of a different topic keeps the original topic title
+ok 410 Chrome 90.0 - [1198 ms] - Acceptance: Topic: Quoting a quote with the Reply button keeps the original poster name
+ok 411 Chrome 90.0 - [1929 ms] - Acceptance: Topic: Quoting a quote with replyAsNewTopic keeps the original poster name
+ok 412 Chrome 90.0 - [1206 ms] - Acceptance: Topic: Quoting by selecting text can mark the quote as full
+ok 413 Chrome 90.0 - [402 ms] - Acceptance: Topic featured links: remove featured link
+ok 414 Chrome 90.0 - [462 ms] - Acceptance: Topic with title decorated: Decorate topic title
+ok 415 Chrome 90.0 - [386 ms] - Acceptance: Topic pinning/unpinning as an admin: Admin pinning topic
+ok 416 Chrome 90.0 - [388 ms] - Acceptance: Topic pinning/unpinning as a staff member: Staff pinning topic
+ok 417 Chrome 90.0 - [372 ms] - Acceptance: Topic pinning/unpinning as a group moderator: Group category moderator pinning topic
+ok 418 Chrome 90.0 - [874 ms] - Acceptance: Category 404: Navigating to a bad category link does not break the router
+    ---
+        browser log: |
+            {"type":"error","text":"[object Object]"}
+    ...
+ok 419 Chrome 90.0 - [179 ms] - Acceptance: Unknown: Permalink Unknown URL
+ok 420 Chrome 90.0 - [500 ms] - Acceptance: Unknown: Permalink URL to a Topic
+ok 421 Chrome 90.0 - [148 ms] - Acceptance: Unknown: Permalink URL to a static page
+ok 422 Chrome 90.0 - [194 ms] - Acceptance: User Anonymous: Root URL
+ok 423 Chrome 90.0 - [641 ms] - Acceptance: User Anonymous: Filters
+ok 424 Chrome 90.0 - [163 ms] - Acceptance: User Anonymous: Badges
+ok 425 Chrome 90.0 - [346 ms] - Acceptance: User Anonymous: Restricted Routes
+ok 426 Chrome 90.0 - [331 ms] - Acceptance: User's bookmarks: removing a bookmark with no reminder does not show a confirmation
+ok 427 Chrome 90.0 - [1055 ms] - Acceptance: User's bookmarks - reminder: removing a bookmark with a reminder shows a confirmation
+ok 428 Chrome 90.0 - [211 ms] - Acceptance: User's bookmarks - no bookmarks: listing users bookmarks - no bookmarks
+ok 429 Chrome 90.0 - [644 ms] - Acceptance: User Card - Show Local Time: user card local time - does not update timezone for another user
+ok 430 Chrome 90.0 - [283 ms] - Acceptance: User Drafts: Stream
+ok 431 Chrome 90.0 - [839 ms] - Acceptance: User Drafts: Stream - resume draft
+ok 432 Chrome 90.0 - [562 ms] - Acceptance: User Preferences - Interface: font size change
+ok 433 Chrome 90.0 - [206 ms] - Acceptance: User Preferences - Interface: does not show option to disable dark mode by default
+ok 434 Chrome 90.0 - [210 ms] - Acceptance: User Preferences - Interface: shows light/dark color scheme pickers
+ok 435 Chrome 90.0 - [214 ms] - Acceptance: User Preferences - Interface: shows light color scheme default option when theme's color scheme is not user selectable
+ok 436 Chrome 90.0 - [255 ms] - Acceptance: User Preferences - Interface: shows no default option for light scheme when theme's color scheme is user selectable
+ok 437 Chrome 90.0 - [210 ms] - Acceptance: User Preferences Color Schemes (with default dark scheme): show option to disable dark mode
+ok 438 Chrome 90.0 - [211 ms] - Acceptance: User Preferences Color Schemes (with default dark scheme): no color scheme picker by default
+ok 439 Chrome 90.0 - [225 ms] - Acceptance: User Preferences Color Schemes (with default dark scheme): light color scheme picker
+ok 440 Chrome 90.0 - [414 ms] - Acceptance: User Preferences Color Schemes (with default dark scheme): light and dark color scheme pickers
+ok 441 Chrome 90.0 - [299 ms] - Acceptance: User notification schedule: the schedule interface is hidden until enabled
+ok 442 Chrome 90.0 - [312 ms] - Acceptance: User notification schedule: By default every day is selected 8:00am - 5:00pm
+ok 443 Chrome 90.0 - [1103 ms] - Acceptance: User notification schedule: If 'none' is selected for the start time, end time dropdown is removed
+ok 444 Chrome 90.0 - [451 ms] - Acceptance: User notification schedule: If start time is after end time, end time gets bumped 30 minutes past start time
+ok 445 Chrome 90.0 - [124 ms] - Acceptance: User Routes: Invalid usernames
+ok 446 Chrome 90.0 - [184 ms] - Acceptance: User Routes: Unicode usernames
+ok 447 Chrome 90.0 - [182 ms] - Acceptance: User Routes: Invites
+ok 448 Chrome 90.0 - [217 ms] - Acceptance: User Routes: Messages
+ok 449 Chrome 90.0 - [209 ms] - Acceptance: User Routes: Notifications
+ok 450 Chrome 90.0 - [399 ms] - Acceptance: User Routes: Root URL - Viewing Self
+ok 451 Chrome 90.0 - [210 ms] - Acceptance: User Routes: Viewing Summary
+ok 452 Chrome 90.0 - [947 ms] - Acceptance: User Routes: Viewing Drafts
+ok 453 Chrome 90.0 - [342 ms] - Acceptance: User Directory: Visit Page
+ok 454 Chrome 90.0 - [346 ms] - Acceptance: User Directory: Visit All Time
+ok 455 Chrome 90.0 - [337 ms] - Acceptance: User Directory: Visit Without Usernames
+ok 456 Chrome 90.0 - [344 ms] - Acceptance: User Directory: Visit With Group Filter
+ok 457 Chrome 90.0 - [97 ms] - Integration | Component | activation-controls: hides change email button
+ok 458 Chrome 90.0 - [155 ms] - Integration | Component | admin-report: default
+ok 459 Chrome 90.0 - [315 ms] - Integration | Component | admin-report: options
+ok 460 Chrome 90.0 - [838 ms] - Integration | Component | admin-report: switch modes
+ok 461 Chrome 90.0 - [123 ms] - Integration | Component | admin-report: timeout
+ok 462 Chrome 90.0 - [116 ms] - Integration | Component | admin-report: no data
+ok 463 Chrome 90.0 - [125 ms] - Integration | Component | admin-report: exception
+ok 464 Chrome 90.0 - [115 ms] - Integration | Component | admin-report: rate limited
+ok 465 Chrome 90.0 - [114 ms] - Integration | Component | admin-report: not found
+ok 466 Chrome 90.0 - [142 ms] - Integration | Component | badge-title: badge title
+ok 467 Chrome 90.0 - [107 ms] - Integration | Component | cook-text: renders markdown
+ok 468 Chrome 90.0 - [137 ms] - Integration | Component | cook-text: resolves short URLs
+ok 469 Chrome 90.0 - [97 ms] - Integration | Component | d-button: icon only button
+ok 470 Chrome 90.0 - [93 ms] - Integration | Component | d-button: icon and text button
+ok 471 Chrome 90.0 - [87 ms] - Integration | Component | d-button: text only button
+ok 472 Chrome 90.0 - [88 ms] - Integration | Component | d-button: form attribute
+ok 473 Chrome 90.0 - [92 ms] - Integration | Component | d-button: link-styled button
+ok 474 Chrome 90.0 - [93 ms] - Integration | Component | d-button: isLoading button
+ok 475 Chrome 90.0 - [91 ms] - Integration | Component | d-button: disabled button
+ok 476 Chrome 90.0 - [140 ms] - Integration | Component | d-button: aria-label
+ok 477 Chrome 90.0 - [247 ms] - Integration | Component | d-button: title
+ok 478 Chrome 90.0 - [332 ms] - Integration | Component | d-button: label
+ok 479 Chrome 90.0 - [216 ms] - Integration | Component | d-button: aria-expanded
+ok 480 Chrome 90.0 - [86 ms] - Integration | Component | d-button: aria-controls
+ok 481 Chrome 90.0 - [676 ms] - Integration | Component | d-editor: preview updates with markdown
+ok 482 Chrome 90.0 - [765 ms] - Integration | Component | d-editor: preview sanitizes HTML
+ok 483 Chrome 90.0 - [752 ms] - Integration | Component | d-editor: updating the value refreshes the preview
+ok 484 Chrome 90.0 - [678 ms] - Integration | Component | d-editor: selecting the space before a word
+ok 485 Chrome 90.0 - [746 ms] - Integration | Component | d-editor: selecting the space after a word
+ok 486 Chrome 90.0 - [680 ms] - Integration | Component | d-editor: bold button with no selection
+ok 487 Chrome 90.0 - [690 ms] - Integration | Component | d-editor: bold button with a selection
+ok 488 Chrome 90.0 - [726 ms] - Integration | Component | d-editor: bold with a multiline selection
+ok 489 Chrome 90.0 - [727 ms] - Integration | Component | d-editor: italic button with no selection
+ok 490 Chrome 90.0 - [885 ms] - Integration | Component | d-editor: italic button with a selection
+ok 491 Chrome 90.0 - [868 ms] - Integration | Component | d-editor: italic with a multiline selection
+ok 492 Chrome 90.0 - [704 ms] - Integration | Component | d-editor: advanced code
+ok 493 Chrome 90.0 - [916 ms] - Integration | Component | d-editor: code button
+ok 494 Chrome 90.0 - [2012 ms] - Integration | Component | d-editor: code fences
+ok 495 Chrome 90.0 - [704 ms] - Integration | Component | d-editor: quote button - empty lines
+ok 496 Chrome 90.0 - [676 ms] - Integration | Component | d-editor: quote button - selecting empty lines
+ok 497 Chrome 90.0 - [766 ms] - Integration | Component | d-editor: quote button
+ok 498 Chrome 90.0 - [731 ms] - Integration | Component | d-editor: bullet button with no selection
+ok 499 Chrome 90.0 - [699 ms] - Integration | Component | d-editor: bullet button with a selection
+ok 500 Chrome 90.0 - [751 ms] - Integration | Component | d-editor: bullet button with a multiple line selection
+ok 501 Chrome 90.0 - [714 ms] - Integration | Component | d-editor: list button with no selection
+ok 502 Chrome 90.0 - [714 ms] - Integration | Component | d-editor: list button with a selection
+ok 503 Chrome 90.0 - [731 ms] - Integration | Component | d-editor: list button with line sequence
+ok 504 Chrome 90.0 - [711 ms] - Integration | Component | d-editor: clicking the toggle-direction changes dir from ltr to rtl
+ok 505 Chrome 90.0 - [700 ms] - Integration | Component | d-editor: clicking the toggle-direction changes dir from ltr to rtl
+ok 506 Chrome 90.0 - [720 ms] - Integration | Component | d-editor: doesn't jump to bottom with long text
+ok 507 Chrome 90.0 - [1229 ms] - Integration | Component | d-editor: emoji
+ok 508 Chrome 90.0 - [108 ms] - Integration | Component | d-editor: replace-text event by default
+ok 509 Chrome 90.0 - [115 ms] - Integration | Component | d-editor: replace-text event for composer
+ok 510 Chrome 90.0 - [209 ms] - Integration | Component | d-editor: paste table
+ok 511 Chrome 90.0 - [592 ms] - Integration | Component | d-editor: paste a different table
+ok 512 Chrome 90.0 - [242 ms] - Integration | Component | d-editor: replace-text event: cursor at start remains there
+ok 513 Chrome 90.0 - [113 ms] - Integration | Component | d-editor: replace-text event: cursor before needle becomes cursor before replacement
+ok 514 Chrome 90.0 - [117 ms] - Integration | Component | d-editor: replace-text event: cursor at needle start + 1 moves behind replacement
+ok 515 Chrome 90.0 - [121 ms] - Integration | Component | d-editor: replace-text event: cursor at needle end - 1 stays behind replacement
+ok 516 Chrome 90.0 - [119 ms] - Integration | Component | d-editor: replace-text event: cursor behind needle becomes cursor behind replacement
+ok 517 Chrome 90.0 - [121 ms] - Integration | Component | d-editor: replace-text event: cursor at end remains there
+ok 518 Chrome 90.0 - [121 ms] - Integration | Component | d-editor: replace-text event: selection spanning needle start becomes selection until replacement start
+ok 519 Chrome 90.0 - [118 ms] - Integration | Component | d-editor: replace-text event: selection spanning needle end becomes selection from replacement end
+ok 520 Chrome 90.0 - [125 ms] - Integration | Component | d-editor: replace-text event: selection spanning needle becomes selection spanning replacement
+ok 521 Chrome 90.0 - [128 ms] - Integration | Component | d-editor: replace-text event: complete selection remains complete
+ok 522 Chrome 90.0 - [87 ms] - Integration | Component | d-icon: default
+ok 523 Chrome 90.0 - [88 ms] - Integration | Component | d-icon: with replacement
+ok 524 Chrome 90.0 - [92 ms] - Integration | Component | date-input: default
+ok 525 Chrome 90.0 - [90 ms] - Integration | Component | date-input: prevents mutations
+ok 526 Chrome 90.0 - [93 ms] - Integration | Component | date-input: allows mutations through actions
+ok 527 Chrome 90.0 - [174 ms] - Integration | Component | date-time-input-range: default
+ok 528 Chrome 90.0 - [338 ms] - Integration | Component | date-time-input: default
+ok 529 Chrome 90.0 - [439 ms] - Integration | Component | date-time-input: prevents mutations
+ok 530 Chrome 90.0 - [98 ms] - Integration | Component | date-time-input: allows mutations through actions
+ok 531 Chrome 90.0 - [87 ms] - Integration | Component | date-time-input: can hide time
+ok 532 Chrome 90.0 - [154 ms] - Integration | Component | group-list site-setting: default
+ok 533 Chrome 90.0 - [96 ms] - Integration | Component | group-membership-button: canJoinGroup
+ok 534 Chrome 90.0 - [97 ms] - Integration | Component | group-membership-button: canLeaveGroup
+ok 535 Chrome 90.0 - [100 ms] - Integration | Component | group-membership-button: canRequestMembership
+ok 536 Chrome 90.0 - [111 ms] - Integration | Component | highlighted-code: highlighting code
+    ---
+        browser log: |
+            {"type":"log","text":"Deprecated as of 10.7.0. highlightBlock will be removed entirely in v12.0"}
+            {"type":"log","text":"Deprecated as of 10.7.0. Please use highlightElement now."}
+    ...
+ok 537 Chrome 90.0 - [222 ms] - Integration | Component | highlighted-code: large code blocks are not highlighted
+ok 538 Chrome 90.0 - [99 ms] - Integration | Component | html-safe-helper: default
+ok 539 Chrome 90.0 - [101 ms] - Integration | Component | iframed-html: appends the html into the iframe
+ok 540 Chrome 90.0 - [134 ms] - Integration | Component | image-uploader: with image
+ok 541 Chrome 90.0 - [92 ms] - Integration | Component | image-uploader: without image
+ok 542 Chrome 90.0 - [91 ms] - Integration | Component | image-uploader: with placeholder
+ok 543 Chrome 90.0 - [230 ms] - Integration | Component | invite-panel: shows the invite link after it is generated
+ok 544 Chrome 90.0 - [150 ms] - Integration | Component | load-more: updates once after initialization
+ok 545 Chrome 90.0 - [299 ms] - Integration | Component | relative-time-picker: prefills and preselects minutes
+ok 546 Chrome 90.0 - [536 ms] - Integration | Component | relative-time-picker: prefills and preselects hours based on translated minutes
+ok 547 Chrome 90.0 - [95 ms] - Integration | Component | relative-time-picker: prefills and preselects days based on translated minutes
+ok 548 Chrome 90.0 - [90 ms] - Integration | Component | relative-time-picker: prefills and preselects months based on translated minutes
+ok 549 Chrome 90.0 - [85 ms] - Integration | Component | relative-time-picker: prefills and preselects years based on translated minutes
+ok 550 Chrome 90.0 - [97 ms] - Integration | Component | relative-time-picker: prefills and preselects hours
+ok 551 Chrome 90.0 - [94 ms] - Integration | Component | relative-time-picker: prefills and preselects minutes based on translated hours
+ok 552 Chrome 90.0 - [101 ms] - Integration | Component | relative-time-picker: prefills and preselects days based on translated hours
+ok 553 Chrome 90.0 - [95 ms] - Integration | Component | relative-time-picker: prefills and preselects months based on translated hours
+ok 554 Chrome 90.0 - [98 ms] - Integration | Component | relative-time-picker: prefills and preselects years based on translated hours
+ok 555 Chrome 90.0 - [171 ms] - Integration | Component | secret-value-list: adding a value
+ok 556 Chrome 90.0 - [107 ms] - Integration | Component | secret-value-list: adding an invalid value
+ok 557 Chrome 90.0 - [105 ms] - Integration | Component | secret-value-list: removing a value
+ok 558 Chrome 90.0 - [126 ms] - Integration | Component | select-kit:api: modifySelectKit(identifier).appendContent
+ok 559 Chrome 90.0 - [121 ms] - Integration | Component | select-kit:api: modifySelectKit(identifier).prependContent
+ok 560 Chrome 90.0 - [129 ms] - Integration | Component | select-kit:api: modifySelectKit(identifier).onChange
+ok 561 Chrome 90.0 - [100 ms] - Integration | Component | select-kit/category-chooser: with value
+ok 562 Chrome 90.0 - [657 ms] - Integration | Component | select-kit/category-chooser: with excludeCategoryId
+ok 563 Chrome 90.0 - [412 ms] - Integration | Component | select-kit/category-chooser: with scopedCategoryId
+ok 564 Chrome 90.0 - [86 ms] - Integration | Component | select-kit/category-chooser: with allowUncategorized=null
+ok 565 Chrome 90.0 - [94 ms] - Integration | Component | select-kit/category-chooser: with allowUncategorized=null rootNone=true
+ok 566 Chrome 90.0 - [99 ms] - Integration | Component | select-kit/category-chooser: with disallowed uncategorized, none
+ok 567 Chrome 90.0 - [92 ms] - Integration | Component | select-kit/category-chooser: with allowed uncategorized
+ok 568 Chrome 90.0 - [95 ms] - Integration | Component | select-kit/category-chooser: with allowed uncategorized and none=true
+ok 569 Chrome 90.0 - [93 ms] - Integration | Component | select-kit/category-chooser: with allowed uncategorized and none
+ok 570 Chrome 90.0 - [265 ms] - Integration | Component | select-kit/category-chooser: filter is case insensitive
+ok 571 Chrome 90.0 - [183 ms] - Integration | Component | select-kit/category-chooser: filter works with non english characters
+ok 572 Chrome 90.0 - [119 ms] - Integration | Component | select-kit/category-chooser: decodes entities in row title
+ok 573 Chrome 90.0 - [93 ms] - Integration | Component | select-kit/category-drop: caretUpIcon
+ok 574 Chrome 90.0 - [93 ms] - Integration | Component | select-kit/category-drop: none
+ok 575 Chrome 90.0 - [178 ms] - Integration | Component | select-kit/category-drop: [not staff - TL0] displayCategoryDescription
+ok 576 Chrome 90.0 - [163 ms] - Integration | Component | select-kit/category-drop: [not staff - TL1] displayCategoryDescription
+ok 577 Chrome 90.0 - [166 ms] - Integration | Component | select-kit/category-drop: [staff - TL0] displayCategoryDescription
+ok 578 Chrome 90.0 - [700 ms] - Integration | Component | select-kit/category-drop: hideParentCategory (default: false)
+ok 579 Chrome 90.0 - [315 ms] - Integration | Component | select-kit/category-drop: hideParentCategory (true)
+ok 580 Chrome 90.0 - [169 ms] - Integration | Component | select-kit/category-drop: allow_uncategorized_topics (true)
+ok 581 Chrome 90.0 - [171 ms] - Integration | Component | select-kit/category-drop: allow_uncategorized_topics (false)
+ok 582 Chrome 90.0 - [162 ms] - Integration | Component | select-kit/category-drop: countSubcategories (default: false)
+ok 583 Chrome 90.0 - [165 ms] - Integration | Component | select-kit/category-drop: countSubcategories (true)
+ok 584 Chrome 90.0 - [167 ms] - Integration | Component | select-kit/category-drop: shortcuts:default
+ok 585 Chrome 90.0 - [176 ms] - Integration | Component | select-kit/category-drop: shortcuts:category is set
+ok 586 Chrome 90.0 - [119 ms] - Integration | Component | select-kit/category-drop: shortcuts with parentCategory/subCategory=true:default
+ok 587 Chrome 90.0 - [117 ms] - Integration | Component | select-kit/category-drop: shortcuts with parentCategory/subCategory=true:category is selected
+ok 588 Chrome 90.0 - [136 ms] - Integration | Component | select-kit/category-drop: category url
+ok 589 Chrome 90.0 - [109 ms] - Integration | Component | select-kit/combo-box: options.clearable
+ok 590 Chrome 90.0 - [107 ms] - Integration | Component | select-kit/combo-box: options.{caretUpIcon,caretDownIcon}
+ok 591 Chrome 90.0 - [115 ms] - Integration | Component | select-kit/dropdown-select-box: selection behavior
+ok 592 Chrome 90.0 - [91 ms] - Integration | Component | select-kit/dropdown-select-box: options.showFullTitle=false
+ok 593 Chrome 90.0 - [92 ms] - Integration | Component | select-kit/dropdown-select-box: options.showFullTitle=true
+ok 594 Chrome 90.0 - [136 ms] - Integration | Component | select-kit/email-group-user-chooser: autofocus option set to true
+ok 595 Chrome 90.0 - [400 ms] - Integration | Component | select-kit/email-group-user-chooser: without autofocus
+ok 596 Chrome 90.0 - [549 ms] - Integration | Component | select-kit/list-setting: default
+ok 597 Chrome 90.0 - [89 ms] - Integration | Component | select-kit/mini-tag-chooser: displays tags
+ok 598 Chrome 90.0 - [214 ms] - Integration | Component | select-kit/mini-tag-chooser: create a tag
+ok 599 Chrome 90.0 - [160 ms] - Integration | Component | select-kit/mini-tag-chooser: max_tags_per_topic
+ok 600 Chrome 90.0 - [109 ms] - Integration | Component | select-kit/multi-select: content
+ok 601 Chrome 90.0 - [88 ms] - Integration | Component | select-kit/notifications-button: default
+ok 602 Chrome 90.0 - [134 ms] - Integration | Component | select-kit/pinned-options: unpinning
+ok 603 Chrome 90.0 - [130 ms] - Integration | Component | select-kit/pinned-options: pinning
+ok 604 Chrome 90.0 - [110 ms] - Integration | Component | select-kit/single-select: content
+ok 605 Chrome 90.0 - [91 ms] - Integration | Component | select-kit/single-select: value
+ok 606 Chrome 90.0 - [130 ms] - Integration | Component | select-kit/single-select: options.filterable
+ok 607 Chrome 90.0 - [141 ms] - Integration | Component | select-kit/single-select: options.limitMatches
+ok 608 Chrome 90.0 - [112 ms] - Integration | Component | select-kit/single-select: valueAttribute (deprecated)
+ok 609 Chrome 90.0 - [112 ms] - Integration | Component | select-kit/single-select: none:string
+ok 610 Chrome 90.0 - [107 ms] - Integration | Component | select-kit/single-select: none:object
+ok 611 Chrome 90.0 - [127 ms] - Integration | Component | select-kit/single-select: content is a basic array
+ok 612 Chrome 90.0 - [258 ms] - Integration | Component | select-kit/single-select: selected value can be 0
+ok 613 Chrome 90.0 - [476 ms] - Integration | Component | select-kit/single-select: prevents propagating click event on header
+ok 614 Chrome 90.0 - [288 ms] - Integration | Component | select-kit/single-select: labelProperty
+ok 615 Chrome 90.0 - [95 ms] - Integration | Component | select-kit/single-select: titleProperty
+ok 616 Chrome 90.0 - [112 ms] - Integration | Component | select-kit/single-select: langProperty
+ok 617 Chrome 90.0 - [122 ms] - Integration | Component | select-kit/single-select: name
+ok 618 Chrome 90.0 - [127 ms] - Integration | Component | select-kit/tag-drop: default
+ok 619 Chrome 90.0 - [102 ms] - Integration | Component | select-kit/topic-notifications-button: the header has a localized title
+ok 620 Chrome 90.0 - [98 ms] - Integration | Component | select-kit/topic-notifications-button: the header has a localized title
+ok 621 Chrome 90.0 - [119 ms] - Integration | Component | select-kit/topic-notifications-options: regular topic notification level descriptions
+ok 622 Chrome 90.0 - [114 ms] - Integration | Component | select-kit/topic-notifications-options: PM topic notification level descriptions
+ok 623 Chrome 90.0 - [96 ms] - Integration | Component | select-kit/user-chooser: displays usernames
+ok 624 Chrome 90.0 - [120 ms] - Integration | Component | select-kit/user-chooser: can remove a username
+ok 625 Chrome 90.0 - [149 ms] - Integration | Component | simple-list: adding a value
+ok 626 Chrome 90.0 - [99 ms] - Integration | Component | simple-list: removing a value
+ok 627 Chrome 90.0 - [99 ms] - Integration | Component | simple-list: delimiter support
+ok 628 Chrome 90.0 - [163 ms] - Integration | Component | site-header: first notification mask
+ok 629 Chrome 90.0 - [192 ms] - Integration | Component | site-header: do not call authenticated endpoints as anonymous
+ok 630 Chrome 90.0 - [296 ms] - Integration | Component | text-field: renders correctly with no properties set
+ok 631 Chrome 90.0 - [506 ms] - Integration | Component | text-field: support a placeholder
+ok 632 Chrome 90.0 - [90 ms] - Integration | Component | text-field: sets the dir attribute to ltr for Hebrew text
+ok 633 Chrome 90.0 - [81 ms] - Integration | Component | text-field: sets the dir attribute to ltr for English text
+ok 634 Chrome 90.0 - [97 ms] - Integration | Component | text-field: supports onChange
+ok 635 Chrome 90.0 - [101 ms] - Integration | Component | text-field: supports onChangeImmediate
+ok 636 Chrome 90.0 - [96 ms] - Integration | Component | themes-list-item: default theme
+ok 637 Chrome 90.0 - [88 ms] - Integration | Component | themes-list-item: pending updates
+ok 638 Chrome 90.0 - [92 ms] - Integration | Component | themes-list-item: broken theme
+ok 639 Chrome 90.0 - [89 ms] - Integration | Component | themes-list-item: with children
+ok 640 Chrome 90.0 - [117 ms] - Integration | Component | themes-list: current tab is themes
+ok 641 Chrome 90.0 - [102 ms] - Integration | Component | themes-list: current tab is components
+ok 642 Chrome 90.0 - [96 ms] - Integration | Component | time-input: default
+ok 643 Chrome 90.0 - [260 ms] - Integration | Component | time-input: prevents mutations
+ok 644 Chrome 90.0 - [244 ms] - Integration | Component | time-input: allows mutations through actions
+ok 645 Chrome 90.0 - [94 ms] - Integration | Component | topic-list-item: checkbox is rendered checked if topic is in selected array
+ok 646 Chrome 90.0 - [147 ms] - Integration | Component | topic-list: bulk select
+ok 647 Chrome 90.0 - [136 ms] - Integration | Component | user-avatar-flair: avatar flair for admin user
+ok 648 Chrome 90.0 - [302 ms] - Integration | Component | user-avatar-flair: avatar flair for moderator user with fallback to staff
+ok 649 Chrome 90.0 - [331 ms] - Integration | Component | user-avatar-flair: avatar flair for trust level
+ok 650 Chrome 90.0 - [278 ms] - Integration | Component | user-avatar-flair: avatar flair for trust level with fallback
+ok 651 Chrome 90.0 - [97 ms] - Integration | Component | user-avatar-flair: avatar flair for primary group flair
+ok 652 Chrome 90.0 - [98 ms] - Integration | Component | user-selector: pasting a list of usernames
+    ---
+        browser log: |
+            {"type":"warn","text":"Deprecation notice: `{{user-selector}}` is deprecated. Please use `{{email-group-user-chooser}}` instead. (deprecated since Discourse 2.7) (removal in Discourse 2.8)"}
+    ...
+ok 653 Chrome 90.0 - [92 ms] - Integration | Component | user-selector: excluding usernames
+    ---
+        browser log: |
+            {"type":"warn","text":"Deprecation notice: `{{user-selector}}` is deprecated. Please use `{{email-group-user-chooser}}` instead. (deprecated since Discourse 2.7) (removal in Discourse 2.8)"}
+    ...
+ok 654 Chrome 90.0 - [133 ms] - Integration | Component | value-list: removing a value
+ok 655 Chrome 90.0 - [141 ms] - Integration | Component | value-list: selecting a value
+ok 656 Chrome 90.0 - [153 ms] - Integration | Component | value-list: array support
+ok 657 Chrome 90.0 - [89 ms] - Integration | Component | Widget | actions-summary: post deleted
+ok 658 Chrome 90.0 - [90 ms] - Integration | Component | Widget | avatar-flair: avatar flair with an icon
+ok 659 Chrome 90.0 - [93 ms] - Integration | Component | Widget | avatar-flair: avatar flair with an image
+ok 660 Chrome 90.0 - [89 ms] - Integration | Component | Widget | button: icon only button
+ok 661 Chrome 90.0 - [94 ms] - Integration | Component | Widget | button: icon and text button
+ok 662 Chrome 90.0 - [91 ms] - Integration | Component | Widget | button: text only button
+ok 663 Chrome 90.0 - [95 ms] - Integration | Component | Widget | button: translatedLabel
+ok 664 Chrome 90.0 - [87 ms] - Integration | Component | Widget | button: translatedTitle
+ok 665 Chrome 90.0 - [142 ms] - Integration | Component | Widget | default-notification-item: sets notification as read on middle click
+ok 666 Chrome 90.0 - [363 ms] - Integration | Component | Widget | hamburger-menu: prioritize faq
+ok 667 Chrome 90.0 - [503 ms] - Integration | Component | Widget | hamburger-menu: prioritize faq - user has read
+ok 668 Chrome 90.0 - [99 ms] - Integration | Component | Widget | hamburger-menu: staff menu - not staff
+ok 669 Chrome 90.0 - [116 ms] - Integration | Component | Widget | hamburger-menu: staff menu - moderator
+ok 670 Chrome 90.0 - [103 ms] - Integration | Component | Widget | hamburger-menu: staff menu - admin
+ok 671 Chrome 90.0 - [96 ms] - Integration | Component | Widget | hamburger-menu: logged in links
+ok 672 Chrome 90.0 - [99 ms] - Integration | Component | Widget | hamburger-menu: general links
+ok 673 Chrome 90.0 - [94 ms] - Integration | Component | Widget | hamburger-menu: top categories - anonymous
+ok 674 Chrome 90.0 - [97 ms] - Integration | Component | Widget | hamburger-menu: top categories - allow_uncategorized_topics
+ok 675 Chrome 90.0 - [94 ms] - Integration | Component | Widget | hamburger-menu: top categories
+ok 676 Chrome 90.0 - [94 ms] - Integration | Component | Widget | hamburger-menu: badges link - disabled
+ok 677 Chrome 90.0 - [100 ms] - Integration | Component | Widget | hamburger-menu: badges link
+ok 678 Chrome 90.0 - [98 ms] - Integration | Component | Widget | hamburger-menu: user directory link
+ok 679 Chrome 90.0 - [100 ms] - Integration | Component | Widget | hamburger-menu: user directory link - disabled
+ok 680 Chrome 90.0 - [98 ms] - Integration | Component | Widget | hamburger-menu: general links
+ok 681 Chrome 90.0 - [92 ms] - Integration | Component | Widget | header: rendering basics
+ok 682 Chrome 90.0 - [94 ms] - Integration | Component | Widget | header: sign up / login buttons
+ok 683 Chrome 90.0 - [138 ms] - Integration | Component | Widget | header: anon when login required
+ok 684 Chrome 90.0 - [362 ms] - Integration | Component | Widget | header: logged in when login required
+ok 685 Chrome 90.0 - [346 ms] - Integration | Component | Widget | home-logo: basics - minimized
+ok 686 Chrome 90.0 - [292 ms] - Integration | Component | Widget | home-logo: no logo
+ok 687 Chrome 90.0 - [88 ms] - Integration | Component | Widget | home-logo: no logo - minimized
+ok 688 Chrome 90.0 - [86 ms] - Integration | Component | Widget | home-logo: mobile logo
+ok 689 Chrome 90.0 - [97 ms] - Integration | Component | Widget | home-logo: mobile without logo
+ok 690 Chrome 90.0 - [103 ms] - Integration | Component | Widget | home-logo: logo with dark mode alternative
+ok 691 Chrome 90.0 - [102 ms] - Integration | Component | Widget | home-logo: mobile logo with dark mode alternative
+ok 692 Chrome 90.0 - [102 ms] - Integration | Component | Widget | home-logo: dark mode enabled but no dark logo set
+ok 693 Chrome 90.0 - [94 ms] - Integration | Component | Widget | home-logo: dark logo set but no dark mode
+ok 694 Chrome 90.0 - [104 ms] - Integration | Component | Widget | home-logo: dark color scheme and dark logo set
+ok 695 Chrome 90.0 - [102 ms] - Integration | Component | Widget | home-logo: dark color scheme and dark logo not set
+ok 696 Chrome 90.0 - [90 ms] - Integration | Component | Widget | post-links: duplicate links
+ok 697 Chrome 90.0 - [93 ms] - Integration | Component | Widget | post-links: collapsed links
+ok 698 Chrome 90.0 - [89 ms] - Integration | Component | Widget | post-menu: add extra button
+ok 699 Chrome 90.0 - [91 ms] - Integration | Component | Widget | post-menu: remove extra button
+ok 700 Chrome 90.0 - [1031 ms] - Integration | Component | Widget | post-stream: basics
+ok 701 Chrome 90.0 - [434 ms] - Integration | Component | Widget | post-stream: deleted posts
+ok 702 Chrome 90.0 - [864 ms] - Integration | Component | Widget | post: basic elements
+ok 703 Chrome 90.0 - [256 ms] - Integration | Component | Widget | post: post - links
+ok 704 Chrome 90.0 - [245 ms] - Integration | Component | Widget | post: wiki
+ok 705 Chrome 90.0 - [245 ms] - Integration | Component | Widget | post: wiki without revision
+ok 706 Chrome 90.0 - [246 ms] - Integration | Component | Widget | post: via-email
+ok 707 Chrome 90.0 - [246 ms] - Integration | Component | Widget | post: via-email without permission
+ok 708 Chrome 90.0 - [245 ms] - Integration | Component | Widget | post: history
+ok 709 Chrome 90.0 - [258 ms] - Integration | Component | Widget | post: history without view permission
+ok 710 Chrome 90.0 - [253 ms] - Integration | Component | Widget | post: whisper
+ok 711 Chrome 90.0 - [257 ms] - Integration | Component | Widget | post: like count button
+ok 712 Chrome 90.0 - [259 ms] - Integration | Component | Widget | post: like count with no likes
+ok 713 Chrome 90.0 - [258 ms] - Integration | Component | Widget | post: share button
+ok 714 Chrome 90.0 - [94 ms] - Integration | Component | Widget | post: liking
+ok 715 Chrome 90.0 - [90 ms] - Integration | Component | Widget | post: anon liking
+ok 716 Chrome 90.0 - [302 ms] - Integration | Component | Widget | post: edit button
+ok 717 Chrome 90.0 - [293 ms] - Integration | Component | Widget | post: edit button - can't edit
+ok 718 Chrome 90.0 - [595 ms] - Integration | Component | Widget | post: recover button
+ok 719 Chrome 90.0 - [852 ms] - Integration | Component | Widget | post: delete topic button
+ok 720 Chrome 90.0 - [258 ms] - Integration | Component | Widget | post: delete topic button - can't delete
+ok 721 Chrome 90.0 - [266 ms] - Integration | Component | Widget | post: delete topic button - can't delete when topic author without permission
+ok 722 Chrome 90.0 - [250 ms] - Integration | Component | Widget | post: recover topic button
+ok 723 Chrome 90.0 - [259 ms] - Integration | Component | Widget | post: recover topic button - can't recover
+ok 724 Chrome 90.0 - [268 ms] - Integration | Component | Widget | post: delete post button
+ok 725 Chrome 90.0 - [357 ms] - Integration | Component | Widget | post: delete post button - can't delete
+ok 726 Chrome 90.0 - [370 ms] - Integration | Component | Widget | post: delete post button - can't delete, can't flag
+ok 727 Chrome 90.0 - [319 ms] - Integration | Component | Widget | post: recover post button
+ok 728 Chrome 90.0 - [314 ms] - Integration | Component | Widget | post: recover post button - can't recover
+ok 729 Chrome 90.0 - [331 ms] - Integration | Component | Widget | post: flagging
+ok 730 Chrome 90.0 - [275 ms] - Integration | Component | Widget | post: flagging: can't flag
+ok 731 Chrome 90.0 - [277 ms] - Integration | Component | Widget | post: flagging: can't flag when post is hidden
+ok 732 Chrome 90.0 - [265 ms] - Integration | Component | Widget | post: read indicator
+ok 733 Chrome 90.0 - [265 ms] - Integration | Component | Widget | post: unread indicator
+ok 734 Chrome 90.0 - [265 ms] - Integration | Component | Widget | post: reply directly above (supressed)
+ok 735 Chrome 90.0 - [532 ms] - Integration | Component | Widget | post: reply a few posts above (supressed)
+ok 736 Chrome 90.0 - [1172 ms] - Integration | Component | Widget | post: reply directly above
+    ---
+        browser log: |
+            {"type":"warn","text":"DEPRECATION: The <(unknown):ember373362>#deleted computed property was just overriden. This removes the computed property and replaces it with a plain value, and has been deprecated. If you want this behavior, consider defining a setter which does it manually. [deprecation id: computed-property.override] See https://emberjs.com/deprecations/v3.x#toc_computed-property-override for more details."}
+            {"type":"warn","text":"DEPRECATION: The <(unknown):ember373362>#firstPost computed property was just overriden. This removes the computed property and replaces it with a plain value, and has been deprecated. If you want this behavior, consider defining a setter which does it manually. [deprecation id: computed-property.override] See https://emberjs.com/deprecations/v3.x#toc_computed-property-override for more details."}
+            {"type":"warn","text":"DEPRECATION: The <(unknown):ember373362>#usernameUrl computed property was just overriden. This removes the computed property and replaces it with a plain value, and has been deprecated. If you want this behavior, consider defining a setter which does it manually. [deprecation id: computed-property.override] See https://emberjs.com/deprecations/v3.x#toc_computed-property-override for more details."}
+            {"type":"warn","text":"DEPRECATION: The <(unknown):ember373362>#shareUrl computed property was just overriden. This removes the computed property and replaces it with a plain value, and has been deprecated. If you want this behavior, consider defining a setter which does it manually. [deprecation id: computed-property.override] See https://emberjs.com/deprecations/v3.x#toc_computed-property-override for more details."}
+            {"type":"warn","text":"DEPRECATION: The <(unknown):ember373362>#new_user computed property was just overriden. This removes the computed property and replaces it with a plain value, and has been deprecated. If you want this behavior, consider defining a setter which does it manually. [deprecation id: computed-property.override] See https://emberjs.com/deprecations/v3.x#toc_computed-property-override for more details."}
+    ...
+ok 737 Chrome 90.0 - [278 ms] - Integration | Component | Widget | post: cooked content hidden
+ok 738 Chrome 90.0 - [269 ms] - Integration | Component | Widget | post: expand first post
+ok 739 Chrome 90.0 - [310 ms] - Integration | Component | Widget | post: can't bookmark
+ok 740 Chrome 90.0 - [272 ms] - Integration | Component | Widget | post: bookmark
+ok 741 Chrome 90.0 - [290 ms] - Integration | Component | Widget | post: can't show admin menu when you can't manage
+ok 742 Chrome 90.0 - [290 ms] - Integration | Component | Widget | post: show admin menu
+ok 743 Chrome 90.0 - [283 ms] - Integration | Component | Widget | post: toggle moderator post
+ok 744 Chrome 90.0 - [289 ms] - Integration | Component | Widget | post: toggle moderator post
+ok 745 Chrome 90.0 - [287 ms] - Integration | Component | Widget | post: rebake post
+ok 746 Chrome 90.0 - [288 ms] - Integration | Component | Widget | post: unhide post
+ok 747 Chrome 90.0 - [298 ms] - Integration | Component | Widget | post: change owner
+ok 748 Chrome 90.0 - [279 ms] - Integration | Component | Widget | post: reply
+ok 749 Chrome 90.0 - [270 ms] - Integration | Component | Widget | post: reply - without permissions
+ok 750 Chrome 90.0 - [272 ms] - Integration | Component | Widget | post: replies - no replies
+ok 751 Chrome 90.0 - [272 ms] - Integration | Component | Widget | post: replies - multiple replies
+ok 752 Chrome 90.0 - [559 ms] - Integration | Component | Widget | post: replies - one below, suppressed
+ok 753 Chrome 90.0 - [1058 ms] - Integration | Component | Widget | post: replies - one below, not suppressed
+    ---
+        browser log: |
+            {"type":"warn","text":"DEPRECATION: The <(unknown):ember377037>#deleted computed property was just overriden. This removes the computed property and replaces it with a plain value, and has been deprecated. If you want this behavior, consider defining a setter which does it manually. [deprecation id: computed-property.override] See https://emberjs.com/deprecations/v3.x#toc_computed-property-override for more details."}
+            {"type":"warn","text":"DEPRECATION: The <(unknown):ember377037>#firstPost computed property was just overriden. This removes the computed property and replaces it with a plain value, and has been deprecated. If you want this behavior, consider defining a setter which does it manually. [deprecation id: computed-property.override] See https://emberjs.com/deprecations/v3.x#toc_computed-property-override for more details."}
+            {"type":"warn","text":"DEPRECATION: The <(unknown):ember377037>#usernameUrl computed property was just overriden. This removes the computed property and replaces it with a plain value, and has been deprecated. If you want this behavior, consider defining a setter which does it manually. [deprecation id: computed-property.override] See https://emberjs.com/deprecations/v3.x#toc_computed-property-override for more details."}
+            {"type":"warn","text":"DEPRECATION: The <(unknown):ember377037>#shareUrl computed property was just overriden. This removes the computed property and replaces it with a plain value, and has been deprecated. If you want this behavior, consider defining a setter which does it manually. [deprecation id: computed-property.override] See https://emberjs.com/deprecations/v3.x#toc_computed-property-override for more details."}
+            {"type":"warn","text":"DEPRECATION: The <(unknown):ember377037>#new_user computed property was just overriden. This removes the computed property and replaces it with a plain value, and has been deprecated. If you want this behavior, consider defining a setter which does it manually. [deprecation id: computed-property.override] See https://emberjs.com/deprecations/v3.x#toc_computed-property-override for more details."}
+    ...
+ok 754 Chrome 90.0 - [272 ms] - Integration | Component | Widget | post: topic map not shown
+ok 755 Chrome 90.0 - [287 ms] - Integration | Component | Widget | post: topic map - few posts
+ok 756 Chrome 90.0 - [403 ms] - Integration | Component | Widget | post: topic map - participants
+ok 757 Chrome 90.0 - [339 ms] - Integration | Component | Widget | post: topic map - links
+ok 758 Chrome 90.0 - [328 ms] - Integration | Component | Widget | post: topic map - no summary
+ok 759 Chrome 90.0 - [310 ms] - Integration | Component | Widget | post: topic map - has summary
+ok 760 Chrome 90.0 - [281 ms] - Integration | Component | Widget | post: pm map
+ok 761 Chrome 90.0 - [277 ms] - Integration | Component | Widget | post: post notice - with username
+ok 762 Chrome 90.0 - [291 ms] - Integration | Component | Widget | post: post notice - with name
+ok 763 Chrome 90.0 - [289 ms] - Integration | Component | Widget | post: show group request in post
+ok 764 Chrome 90.0 - [96 ms] - Integration | Component | Widget | poster-name: basic rendering
+ok 765 Chrome 90.0 - [94 ms] - Integration | Component | Widget | poster-name: extra classes and glyphs
+ok 766 Chrome 90.0 - [88 ms] - Integration | Component | Widget | poster-name: disable display name on posts
+ok 767 Chrome 90.0 - [91 ms] - Integration | Component | Widget | poster-name: doesn't render a name if it's similar to the username
+ok 768 Chrome 90.0 - [94 ms] - Integration | Component | Widget | quick-access-item: content attribute is escaped
+ok 769 Chrome 90.0 - [124 ms] - Integration | Component | Widget | quick-access-item: escapedContent attribute is not escaped
+ok 770 Chrome 90.0 - [210 ms] - Integration | Component | Widget | small-user-list: renders avatars and support for unknown
+ok 771 Chrome 90.0 - [468 ms] - Integration | Component | software-update-prompt: software-update-prompt gets correct CSS class after messageBus message
+ok 772 Chrome 90.0 - [422 ms] - Integration | Component | Widget | topic-admin-menu-button: topic-admin-menu-button is present for admin/moderators
+ok 773 Chrome 90.0 - [92 ms] - Integration | Component | Widget | topic-admin-menu-button: topic-admin-menu-button hides for non-admin when there is no action
+ok 774 Chrome 90.0 - [85 ms] - Integration | Component | Widget | topic-participant: one post
+ok 775 Chrome 90.0 - [93 ms] - Integration | Component | Widget | topic-participant: many posts, a primary group with flair
+ok 776 Chrome 90.0 - [94 ms] - Integration | Component | Widget | topic-status: basics
+ok 777 Chrome 90.0 - [91 ms] - Integration | Component | Widget | topic-status: extendability
+ok 778 Chrome 90.0 - [107 ms] - Integration | Component | Widget | user-menu: basics
+ok 779 Chrome 90.0 - [102 ms] - Integration | Component | Widget | user-menu: notifications
+ok 780 Chrome 90.0 - [115 ms] - Integration | Component | Widget | user-menu: log out
+ok 781 Chrome 90.0 - [102 ms] - Integration | Component | Widget | user-menu: private messages - disabled
+ok 782 Chrome 90.0 - [134 ms] - Integration | Component | Widget | user-menu: private messages - enabled
+ok 783 Chrome 90.0 - [118 ms] - Integration | Component | Widget | user-menu: bookmarks
+ok 784 Chrome 90.0 - [106 ms] - Integration | Component | Widget | user-menu: anonymous
+ok 785 Chrome 90.0 - [104 ms] - Integration | Component | Widget | user-menu: anonymous - disabled
+ok 786 Chrome 90.0 - [107 ms] - Integration | Component | Widget | user-menu: anonymous - switch back
+ok 787 Chrome 90.0 - [135 ms] - Integration | Component | Widget | widget-dropdown: dropdown id
+ok 788 Chrome 90.0 - [222 ms] - Integration | Component | Widget | widget-dropdown: label
+ok 789 Chrome 90.0 - [478 ms] - Integration | Component | Widget | widget-dropdown: translatedLabel
+ok 790 Chrome 90.0 - [355 ms] - Integration | Component | Widget | widget-dropdown: content
+ok 791 Chrome 90.0 - [91 ms] - Integration | Component | Widget | widget-dropdown: onChange action
+ok 792 Chrome 90.0 - [91 ms] - Integration | Component | Widget | widget-dropdown: can be opened and closed
+ok 793 Chrome 90.0 - [88 ms] - Integration | Component | Widget | widget-dropdown: icon
+ok 794 Chrome 90.0 - [98 ms] - Integration | Component | Widget | widget-dropdown: class
+ok 795 Chrome 90.0 - [90 ms] - Integration | Component | Widget | widget-dropdown: content with translatedLabel
+ok 796 Chrome 90.0 - [100 ms] - Integration | Component | Widget | widget-dropdown: content with label
+ok 797 Chrome 90.0 - [92 ms] - Integration | Component | Widget | widget-dropdown: content with icon
+ok 798 Chrome 90.0 - [90 ms] - Integration | Component | Widget | widget-dropdown: content with html
+ok 799 Chrome 90.0 - [94 ms] - Integration | Component | Widget | widget-dropdown: separator
+ok 800 Chrome 90.0 - [90 ms] - Integration | Component | Widget | widget-dropdown: hides widget if no content
+ok 801 Chrome 90.0 - [94 ms] - Integration | Component | Widget | widget-dropdown: headerClass option
+ok 802 Chrome 90.0 - [91 ms] - Integration | Component | Widget | widget-dropdown: bodyClass option
+ok 803 Chrome 90.0 - [94 ms] - Integration | Component | Widget | widget-dropdown: caret option
+ok 804 Chrome 90.0 - [91 ms] - Integration | Component | Widget | base: widget attributes are passed in via args
+ok 805 Chrome 90.0 - [121 ms] - Integration | Component | Widget | base: hbs template - no tagName
+ok 806 Chrome 90.0 - [262 ms] - Integration | Component | Widget | base: hbs template - with tagName
+ok 807 Chrome 90.0 - [344 ms] - Integration | Component | Widget | base: hbs template - with data attributes
+ok 808 Chrome 90.0 - [299 ms] - Integration | Component | Widget | base: buildClasses
+ok 809 Chrome 90.0 - [86 ms] - Integration | Component | Widget | base: buildAttributes
+ok 810 Chrome 90.0 - [84 ms] - Integration | Component | Widget | base: buildId
+ok 811 Chrome 90.0 - [95 ms] - Integration | Component | Widget | base: widget state
+ok 812 Chrome 90.0 - [98 ms] - Integration | Component | Widget | base: widget update with promise
+ok 813 Chrome 90.0 - [91 ms] - Integration | Component | Widget | base: widget attaching
+ok 814 Chrome 90.0 - [91 ms] - Integration | Component | Widget | base: magic attaching by name
+ok 815 Chrome 90.0 - [94 ms] - Integration | Component | Widget | base: custom attrs to a magic attached widget
+ok 816 Chrome 90.0 - [89 ms] - Integration | Component | Widget | base: handlebars d-icon
+ok 817 Chrome 90.0 - [105 ms] - Integration | Component | Widget | base: handlebars i18n
+ok 818 Chrome 90.0 - [91 ms] - Integration | Component | Widget | base: handlebars #each
+ok 819 Chrome 90.0 - [94 ms] - Integration | Component | Widget | base: widget decorating
+ok 820 Chrome 90.0 - [90 ms] - Integration | Component | Widget | base: widget settings
+ok 821 Chrome 90.0 - [88 ms] - Integration | Component | Widget | base: override settings
+ok 822 Chrome 90.0 - [91 ms] - Integration | Component | Widget | base: get accessor
+ok 823 Chrome 90.0 - [124 ms] - Integration | Component | Widget | base: tagName
+ok 824 Chrome 90.0 - [71 ms] - Unit | Controller | admin-customize-themes-show: can display source url for remote themes
+ok 825 Chrome 90.0 - [101 ms] - Unit | Controller | admin-customize-themes-show: can display source url for remote theme branches
+ok 826 Chrome 90.0 - [245 ms] - Unit | Controller | admin-customize-themes: can list themes correctly
+ok 827 Chrome 90.0 - [173 ms] - Unit | Controller | admin-user-badges: grantableBadges
+ok 828 Chrome 90.0 - [199 ms] - Unit | Controller | avatar-selector: avatarTemplate
+ok 829 Chrome 90.0 - [135 ms] - Unit | Controller | create-account: basicUsernameValidation
+ok 830 Chrome 90.0 - [27 ms] - Unit | Controller | create-account: passwordValidation
+ok 831 Chrome 90.0 - [26 ms] - Unit | Controller | create-account: authProviderDisplayName
+ok 832 Chrome 90.0 - [42 ms] - Unit | Controller | history: displayEdit
+ok 833 Chrome 90.0 - [21 ms] - Unit | Controller | preferences/account: updating of associated accounts
+ok 834 Chrome 90.0 - [17 ms] - Unit | Controller | preferences/second-factor: displayOAuthWarning when OAuth login methods are enabled
+ok 835 Chrome 90.0 - [23 ms] - Unit | Controller | reorder-categories: reorder set unique position number
+ok 836 Chrome 90.0 - [22 ms] - Unit | Controller | reorder-categories: reorder places subcategories after their parent categories, while maintaining the relative order
+ok 837 Chrome 90.0 - [19 ms] - Unit | Controller | reorder-categories: changing the position number of a category should place it at given position
+ok 838 Chrome 90.0 - [36 ms] - Unit | Controller | reorder-categories: changing the position number of a category should place it at given position and respect children
+ok 839 Chrome 90.0 - [24 ms] - Unit | Controller | reorder-categories: changing the position through click on arrow of a category should place it at given position and respect children
+ok 840 Chrome 90.0 - [20 ms] - Unit | Controller | topic: editTopic
+ok 841 Chrome 90.0 - [17 ms] - Unit | Controller | topic: deleteTopic
+ok 842 Chrome 90.0 - [40 ms] - Unit | Controller | topic: toggleMultiSelect
+ok 843 Chrome 90.0 - [23 ms] - Unit | Controller | topic: selectedPosts
+ok 844 Chrome 90.0 - [20 ms] - Unit | Controller | topic: selectedAllPosts
+ok 845 Chrome 90.0 - [19 ms] - Unit | Controller | topic: selectedPostsUsername
+ok 846 Chrome 90.0 - [16 ms] - Unit | Controller | topic: showSelectedPostsAtBottom
+ok 847 Chrome 90.0 - [21 ms] - Unit | Controller | topic: canDeleteSelected
+ok 848 Chrome 90.0 - [21 ms] - Unit | Controller | topic: Can split/merge topic
+ok 849 Chrome 90.0 - [18 ms] - Unit | Controller | topic: canChangeOwner
+ok 850 Chrome 90.0 - [17 ms] - Unit | Controller | topic: canMergePosts
+ok 851 Chrome 90.0 - [16 ms] - Unit | Controller | topic: Select/deselect all
+ok 852 Chrome 90.0 - [17 ms] - Unit | Controller | topic: togglePostSelection
+ok 853 Chrome 90.0 - [19 ms] - Unit | Controller | topic: selectBelow
+ok 854 Chrome 90.0 - [18 ms] - Unit | Controller | topic: topVisibleChanged
+ok 855 Chrome 90.0 - [25 ms] - Unit | Controller | topic: deletePost - no modal is shown if post does not have replies
+ok 856 Chrome 90.0 - [17 ms] - Unit | Ember | resolver: finds templates in top level dir
+ok 857 Chrome 90.0 - [18 ms] - Unit | Ember | resolver: finds templates in first-level subdir
+ok 858 Chrome 90.0 - [16 ms] - Unit | Ember | resolver: resolves precedence between overlapping top level dir and first level subdir templates
+ok 859 Chrome 90.0 - [16 ms] - Unit | Ember | resolver: finds templates in subdir deeper than one level
+ok 860 Chrome 90.0 - [16 ms] - Unit | Ember | resolver: resolves mobile templates to 'mobile/' namespace
+ok 861 Chrome 90.0 - [13 ms] - Unit | Ember | resolver: resolves plugin templates to 'javascripts/' namespace
+ok 862 Chrome 90.0 - [13 ms] - Unit | Ember | resolver: resolves templates with 'admin' prefix to 'admin/templates/' namespace
+ok 863 Chrome 90.0 - [15 ms] - Unit | Ember | resolver: returns 'not_found' template when template name cannot be resolved
+ok 864 Chrome 90.0 - [17 ms] - Unit | Utility | allowLister: allowLister
+ok 865 Chrome 90.0 - [23 ms] - Unit | Utility | bookmark: formattedReminderTime works when the reminder time is tomorrow
+ok 866 Chrome 90.0 - [17 ms] - Unit | Utility | bookmark: formattedReminderTime works when the reminder time is today
+ok 867 Chrome 90.0 - [17 ms] - Unit | Utility | bookmark: formattedReminderTime works when the reminder time is in the future
+ok 868 Chrome 90.0 - [15 ms] - Unit | Utility | category-badge: categoryBadge without a category
+ok 869 Chrome 90.0 - [18 ms] - Unit | Utility | category-badge: Regular categoryBadge
+ok 870 Chrome 90.0 - [17 ms] - Unit | Utility | category-badge: undefined color
+ok 871 Chrome 90.0 - [14 ms] - Unit | Utility | category-badge: topic count
+ok 872 Chrome 90.0 - [15 ms] - Unit | Utility | category-badge: allowUncategorized
+ok 873 Chrome 90.0 - [16 ms] - Unit | Utility | category-badge: category names are wrapped in dir-spans
+ok 874 Chrome 90.0 - [14 ms] - Unit | Utility | category-badge: recursive
+skip 875 Chrome 90.0 - [0 ms] - Unit | Utility | click-track-edit-history: tracks internal URLs
+skip 876 Chrome 90.0 - [0 ms] - Unit | Utility | click-track-edit-history: tracks external URLs
+skip 877 Chrome 90.0 - [0 ms] - Unit | Utility | click-track-edit-history: tracks external URLs when opening in another window
+skip 878 Chrome 90.0 - [0 ms] - Unit | Utility | click-track-profile-page: tracks internal URLs
+skip 879 Chrome 90.0 - [0 ms] - Unit | Utility | click-track-profile-page: tracks external URLs
+skip 880 Chrome 90.0 - [0 ms] - Unit | Utility | click-track-profile-page: tracks external URLs in other posts
+skip 881 Chrome 90.0 - [0 ms] - Unit | Utility | click-track: tracks internal URLs
+ok 882 Chrome 90.0 - [24 ms] - Unit | Utility | click-track: does not track elements with no href
+ok 883 Chrome 90.0 - [24 ms] - Unit | Utility | click-track: does not track attachments
+skip 884 Chrome 90.0 - [0 ms] - Unit | Utility | click-track: tracks external URLs
+skip 885 Chrome 90.0 - [0 ms] - Unit | Utility | click-track: tracks external URLs when opening in another window
+ok 886 Chrome 90.0 - [25 ms] - Unit | Utility | click-track: does not track clicks on lightboxes
+ok 887 Chrome 90.0 - [25 ms] - Unit | Utility | click-track: does not track clicks when forcibly disabled
+ok 888 Chrome 90.0 - [26 ms] - Unit | Utility | click-track: does not track clicks on back buttons
+ok 889 Chrome 90.0 - [22 ms] - Unit | Utility | click-track: does not track right clicks inside quotes
+ok 890 Chrome 90.0 - [26 ms] - Unit | Utility | click-track: does not track clicks links in quotes
+ok 891 Chrome 90.0 - [22 ms] - Unit | Utility | click-track: does not track clicks on category badges
+ok 892 Chrome 90.0 - [24 ms] - Unit | Utility | click-track: does not track clicks on mailto
+ok 893 Chrome 90.0 - [25 ms] - Unit | Utility | click-track: removes the href and put it as a data attribute
+ok 894 Chrome 90.0 - [30 ms] - Unit | Utility | click-track: restores the href after a while
+ok 895 Chrome 90.0 - [26 ms] - Unit | Utility | click-track: does not update badge clicks on my own link
+ok 896 Chrome 90.0 - [26 ms] - Unit | Utility | click-track: does not update badge clicks in my own post
+ok 897 Chrome 90.0 - [30 ms] - Unit | Utility | click-track: updates badge counts correctly
+ok 898 Chrome 90.0 - [26 ms] - Unit | Utility | click-track: it opens in a new tab when pressing shift
+ok 899 Chrome 90.0 - [25 ms] - Unit | Utility | click-track: it opens in a new tab when pressing meta
+ok 900 Chrome 90.0 - [26 ms] - Unit | Utility | click-track: it opens in a new tab when pressing ctrl
+ok 901 Chrome 90.0 - [27 ms] - Unit | Utility | click-track: it opens in a new tab on middle click
+ok 902 Chrome 90.0 - [18 ms] - Unit | Utility | computed: setting
+ok 903 Chrome 90.0 - [17 ms] - Unit | Utility | computed: propertyEqual
+ok 904 Chrome 90.0 - [15 ms] - Unit | Utility | computed: propertyNotEqual
+ok 905 Chrome 90.0 - [15 ms] - Unit | Utility | computed: fmt
+ok 906 Chrome 90.0 - [14 ms] - Unit | Utility | computed: i18n
+ok 907 Chrome 90.0 - [17 ms] - Unit | Utility | computed: url
+ok 908 Chrome 90.0 - [17 ms] - Unit | Utility | computed: htmlSafe
+ok 909 Chrome 90.0 - [15 ms] - Unit | Utility | emoji-emojiStore: defaults
+ok 910 Chrome 90.0 - [13 ms] - Unit | Utility | emoji-emojiStore: diversity
+ok 911 Chrome 90.0 - [13 ms] - Unit | Utility | emoji-emojiStore: favorites
+ok 912 Chrome 90.0 - [14 ms] - Unit | Utility | emoji-emojiStore: track
+ok 913 Chrome 90.0 - [20 ms] - Unit | Utility | emoji: emojiUnescape
+ok 914 Chrome 90.0 - [18 ms] - Unit | Utility | emoji: Emoji search
+ok 915 Chrome 90.0 - [18 ms] - Unit | Utility | formatter: formating medium length dates
+ok 916 Chrome 90.0 - [16 ms] - Unit | Utility | formatter: formating tiny dates
+ok 917 Chrome 90.0 - [16 ms] - Unit | Utility | formatter: autoUpdatingRelativeAge
+ok 918 Chrome 90.0 - [16 ms] - Unit | Utility | formatter: updateRelativeAge
+ok 919 Chrome 90.0 - [15 ms] - Unit | Utility | formatter: number
+ok 920 Chrome 90.0 - [15 ms] - Unit | Utility | formatter: durationTiny
+ok 921 Chrome 90.0 - [13 ms] - Unit | Utility | get-url: isAbsoluteURL
+ok 922 Chrome 90.0 - [13 ms] - Unit | Utility | get-url: getAbsoluteURL
+ok 923 Chrome 90.0 - [14 ms] - Unit | Utility | get-url: withoutPrefix
+ok 924 Chrome 90.0 - [16 ms] - Unit | Utility | get-url: withoutPrefix called multiple times on the same path
+ok 925 Chrome 90.0 - [15 ms] - Unit | Utility | get-url: getURL with empty paths
+ok 926 Chrome 90.0 - [31 ms] - Unit | Utility | get-url: getURL on subfolder install
+ok 927 Chrome 90.0 - [18 ms] - Unit | Utility | get-url: getURLWithCDN on subfolder install with S3
+ok 928 Chrome 90.0 - [17 ms] - Unit | Utility | highlight-search: highlighting text
+ok 929 Chrome 90.0 - [16 ms] - Unit | Utility | highlight-search: highlighting unicode text
+ok 930 Chrome 90.0 - [19 ms] - Unit | Utility | i18n: defaults
+ok 931 Chrome 90.0 - [16 ms] - Unit | Utility | i18n: translations
+ok 932 Chrome 90.0 - [14 ms] - Unit | Utility | i18n: extra translations
+ok 933 Chrome 90.0 - [13 ms] - Unit | Utility | i18n: pluralizations
+ok 934 Chrome 90.0 - [13 ms] - Unit | Utility | i18n: fallback
+ok 935 Chrome 90.0 - [13 ms] - Unit | Utility | i18n: Dollar signs are properly escaped
+ok 936 Chrome 90.0 - [17 ms] - Unit | Utility | icon-library: return icon markup
+ok 937 Chrome 90.0 - [15 ms] - Unit | Utility | icon-library: convert icon names
+ok 938 Chrome 90.0 - [12 ms] - Unit | Utility | icon-library: escape icon names, classes and titles
+ok 939 Chrome 90.0 - [12 ms] - Unit | Utility | key-value-store: it's able to get the result back from the store
+ok 940 Chrome 90.0 - [12 ms] - Unit | Utility | key-value-store: is able to nuke the store
+ok 941 Chrome 90.0 - [14 ms] - Unit | Utility | keyboard-shortcuts: selectDown calls _moveSelection with 1
+ok 942 Chrome 90.0 - [17 ms] - Unit | Utility | keyboard-shortcuts: selectUp calls _moveSelection with -1
+ok 943 Chrome 90.0 - [15 ms] - Unit | Utility | keyboard-shortcuts: goBack calls history.back
+ok 944 Chrome 90.0 - [13 ms] - Unit | Utility | keyboard-shortcuts: nextSection calls _changeSection with 1
+ok 945 Chrome 90.0 - [13 ms] - Unit | Utility | keyboard-shortcuts: prevSection calls _changeSection with -1
+ok 946 Chrome 90.0 - [15 ms] - Unit | Utility | link-lookup: works with https
+ok 947 Chrome 90.0 - [14 ms] - Unit | Utility | link-lookup: works with http
+ok 948 Chrome 90.0 - [17 ms] - Unit | Utility | link-lookup: works with trailing slash
+ok 949 Chrome 90.0 - [15 ms] - Unit | Utility | link-lookup: works with uppercase characters
+ok 950 Chrome 90.0 - [533 ms] - Unit | Utility | link-mentions: linkSeenMentions replaces users and groups
+skip 951 Chrome 90.0 - [0 ms] - Unit | Utility | load-script: load with a script tag, and callbacks are only executed after script is loaded
+ok 952 Chrome 90.0 - [16 ms] - Unit | Utility | load-script: works when a value is not present
+ok 953 Chrome 90.0 - [18 ms] - Unit | Utility | load-script: generates URLs with version number in the query params
+ok 954 Chrome 90.0 - [27 ms] - Unit | Utility | oneboxer: load - failed onebox
+ok 955 Chrome 90.0 - [31 ms] - Unit | Utility | oneboxer: load - successful onebox
+ok 956 Chrome 90.0 - [22 ms] - Unit | Utility | parseBBCodeTag: block with multiple quoted attributes
+ok 957 Chrome 90.0 - [17 ms] - Unit | Utility | preload-store: get
+ok 958 Chrome 90.0 - [16 ms] - Unit | Utility | preload-store: remove
+ok 959 Chrome 90.0 - [21 ms] - Unit | Utility | preload-store: getAndRemove returns a promise that resolves to null
+ok 960 Chrome 90.0 - [20 ms] - Unit | Utility | preload-store: getAndRemove returns a promise that resolves to the result of the finder
+ok 961 Chrome 90.0 - [20 ms] - Unit | Utility | preload-store: getAndRemove returns a promise that resolves to the result of the finder's promise
+ok 962 Chrome 90.0 - [20 ms] - Unit | Utility | preload-store: returns a promise that rejects with the result of the finder's rejected promise
+ok 963 Chrome 90.0 - [20 ms] - Unit | Utility | preload-store: returns a promise that resolves to 'evil'
+skip 964 Chrome 90.0 - [0 ms] - Unit | Utility | pretty-text: Pending Engine fixes and spec fixes
+ok 965 Chrome 90.0 - [20 ms] - Unit | Utility | pretty-text: buildOptions
+ok 966 Chrome 90.0 - [25 ms] - Unit | Utility | pretty-text: basic cooking
+ok 967 Chrome 90.0 - [15 ms] - Unit | Utility | pretty-text: Nested bold and italics
+ok 968 Chrome 90.0 - [15 ms] - Unit | Utility | pretty-text: Traditional Line Breaks
+ok 969 Chrome 90.0 - [15 ms] - Unit | Utility | pretty-text: Unbalanced underscores
+ok 970 Chrome 90.0 - [18 ms] - Unit | Utility | pretty-text: Line Breaks
+ok 971 Chrome 90.0 - [16 ms] - Unit | Utility | pretty-text: Paragraphs for HTML
+ok 972 Chrome 90.0 - [38 ms] - Unit | Utility | pretty-text: Links
+ok 973 Chrome 90.0 - [17 ms] - Unit | Utility | pretty-text: simple quotes
+ok 974 Chrome 90.0 - [26 ms] - Unit | Utility | pretty-text: Quotes
+ok 975 Chrome 90.0 - [37 ms] - Unit | Utility | pretty-text: Mentions
+ok 976 Chrome 90.0 - [34 ms] - Unit | Utility | pretty-text: Mentions - Unicode usernames enabled
+ok 977 Chrome 90.0 - [23 ms] - Unit | Utility | pretty-text: Mentions - disabled
+ok 978 Chrome 90.0 - [21 ms] - Unit | Utility | pretty-text: Category hashtags
+ok 979 Chrome 90.0 - [17 ms] - Unit | Utility | pretty-text: Heading
+ok 980 Chrome 90.0 - [22 ms] - Unit | Utility | pretty-text: bold and italics
+ok 981 Chrome 90.0 - [18 ms] - Unit | Utility | pretty-text: Escaping
+ok 982 Chrome 90.0 - [17 ms] - Unit | Utility | pretty-text: New Lines
+ok 983 Chrome 90.0 - [18 ms] - Unit | Utility | pretty-text: Oneboxing
+ok 984 Chrome 90.0 - [15 ms] - Unit | Utility | pretty-text: links with full urls
+ok 985 Chrome 90.0 - [18 ms] - Unit | Utility | pretty-text: Code Blocks
+ok 986 Chrome 90.0 - [16 ms] - Unit | Utility | pretty-text: URLs in BBCode tags
+ok 987 Chrome 90.0 - [15 ms] - Unit | Utility | pretty-text: images
+ok 988 Chrome 90.0 - [13 ms] - Unit | Utility | pretty-text: attachment
+ok 989 Chrome 90.0 - [15 ms] - Unit | Utility | pretty-text: attachment - mapped url - secure media disabled
+ok 990 Chrome 90.0 - [17 ms] - Unit | Utility | pretty-text: attachment - mapped url - secure media enabled
+ok 991 Chrome 90.0 - [15 ms] - Unit | Utility | pretty-text: video
+ok 992 Chrome 90.0 - [17 ms] - Unit | Utility | pretty-text: video - mapped url - secure media enabled
+ok 993 Chrome 90.0 - [14 ms] - Unit | Utility | pretty-text: audio
+ok 994 Chrome 90.0 - [14 ms] - Unit | Utility | pretty-text: audio - mapped url - secure media enabled
+ok 995 Chrome 90.0 - [19 ms] - Unit | Utility | pretty-text: censoring
+ok 996 Chrome 90.0 - [16 ms] - Unit | Utility | pretty-text: code blocks/spans hoisting
+ok 997 Chrome 90.0 - [16 ms] - Unit | Utility | pretty-text: basic bbcode
+ok 998 Chrome 90.0 - [15 ms] - Unit | Utility | pretty-text: urls
+ok 999 Chrome 90.0 - [14 ms] - Unit | Utility | pretty-text: invalid bbcode
+ok 1000 Chrome 90.0 - [16 ms] - Unit | Utility | pretty-text: code
+ok 1001 Chrome 90.0 - [14 ms] - Unit | Utility | pretty-text: tags with arguments
+ok 1002 Chrome 90.0 - [13 ms] - Unit | Utility | pretty-text: quotes
+ok 1003 Chrome 90.0 - [13 ms] - Unit | Utility | pretty-text: quoting a quote
+ok 1004 Chrome 90.0 - [14 ms] - Unit | Utility | pretty-text: quote formatting
+ok 1005 Chrome 90.0 - [13 ms] - Unit | Utility | pretty-text: quotes with trailing formatting
+ok 1006 Chrome 90.0 - [17 ms] - Unit | Utility | pretty-text: enable/disable features
+ok 1007 Chrome 90.0 - [14 ms] - Unit | Utility | pretty-text: emoji
+ok 1008 Chrome 90.0 - [15 ms] - Unit | Utility | pretty-text: emoji - enable_inline_emoji_translation
+ok 1009 Chrome 90.0 - [14 ms] - Unit | Utility | pretty-text: emoji - emojiSet
+ok 1010 Chrome 90.0 - [18 ms] - Unit | Utility | pretty-text: emoji - emojiCDN
+ok 1011 Chrome 90.0 - [18 ms] - Unit | Utility | pretty-text: emoji - registerEmoji
+ok 1012 Chrome 90.0 - [13 ms] - Unit | Utility | pretty-text: extractDataAttribute
+ok 1013 Chrome 90.0 - [18 ms] - Unit | Utility | pretty-text: video - display placeholder when previewing
+ok 1014 Chrome 90.0 - [39 ms] - Unit | Utility | pretty-text: typographer arrows
+ok 1015 Chrome 90.0 - [27 ms] - Unit | Utility | pretty-text: default typhographic replacements
+ok 1016 Chrome 90.0 - [30 ms] - Unit | Utility | pretty-text: default typhographic replacements - dashes
+ok 1017 Chrome 90.0 - [22 ms] - Unit | Utility | pretty-text: disabled typhographic replacements
+ok 1018 Chrome 90.0 - [20 ms] - Unit | Utility | sanitizer: sanitize
+ok 1019 Chrome 90.0 - [15 ms] - Unit | Utility | sanitizer: ids on headings
+ok 1020 Chrome 90.0 - [17 ms] - Unit | Utility | sanitizer: autoplay videos must be muted
+ok 1021 Chrome 90.0 - [17 ms] - Unit | Utility | sanitizer: poorly formed ids on headings
+ok 1022 Chrome 90.0 - [13 ms] - Unit | Utility | sanitizer: urlAllowed
+ok 1023 Chrome 90.0 - [13 ms] - Unit | Utility | screen-track: consolidateTimings
+ok 1024 Chrome 90.0 - [17 ms] - Unit | Utility | search: unescapesEmojisInBlurbs
+ok 1025 Chrome 90.0 - [15 ms] - Unit | Utility | search: searchContextDescription
+ok 1026 Chrome 90.0 - [14 ms] - Unit | Utility | sharing: addSource
+ok 1027 Chrome 90.0 - [14 ms] - Unit | Utility | sharing: addSharingId
+ok 1028 Chrome 90.0 - [13 ms] - Unit | Utility | text-direction: isRTL
+ok 1029 Chrome 90.0 - [12 ms] - Unit | Utility | text-direction: isLTR
+ok 1030 Chrome 90.0 - [16 ms] - Unit | lib | timeUtils: nextWeek gets next week correctly
+ok 1031 Chrome 90.0 - [13 ms] - Unit | lib | timeUtils: nextMonth gets next month correctly
+ok 1032 Chrome 90.0 - [13 ms] - Unit | lib | timeUtils: laterThisWeek gets 2 days from now
+ok 1033 Chrome 90.0 - [13 ms] - Unit | lib | timeUtils: tomorrow gets tomorrow correctly
+ok 1034 Chrome 90.0 - [13 ms] - Unit | lib | timeUtils: startOfDay changes the time of the provided date to 8:00am correctly
+ok 1035 Chrome 90.0 - [13 ms] - Unit | lib | timeUtils: laterToday gets 3 hours from now and if before half-past, it rounds down
+ok 1036 Chrome 90.0 - [16 ms] - Unit | lib | timeUtils: laterToday gets 3 hours from now and if after half-past, it rounds up to the next hour
+ok 1037 Chrome 90.0 - [15 ms] - Unit | lib | timeUtils: laterToday is capped to 6pm. later today at 3pm = 6pm, 3:30pm = 6pm, 4pm = 6pm, 4:59pm = 6pm
+ok 1038 Chrome 90.0 - [18 ms] - Unit | Utility | to-markdown: converts styles between normal words
+ok 1039 Chrome 90.0 - [18 ms] - Unit | Utility | to-markdown: converts inline nested styles
+ok 1040 Chrome 90.0 - [16 ms] - Unit | Utility | to-markdown: converts a link
+ok 1041 Chrome 90.0 - [19 ms] - Unit | Utility | to-markdown: converts a link which is an attachment
+ok 1042 Chrome 90.0 - [17 ms] - Unit | Utility | to-markdown: put raw URL instead of converting the link
+ok 1043 Chrome 90.0 - [16 ms] - Unit | Utility | to-markdown: skip empty link
+ok 1044 Chrome 90.0 - [16 ms] - Unit | Utility | to-markdown: converts heading tags
+ok 1045 Chrome 90.0 - [28 ms] - Unit | Utility | to-markdown: converts ul list tag
+ok 1046 Chrome 90.0 - [18 ms] - Unit | Utility | to-markdown: stripes unwanted inline tags
+ok 1047 Chrome 90.0 - [25 ms] - Unit | Utility | to-markdown: converts table tags
+ok 1048 Chrome 90.0 - [29 ms] - Unit | Utility | to-markdown: replace pipes with spaces if table format not supported
+ok 1049 Chrome 90.0 - [22 ms] - Unit | Utility | to-markdown: converts img tag
+ok 1050 Chrome 90.0 - [19 ms] - Unit | Utility | to-markdown: supporting html tags by keeping them
+ok 1051 Chrome 90.0 - [21 ms] - Unit | Utility | to-markdown: converts code tags
+ok 1052 Chrome 90.0 - [20 ms] - Unit | Utility | to-markdown: converts blockquote tag
+ok 1053 Chrome 90.0 - [18 ms] - Unit | Utility | to-markdown: converts ol list tag
+ok 1054 Chrome 90.0 - [16 ms] - Unit | Utility | to-markdown: converts list tag from word
+ok 1055 Chrome 90.0 - [23 ms] - Unit | Utility | to-markdown: keeps mention/hash class
+ok 1056 Chrome 90.0 - [15 ms] - Unit | Utility | to-markdown: keeps emoji and removes click count
+ok 1057 Chrome 90.0 - [13 ms] - Unit | Utility | to-markdown: keeps emoji syntax for custom emoji
+ok 1058 Chrome 90.0 - [18 ms] - Unit | Utility | to-markdown: converts image lightboxes to markdown
+ok 1059 Chrome 90.0 - [21 ms] - Unit | Utility | to-markdown: converts quotes to markdown
+ok 1060 Chrome 90.0 - [16 ms] - Unit | Utility | to-markdown: strips base64 image URLs
+ok 1061 Chrome 90.0 - [71 ms] - Unit | Utility | pretty-text/upload-short-url: resolveAllShortUrls
+ok 1062 Chrome 90.0 - [51 ms] - Unit | Utility | pretty-text/upload-short-url: resolveAllShortUrls - href + src replaced correctly
+ok 1063 Chrome 90.0 - [57 ms] - Unit | Utility | pretty-text/upload-short-url: resolveAllShortUrls - url with full origin replaced correctly
+ok 1064 Chrome 90.0 - [53 ms] - Unit | Utility | pretty-text/upload-short-url: resolveAllShortUrls - when secure media is enabled use the attachment full URL
+ok 1065 Chrome 90.0 - [58 ms] - Unit | Utility | pretty-text/upload-short-url: resolveAllShortUrls - scoped
+ok 1066 Chrome 90.0 - [20 ms] - Unit | Utility | uploads: validateUploadedFiles
+ok 1067 Chrome 90.0 - [17 ms] - Unit | Utility | uploads: uploading one file
+ok 1068 Chrome 90.0 - [18 ms] - Unit | Utility | uploads: new user cannot upload images
+ok 1069 Chrome 90.0 - [20 ms] - Unit | Utility | uploads: new user can upload images if allowed
+ok 1070 Chrome 90.0 - [16 ms] - Unit | Utility | uploads: TL1 can upload images
+ok 1071 Chrome 90.0 - [16 ms] - Unit | Utility | uploads: new user cannot upload attachments
+ok 1072 Chrome 90.0 - [16 ms] - Unit | Utility | uploads: ensures an authorized upload
+ok 1073 Chrome 90.0 - [14 ms] - Unit | Utility | uploads: skipping validation works
+ok 1074 Chrome 90.0 - [17 ms] - Unit | Utility | uploads: staff can upload anything in PM
+ok 1075 Chrome 90.0 - [17 ms] - Unit | Utility | uploads: allows valid uploads to go through
+ok 1076 Chrome 90.0 - [16 ms] - Unit | Utility | uploads: isImage
+ok 1077 Chrome 90.0 - [15 ms] - Unit | Utility | uploads: allowsImages
+ok 1078 Chrome 90.0 - [13 ms] - Unit | Utility | uploads: allowsAttachments
+ok 1079 Chrome 90.0 - [14 ms] - Unit | Utility | uploads: getUploadMarkdown
+ok 1080 Chrome 90.0 - [16 ms] - Unit | Utility | uploads: getUploadMarkdown - replaces GUID in image alt text on iOS
+ok 1081 Chrome 90.0 - [16 ms] - Unit | Utility | url: isInternal with a HTTP url
+ok 1082 Chrome 90.0 - [14 ms] - Unit | Utility | url: isInternal with a HTTPS url
+ok 1083 Chrome 90.0 - [13 ms] - Unit | Utility | url: isInternal on subfolder install
+ok 1084 Chrome 90.0 - [13 ms] - Unit | Utility | url: userPath
+ok 1085 Chrome 90.0 - [13 ms] - Unit | Utility | url: userPath with prefix
+ok 1086 Chrome 90.0 - [23 ms] - Unit | Utility | url: routeTo with prefix
+ok 1087 Chrome 90.0 - [20 ms] - Unit | Utility | url: prefixProtocol
+ok 1088 Chrome 90.0 - [21 ms] - Unit | Utility | url: routeTo redirects secure media URLS because they are server side only
+ok 1089 Chrome 90.0 - [61 ms] - Unit | Utility | user-search: it flushes cache when switching categories
+ok 1090 Chrome 90.0 - [80 ms] - Unit | Utility | user-search: it returns cancel when eager completing with no results
+ok 1091 Chrome 90.0 - [43 ms] - Unit | Utility | user-search: it places groups unconditionally for exact match
+ok 1092 Chrome 90.0 - [27 ms] - Unit | Utility | user-search: it strips @ from the beginning
+ok 1093 Chrome 90.0 - [148 ms] - Unit | Utility | user-search: it skips a search depending on punctuations
+ok 1094 Chrome 90.0 - [19 ms] - Unit | Utilities: escapeExpression
+ok 1095 Chrome 90.0 - [17 ms] - Unit | Utilities: emailValid
+ok 1096 Chrome 90.0 - [17 ms] - Unit | Utilities: extractDomainFromUrl
+ok 1097 Chrome 90.0 - [21 ms] - Unit | Utilities: avatarUrl
+ok 1098 Chrome 90.0 - [18 ms] - Unit | Utilities: avatarImg
+ok 1099 Chrome 90.0 - [17 ms] - Unit | Utilities: defaultHomepage via meta tag
+ok 1100 Chrome 90.0 - [16 ms] - Unit | Utilities: defaultHomepage via site settings
+ok 1101 Chrome 90.0 - [17 ms] - Unit | Utilities: setDefaultHomepage
+ok 1102 Chrome 90.0 - [21 ms] - Unit | Utilities: caretRowCol
+ok 1103 Chrome 90.0 - [21 ms] - Unit | Utilities: toAsciiPrintable
+ok 1104 Chrome 90.0 - [18 ms] - Unit | Utilities: slugify
+ok 1105 Chrome 90.0 - [20 ms] - Unit | Utilities: fillMissingDates
+ok 1106 Chrome 90.0 - [18 ms] - Unit | Utilities: inCodeBlock
+skip 1107 Chrome 90.0 - [0 ms] - Unit | Utilities: inCodeBlock - runs fast
+ok 1108 Chrome 90.0 - [27 ms] - initializer:localization: translation overrides
+ok 1109 Chrome 90.0 - [18 ms] - initializer:localization: skip translation override if parent node is not an object
+ok 1110 Chrome 90.0 - [18 ms] - Unit | Mixin | grant-badge-controller: grantableBadges
+ok 1111 Chrome 90.0 - [19 ms] - Unit | Mixin | grant-badge-controller: selectedBadgeGrantable
+ok 1112 Chrome 90.0 - [22 ms] - Unit | Mixin | setting-object: flat array
+ok 1113 Chrome 90.0 - [18 ms] - Unit | Mixin | setting-object: object
+ok 1114 Chrome 90.0 - [21 ms] - Unit | Mixin | setting-object: no values
+ok 1115 Chrome 90.0 - [18 ms] - Unit | Mixin | setting-object: value/name properties defined
+ok 1116 Chrome 90.0 - [19 ms] - Unit | Mixin | singleton: current
+ok 1117 Chrome 90.0 - [18 ms] - Unit | Mixin | singleton: currentProp reading
+ok 1118 Chrome 90.0 - [19 ms] - Unit | Mixin | singleton: currentProp writing
+ok 1119 Chrome 90.0 - [18 ms] - Unit | Mixin | singleton: createCurrent
+ok 1120 Chrome 90.0 - [21 ms] - Unit | Mixin | singleton: createCurrent that returns null
+ok 1121 Chrome 90.0 - [18 ms] - Unit | Model | badge: newBadge
+ok 1122 Chrome 90.0 - [17 ms] - Unit | Model | badge: createFromJson array
+ok 1123 Chrome 90.0 - [16 ms] - Unit | Model | badge: createFromJson single
+ok 1124 Chrome 90.0 - [15 ms] - Unit | Model | badge: updateFromJson
+ok 1125 Chrome 90.0 - [35 ms] - Unit | Model | badge: save
+ok 1126 Chrome 90.0 - [33 ms] - Unit | Model | badge: destroy
+ok 1127 Chrome 90.0 - [21 ms] - Unit | Model | category: slugFor
+ok 1128 Chrome 90.0 - [21 ms] - Unit | Model | category: findBySlug
+ok 1129 Chrome 90.0 - [19 ms] - Unit | Model | category: findSingleBySlug
+ok 1130 Chrome 90.0 - [18 ms] - Unit | Model | category: findBySlugPathWithID
+ok 1131 Chrome 90.0 - [21 ms] - Unit | Model | category: search with category name
+ok 1132 Chrome 90.0 - [16 ms] - Unit | Model | category: search with category slug
+ok 1133 Chrome 90.0 - [18 ms] - Unit | Model | composer: replyLength
+ok 1134 Chrome 90.0 - [15 ms] - Unit | Model | composer: missingReplyCharacters
+ok 1135 Chrome 90.0 - [14 ms] - Unit | Model | composer: missingTitleCharacters
+ok 1136 Chrome 90.0 - [17 ms] - Unit | Model | composer: replyDirty
+ok 1137 Chrome 90.0 - [16 ms] - Unit | Model | composer: appendText
+ok 1138 Chrome 90.0 - [14 ms] - Unit | Model | composer: prependText
+ok 1139 Chrome 90.0 - [13 ms] - Unit | Model | composer: Title length for regular topics
+ok 1140 Chrome 90.0 - [13 ms] - Unit | Model | composer: Title length for private messages
+ok 1141 Chrome 90.0 - [17 ms] - Unit | Model | composer: Post length for private messages with non human users
+ok 1142 Chrome 90.0 - [17 ms] - Unit | Model | composer: editingFirstPost
+ok 1143 Chrome 90.0 - [15 ms] - Unit | Model | composer: clearState
+ok 1144 Chrome 90.0 - [14 ms] - Unit | Model | composer: initial category when uncategorized is allowed
+ok 1145 Chrome 90.0 - [14 ms] - Unit | Model | composer: initial category when uncategorized is not allowed
+ok 1146 Chrome 90.0 - [15 ms] - Unit | Model | composer: open with a quote
+ok 1147 Chrome 90.0 - [18 ms] - Unit | Model | composer: Title length for static page topics as admin
+ok 1148 Chrome 90.0 - [16 ms] - Unit | Model | composer: title placeholder depends on what you're doing
+ok 1149 Chrome 90.0 - [13 ms] - Unit | Model | composer: allows featured link before choosing a category
+ok 1150 Chrome 90.0 - [14 ms] - Unit | Model | composer: targetRecipientsArray contains types
+ok 1151 Chrome 90.0 - [13 ms] - Unit | Model | email-log: create
+ok 1152 Chrome 90.0 - [16 ms] - Unit | Model | email-log: subfolder support
+ok 1153 Chrome 90.0 - [15 ms] - Unit | Model | group: displayName
+ok 1154 Chrome 90.0 - [13 ms] - Unit | Model | invite: create
+ok 1155 Chrome 90.0 - [17 ms] - Unit | Model | nav-item: href
+ok 1156 Chrome 90.0 - [16 ms] - Unit | Model | nav-item: count
+ok 1157 Chrome 90.0 - [13 ms] - Unit | Model | post-stream: create
+ok 1158 Chrome 90.0 - [18 ms] - Unit | Model | post-stream: defaults
+ok 1159 Chrome 90.0 - [18 ms] - Unit | Model | post-stream: appending posts
+ok 1160 Chrome 90.0 - [14 ms] - Unit | Model | post-stream: closestPostNumberFor
+ok 1161 Chrome 90.0 - [15 ms] - Unit | Model | post-stream: closestDaysAgoFor
+ok 1162 Chrome 90.0 - [14 ms] - Unit | Model | post-stream: closestDaysAgoFor - empty
+ok 1163 Chrome 90.0 - [16 ms] - Unit | Model | post-stream: updateFromJson
+ok 1164 Chrome 90.0 - [18 ms] - Unit | Model | post-stream: removePosts
+ok 1165 Chrome 90.0 - [16 ms] - Unit | Model | post-stream: cancelFilter
+ok 1166 Chrome 90.0 - [14 ms] - Unit | Model | post-stream: findPostIdForPostNumber
+ok 1167 Chrome 90.0 - [15 ms] - Unit | Model | post-stream: fillGapBefore
+ok 1168 Chrome 90.0 - [14 ms] - Unit | Model | post-stream: filterParticipant
+ok 1169 Chrome 90.0 - [19 ms] - Unit | Model | post-stream: filterReplies
+ok 1170 Chrome 90.0 - [17 ms] - Unit | Model | post-stream: filterUpwards
+ok 1171 Chrome 90.0 - [15 ms] - Unit | Model | post-stream: streamFilters
+ok 1172 Chrome 90.0 - [16 ms] - Unit | Model | post-stream: loading
+ok 1173 Chrome 90.0 - [16 ms] - Unit | Model | post-stream: nextWindow
+ok 1174 Chrome 90.0 - [19 ms] - Unit | Model | post-stream: previousWindow
+ok 1175 Chrome 90.0 - [17 ms] - Unit | Model | post-stream: storePost
+ok 1176 Chrome 90.0 - [29 ms] - Unit | Model | post-stream: identity map
+ok 1177 Chrome 90.0 - [21 ms] - Unit | Model | post-stream: loadIntoIdentityMap with no data
+ok 1178 Chrome 90.0 - [29 ms] - Unit | Model | post-stream: loadIntoIdentityMap with post ids
+ok 1179 Chrome 90.0 - [31 ms] - Unit | Model | post-stream: appendMore for megatopic
+ok 1180 Chrome 90.0 - [31 ms] - Unit | Model | post-stream: prependMore for megatopic
+ok 1181 Chrome 90.0 - [22 ms] - Unit | Model | post-stream: staging and undoing a new post
+ok 1182 Chrome 90.0 - [19 ms] - Unit | Model | post-stream: staging and committing a post
+ok 1183 Chrome 90.0 - [20 ms] - Unit | Model | post-stream: loadedAllPosts when the id changes
+ok 1184 Chrome 90.0 - [28 ms] - Unit | Model | post-stream: triggerRecoveredPost
+ok 1185 Chrome 90.0 - [19 ms] - Unit | Model | post-stream: comitting and triggerNewPostsInStream race condition
+ok 1186 Chrome 90.0 - [24 ms] - Unit | Model | post-stream: triggerNewPostInStream for ignored posts
+ok 1187 Chrome 90.0 - [33 ms] - Unit | Model | post-stream: postsWithPlaceholders
+ok 1188 Chrome 90.0 - [18 ms] - Unit | Model | post-stream: filteredPostsCount
+ok 1189 Chrome 90.0 - [17 ms] - Unit | Model | post-stream: firstPostId
+ok 1190 Chrome 90.0 - [17 ms] - Unit | Model | post-stream: lastPostId
+ok 1191 Chrome 90.0 - [16 ms] - Unit | Model | post-stream: progressIndexOfPostId
+ok 1192 Chrome 90.0 - [14 ms] - Unit | Model | post: defaults
+ok 1193 Chrome 90.0 - [17 ms] - Unit | Model | post: new_user
+ok 1194 Chrome 90.0 - [15 ms] - Unit | Model | post: firstPost
+ok 1195 Chrome 90.0 - [13 ms] - Unit | Model | post: updateFromPost
+ok 1196 Chrome 90.0 - [34 ms] - Unit | Model | post: destroy by staff
+ok 1197 Chrome 90.0 - [36 ms] - Unit | Model | post: destroy by non-staff
+ok 1198 Chrome 90.0 - [20 ms] - Unit | Model | report: counts
+ok 1199 Chrome 90.0 - [17 ms] - Unit | Model | report: percentChangeString
+ok 1200 Chrome 90.0 - [18 ms] - Unit | Model | report: yesterdayCountTitle with valid values
+ok 1201 Chrome 90.0 - [16 ms] - Unit | Model | report: yesterdayCountTitle when two days ago was 0
+ok 1202 Chrome 90.0 - [16 ms] - Unit | Model | report: sevenDaysCountTitle
+ok 1203 Chrome 90.0 - [16 ms] - Unit | Model | report: thirtyDaysCountTitle
+ok 1204 Chrome 90.0 - [19 ms] - Unit | Model | report: sevenDaysTrend
+ok 1205 Chrome 90.0 - [13 ms] - Unit | Model | report: yesterdayTrend
+ok 1206 Chrome 90.0 - [18 ms] - Unit | Model | report: thirtyDaysTrend
+ok 1207 Chrome 90.0 - [15 ms] - Unit | Model | report: higher is better false
+ok 1208 Chrome 90.0 - [18 ms] - Unit | Model | report: small variation (-2/+2% change) is no-change
+ok 1209 Chrome 90.0 - [16 ms] - Unit | Model | report: average
+ok 1210 Chrome 90.0 - [15 ms] - Unit | Model | report: computed labels
+ok 1211 Chrome 90.0 - [13 ms] - Unit | Model | rest-model: munging
+ok 1212 Chrome 90.0 - [31 ms] - Unit | Model | rest-model: update
+ok 1213 Chrome 90.0 - [29 ms] - Unit | Model | rest-model: updating simultaneously
+ok 1214 Chrome 90.0 - [29 ms] - Unit | Model | rest-model: save new
+ok 1215 Chrome 90.0 - [24 ms] - Unit | Model | rest-model: creating simultaneously
+ok 1216 Chrome 90.0 - [38 ms] - Unit | Model | rest-model: destroyRecord
+ok 1217 Chrome 90.0 - [56 ms] - Unit | Model | rest-model: custom api name
+ok 1218 Chrome 90.0 - [20 ms] - Unit | Model | result-set: defaults
+ok 1219 Chrome 90.0 - [36 ms] - Unit | Model | result-set: pagination support
+ok 1220 Chrome 90.0 - [36 ms] - Unit | Model | result-set: refresh support
+ok 1221 Chrome 90.0 - [19 ms] - Unit | Model | session: highestSeenByTopic
+ok 1222 Chrome 90.0 - [18 ms] - Unit | Model | site: create
+ok 1223 Chrome 90.0 - [20 ms] - Unit | Model | site: instance
+ok 1224 Chrome 90.0 - [18 ms] - Unit | Model | site: create categories
+ok 1225 Chrome 90.0 - [15 ms] - Unit | Model | staff-action-log: create
+ok 1226 Chrome 90.0 - [14 ms] - Unit | Model | theme: can add an upload correctly
+ok 1227 Chrome 90.0 - [15 ms] - Unit | Model | topic-details: defaults
+ok 1228 Chrome 90.0 - [17 ms] - Unit | Model | topic-details: updateFromJson
+ok 1229 Chrome 90.0 - [16 ms] - Unit | Model | topic: defaults
+ok 1230 Chrome 90.0 - [14 ms] - Unit | Model | topic: visited
+ok 1231 Chrome 90.0 - [129 ms] - Unit | Model | topic: lastUnreadUrl
+    ---
+        browser log: |
+            {"type":"warn","text":"DEPRECATION: The <(unknown):ember394480>#category computed property was just overriden. This removes the computed property and replaces it with a plain value, and has been deprecated. If you want this behavior, consider defining a setter which does it manually. [deprecation id: computed-property.override] See https://emberjs.com/deprecations/v3.x#toc_computed-property-override for more details."}
+    ...
+ok 1232 Chrome 90.0 - [20 ms] - Unit | Model | topic: has details
+ok 1233 Chrome 90.0 - [19 ms] - Unit | Model | topic: has a postStream
+ok 1234 Chrome 90.0 - [18 ms] - Unit | Model | topic: has suggestedTopics
+ok 1235 Chrome 90.0 - [25 ms] - Unit | Model | topic: category relationship
+ok 1236 Chrome 90.0 - [23 ms] - Unit | Model | topic: updateFromJson
+ok 1237 Chrome 90.0 - [20 ms] - Unit | Model | topic: recover
+ok 1238 Chrome 90.0 - [18 ms] - Unit | Model | topic: fancyTitle
+ok 1239 Chrome 90.0 - [17 ms] - Unit | Model | topic: fancyTitle direction
+ok 1240 Chrome 90.0 - [21 ms] - Unit | Model | topic: excerpt
+ok 1241 Chrome 90.0 - [17 ms] - Unit | Model | topic: visible & invisible
+ok 1242 Chrome 90.0 - [17 ms] - Unit | Model | topic-tracking-state: tag counts
+ok 1243 Chrome 90.0 - [16 ms] - Unit | Model | topic-tracking-state: forEachTracked
+ok 1244 Chrome 90.0 - [16 ms] - Unit | Model | topic-tracking-state: sync
+ok 1245 Chrome 90.0 - [15 ms] - Unit | Model | topic-tracking-state: subscribe to category
+ok 1246 Chrome 90.0 - [17 ms] - Unit | Model | topic-tracking-state: getSubCategoryIds
+ok 1247 Chrome 90.0 - [19 ms] - Unit | Model | topic-tracking-state: countNew
+ok 1248 Chrome 90.0 - [17 ms] - Unit | Model | topic-tracking-state: dismissNew
+ok 1249 Chrome 90.0 - [14 ms] - Unit | Model | topic-tracking-state: mute and unmute topic
+ok 1250 Chrome 90.0 - [14 ms] - Unit | Model | user-action: collapsing likes
+ok 1251 Chrome 90.0 - [15 ms] - Unit | Model | user-badge: createFromJson single
+ok 1252 Chrome 90.0 - [18 ms] - Unit | Model | user-badge: createFromJson array
+ok 1253 Chrome 90.0 - [27 ms] - Unit | Model | user-badge: findByUsername
+ok 1254 Chrome 90.0 - [28 ms] - Unit | Model | user-badge: findByBadgeId
+ok 1255 Chrome 90.0 - [34 ms] - Unit | Model | user-badge: grant
+ok 1256 Chrome 90.0 - [34 ms] - Unit | Model | user-badge: revoke
+ok 1257 Chrome 90.0 - [19 ms] - Unit | Model | user-draft: stream
+ok 1258 Chrome 90.0 - [17 ms] - Unit | Model | user-draft: draft
+ok 1259 Chrome 90.0 - [17 ms] - Unit | Model | user-stream: basics
+ok 1260 Chrome 90.0 - [17 ms] - Unit | Model | user-stream: filterParam
+ok 1261 Chrome 90.0 - [20 ms] - Unit | Model | user: staff
+ok 1262 Chrome 90.0 - [17 ms] - Unit | Model | user: searchContext
+ok 1263 Chrome 90.0 - [16 ms] - Unit | Model | user: isAllowedToUploadAFile
+ok 1264 Chrome 90.0 - [13 ms] - Unit | Model | user: canMangeGroup
+ok 1265 Chrome 90.0 - [14 ms] - Unit | Model | user: resolvedTimezone
+ok 1266 Chrome 90.0 - [13 ms] - Unit | Model | user: muted ids
+ok 1267 Chrome 90.0 - [66 ms] - Acceptance: current-user: currentUser has appEvents
+ok 1268 Chrome 90.0 - [18 ms] - Unit | Service | document-title: it updates the document title
+ok 1269 Chrome 90.0 - [16 ms] - Unit | Service | document-title: it doesn't display notification counts for anonymous users
+ok 1270 Chrome 90.0 - [15 ms] - Unit | Service | document-title: it displays notification counts for logged in users
+ok 1271 Chrome 90.0 - [13 ms] - Unit | Service | document-title: it doesn't display notification counts for users in do not disturb
+ok 1272 Chrome 90.0 - [19 ms] - Unit | Service | document-title: it doesn't increment background context counts when focused
+ok 1273 Chrome 90.0 - [16 ms] - Unit | Service | document-title: it increments background context counts when not focused
+ok 1274 Chrome 90.0 - [14 ms] - Unit | Service | store: createRecord
+ok 1275 Chrome 90.0 - [13 ms] - Unit | Service | store: createRecord without an `id`
+ok 1276 Chrome 90.0 - [14 ms] - Unit | Service | store: createRecord doesn't modify the input `id` field
+ok 1277 Chrome 90.0 - [17 ms] - Unit | Service | store: createRecord without attributes
+ok 1278 Chrome 90.0 - [17 ms] - Unit | Service | store: createRecord with a record as attributes returns that record from the map
+ok 1279 Chrome 90.0 - [33 ms] - Unit | Service | store: find
+ok 1280 Chrome 90.0 - [28 ms] - Unit | Service | store: find with object id
+ok 1281 Chrome 90.0 - [30 ms] - Unit | Service | store: find with query param
+ok 1282 Chrome 90.0 - [32 ms] - Unit | Service | store: findStale with no stale results
+ok 1283 Chrome 90.0 - [27 ms] - Unit | Service | store: update
+ok 1284 Chrome 90.0 - [27 ms] - Unit | Service | store: update with a multi world name
+ok 1285 Chrome 90.0 - [28 ms] - Unit | Service | store: findAll
+ok 1286 Chrome 90.0 - [39 ms] - Unit | Service | store: destroyRecord
+ok 1287 Chrome 90.0 - [27 ms] - Unit | Service | store: destroyRecord when new
+ok 1288 Chrome 90.0 - [30 ms] - Unit | Service | store: find embedded
+ok 1289 Chrome 90.0 - [34 ms] - Unit | Service | store: embedded records can be cleared
+ok 1290 Chrome 90.0 - [31 ms] - Unit | Service | store: meta types
+ok 1291 Chrome 90.0 - [32 ms] - Unit | Service | store: findAll embedded
+ok 1292 Chrome 90.0 - [30 ms] - Unit | Service | store: custom primaryKey
+ok 1293 Chrome 90.0 - [92 ms] - utils:decorators: afterRender
+    ---
+        browser log: |
+            {"type":"warn","text":"DEPRECATION: Using this.clearRender has been deprecated, consider using `clearRender` imported from `@ember/test-helpers`. [deprecation id: ember-test-helpers.setup-rendering-context.clearRender]"}
+    ...
+ok 1294 Chrome 90.0 - [20 ms] - ember-qunit: Ember.onerror validation: Ember.onerror is functioning properly
+
+1..1294
+# tests 1294
+# pass  1275
+# skip  18
+# todo  0
+# fail  1
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.

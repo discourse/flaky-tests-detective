@@ -1,44 +1,43 @@
 # frozen_string_literal: true
 
-require_relative 'qunit_parser.rb'
-require_relative 'rspec_parser.rb'
+require_relative 'qunit_parser'
+require_relative 'rspec_parser'
+require_relative 'ember_cli_tests_parser'
 
 class BuildParser
 
-  def initialize
-    @rspec_parser = RSpecParser.new
-    @qunit_parser = QUnitParser.new
+  def self.default
+    new([
+      RSpecParser.new,
+      QUnitParser.new,
+      EmberCLITestsParser.new
+    ])
+  end
+
+  def initialize(parsers)
+    @parsers = parsers
   end
 
   def parse_raw_from(archive)
     state = archive.tests_report
-    state[:slowest_ruby_tests] ||= {}
-    state[:slowest_js_tests] ||= {}
-    state[:js_timeouts] ||= []
-
     commit_hash = parse_commit_hash(archive)
-    ruby_errors = rspec_parser.errors(state[:ruby_tests], archive, commit_hash)
-    js_errors = qunit_parser.errors(state[:js_tests], archive, commit_hash)
-    slowest_ruby_tests = rspec_parser.slowest_tests(state[:slowest_ruby_tests], archive, commit_hash)
-    slowest_js_tests = qunit_parser.slowest_tests(state[:slowest_js_tests], archive, commit_hash)
 
-    {
+    initial_report = {
       metadata: {
-        runs: (state.dig(:metadata, :runs) + 1),
+        runs: (state.dig(:metadata, :runs).to_i + 1),
         last_commit_hash: commit_hash,
-        new_errors: ruby_errors[:new_errors] || js_errors[:new_errors]
-      },
-      ruby_tests: ruby_errors[:errors],
-      js_tests: js_errors[:errors],
-      slowest_ruby_tests: slowest_ruby_tests,
-      slowest_js_tests: slowest_js_tests,
-      js_timeouts: qunit_parser.timeouts(state[:js_timeouts], archive, commit_hash)
+        new_errors: false
+      }
     }
+
+    parsers.reduce(initial_report) do |memo, parser|
+      parser.attatch_to_report(memo, archive, commit_hash)
+    end
   end
 
   private
 
-  attr_reader :rspec_parser, :qunit_parser
+  attr_reader :parsers
 
   def parse_commit_hash(archive)
     checked_latest = false

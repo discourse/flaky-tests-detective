@@ -18,9 +18,10 @@ RSpec.describe BuildParser do
 
   describe 'Build metadata' do
     let(:raw_output_path) { 'succesful_run.txt' }
+    let(:build_parser) { described_class.new([]) }
 
     it 'Increments the amount of runs' do
-      results = subject.parse_raw_from(@archive)
+      results = build_parser.parse_raw_from(@archive)
 
       expect(results.dig(:metadata, :runs)).to eq clean_state.dig(:metadata, :runs) + 1
       expect(results.dig(:metadata, :new_errors)).to eq false
@@ -29,7 +30,7 @@ RSpec.describe BuildParser do
     it 'Returns the last stable commit hash' do
       expected_commit_hash = '886d619d3f'
 
-      results = subject.parse_raw_from(@archive)
+      results = build_parser.parse_raw_from(@archive)
 
       expect(results.dig(:metadata, :last_commit_hash)).to eq expected_commit_hash
     end
@@ -39,7 +40,7 @@ RSpec.describe BuildParser do
     let(:raw_output_path) { 'succesful_run.txt' }
 
     it 'Returns no errors' do
-      failed_tests = subject.parse_raw_from(@archive)
+      failed_tests = described_class.default.parse_raw_from(@archive)
 
       expect(failed_tests[:ruby_tests]).to be_empty
       expect(failed_tests[:js_tests]).to be_empty
@@ -47,6 +48,8 @@ RSpec.describe BuildParser do
   end
 
   describe 'Parsing a build with JS errors' do
+    let(:build_parser) { described_class.new([QUnitParser.new]) }
+
     context 'Discourse core tests' do
       let(:raw_output_path) { 'qunit_failed_run.txt' }
       let(:test_name) { :test_failed_display_and_hide }
@@ -54,22 +57,22 @@ RSpec.describe BuildParser do
       it 'Parses and stores failed tests' do
         test_failed_assertion = 'Assertion Failed: "abort"'
         test_assertion_result = 'Expected: true, Actual: false'
-        test_module = 'Acceptance: Discourse Tooltips::display and hide'
+        name = 'display and hide'
 
-        parsed_output = subject.parse_raw_from(@archive)
+        parsed_output = build_parser.parse_raw_from(@archive)
         failed_test = parsed_output.dig(:js_tests, test_name)
 
         expect(failed_test[:assertion]).to eq test_failed_assertion
         expect(failed_test[:result]).to eq test_assertion_result
-        expect(failed_test[:module]).to eq test_module
+        expect(failed_test[:test]).to eq name
         expect(failed_test[:failures]).to eq 1
         expect(failed_test[:last_seen_at]).not_to eq(nil)
       end
 
       it 'Updates initial state and returns a new state when the failures counter is incremented' do
-        first_run_state = subject.parse_raw_from(@archive)
+        first_run_state = build_parser.parse_raw_from(@archive)
         @archive.store_tests_report(first_run_state)
-        second_run = subject.parse_raw_from(@archive)
+        second_run = build_parser.parse_raw_from(@archive)
         failed_test = second_run.dig(:js_tests, test_name)
 
         expect(failed_test[:failures]).to eq 2
@@ -79,7 +82,7 @@ RSpec.describe BuildParser do
       it 'Stores the seed' do
         expected_seed = '244504690341935418402669109164211076907'
 
-        parsed_output = subject.parse_raw_from(@archive)
+        parsed_output = build_parser.parse_raw_from(@archive)
         failed_test = parsed_output.dig(:js_tests, test_name)
 
         expect(failed_test[:seed]).to eq expected_seed
@@ -92,17 +95,34 @@ RSpec.describe BuildParser do
 
       it 'stores the last ten JS timeouts' do
         commit_sha = '9a81cb9'
-        parsed_output = subject.parse_raw_from(@archive)
+        parsed_output = build_parser.parse_raw_from(@archive)
 
         timeouts = parsed_output.dig(:js_timeouts)
 
         expect(timeouts).to contain_exactly([commit_sha, seed])
       end
     end
+
+    context 'Parsing slowest JS test duration' do
+      let(:raw_output_path) { 'succesful_run.txt' }
+
+      it 'records the time of a JS slow test' do
+        test_key = :acceptance_composer_actionsinteractions
+        duration = 0.849
+
+        output = build_parser.parse_raw_from(@archive)
+        test_duration = output.dig(:slowest_js_tests, test_key)
+
+        expect(test_duration[:worst]).to eq duration
+        expect(test_duration[:best]).to eq duration
+        expect(test_duration[:average]).to eq duration
+      end
+    end
   end
 
   describe 'Parsing a build with RSpec errors' do
     let(:raw_output_path) { 'rspec_failed_run.txt' }
+    let(:build_parser) { described_class.new([RSpecParser.new]) }
 
     context 'Discourse core tests' do
       let(:test_name) { :__spec_requests_finish_installation_controller_spec_rb_11 }
@@ -115,7 +135,7 @@ RSpec.describe BuildParser do
         EOS
         test_module = './spec/requests/finish_installation_controller_spec.rb:11'
 
-        parsed_output = subject.parse_raw_from(@archive)
+        parsed_output = build_parser.parse_raw_from(@archive)
         failed_test = parsed_output.dig(:ruby_tests, test_name)
 
         expect(failed_test[:assertion]).to eq test_failed_assertion
@@ -126,9 +146,9 @@ RSpec.describe BuildParser do
       end
 
       it 'Updates initial state and returns a new state when the failures counter is incremented' do
-        first_run_state = subject.parse_raw_from(@archive)
+        first_run_state = build_parser.parse_raw_from(@archive)
         @archive.store_tests_report(first_run_state)
-        second_run = subject.parse_raw_from(@archive)
+        second_run = build_parser.parse_raw_from(@archive)
         failed_test = second_run.dig(:ruby_tests, test_name)
 
         expect(failed_test[:failures]).to eq 2
@@ -138,7 +158,7 @@ RSpec.describe BuildParser do
       it 'Stores the seed' do
         expected_seed = '21827'
 
-        parsed_output = subject.parse_raw_from(@archive)
+        parsed_output = build_parser.parse_raw_from(@archive)
         failed_test = parsed_output.dig(:ruby_tests, test_name)
 
         expect(failed_test[:seed]).to eq expected_seed
@@ -163,7 +183,7 @@ RSpec.describe BuildParser do
         EOS
         test_module = './plugins/discourse-calendar/spec/jobs/ensure_expired_event_destruction_spec.rb:66'
 
-        parsed_output = subject.parse_raw_from(@archive)
+        parsed_output = build_parser.parse_raw_from(@archive)
         failed_test = parsed_output.dig(:ruby_tests, test_name)
 
         expect(failed_test[:assertion]).to eq test_failed_assertion
@@ -176,43 +196,27 @@ RSpec.describe BuildParser do
       it 'Stores the seed' do
         expected_seed = '47979'
 
-        parsed_output = subject.parse_raw_from(@archive)
+        parsed_output = build_parser.parse_raw_from(@archive)
         failed_test = parsed_output.dig(:ruby_tests, test_name)
 
         expect(failed_test[:seed]).to eq expected_seed
       end
     end
-  end
 
-  describe 'Parsing slowest RSpec test duration' do
-    let(:raw_output_path) { 'succesful_run.txt' }
+    context 'Parsing slowest RSpec test duration' do
+      let(:raw_output_path) { 'succesful_run.txt' }
 
-    it 'records the time of a RSpec slow test' do
-      test_key = :__spec_requests_admin_themes_controller_spec_rb_104
-      duration = 40.13
+      it 'records the time of a RSpec slow test' do
+        test_key = :__spec_requests_admin_themes_controller_spec_rb_104
+        duration = 40.13
 
-      output = subject.parse_raw_from(@archive)
-      test_duration = output.dig(:slowest_ruby_tests, test_key)
+        output = build_parser.parse_raw_from(@archive)
+        test_duration = output.dig(:slowest_ruby_tests, test_key)
 
-      expect(test_duration[:worst]).to eq duration
-      expect(test_duration[:best]).to eq duration
-      expect(test_duration[:average]).to eq duration
-    end
-  end
-
-  describe 'Parsing slowest JS test duration' do
-    let(:raw_output_path) { 'succesful_run.txt' }
-
-    it 'records the time of a JS slow test' do
-      test_key = :acceptance_composer_actionsinteractions
-      duration = 0.849
-
-      output = subject.parse_raw_from(@archive)
-      test_duration = output.dig(:slowest_js_tests, test_key)
-
-      expect(test_duration[:worst]).to eq duration
-      expect(test_duration[:best]).to eq duration
-      expect(test_duration[:average]).to eq duration
+        expect(test_duration[:worst]).to eq duration
+        expect(test_duration[:best]).to eq duration
+        expect(test_duration[:average]).to eq duration
+      end
     end
   end
 end

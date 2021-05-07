@@ -5,8 +5,7 @@ require_relative 'lib/detective.rb'
 require_relative 'lib/printers/markdown_printer.rb'
 require_relative 'lib/archives/file_system_archive.rb'
 
-report_path = ARGV[0]
-report_filename = ARGV[1]
+report_filename = ARGV[0] || 'build_report.json'
 threshold = 3
 
 working_dir = File.expand_path('../reports', __FILE__)
