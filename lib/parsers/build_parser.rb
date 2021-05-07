@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
-require_relative 'qunit_parser.rb'
-require_relative 'rspec_parser.rb'
+require_relative 'qunit_parser'
+require_relative 'rspec_parser'
+require_relative 'ember_cli_tests_parser'
 
 class BuildParser
 

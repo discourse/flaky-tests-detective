@@ -17,7 +17,7 @@ class MarkdownPrinter
 
       #{flaky_tests(report)}
 
-      #{build_js_timeouts(report)}
+      #{build_js_timeouts(report[:js_timeouts])}
 
       ---
 
@@ -31,7 +31,7 @@ class MarkdownPrinter
   private
 
   def flaky_tests(report)
-    if !report.dig(:metadata, :new_errors)
+    if %i[ruby_tests js_tests ember_cli_tests].all? { |k| report[k].empty? }
       return "*Looks like I couldn't find any flaky tests this time :tada:*"
     end
 
@@ -85,7 +85,6 @@ class MarkdownPrinter
       ### JS Timeouts
 
       #{timeouts}
-
     EOS
   end
 
@@ -94,9 +93,11 @@ class MarkdownPrinter
       .select { |t| t[:occurances].to_i >= 10 }
       .sort_by { |t| -t[:average].to_i }
       .first(20)
+
     output = ordered_tests.reduce("") do |memo, test|
       memo += slow_test_row(test)
     end
+
     <<~eos
     <details>
       <summary>Slowest #{type} tests</summary>

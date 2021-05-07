@@ -35,7 +35,13 @@ RSpec.describe MarkdownPrinter do
   end
 
   context 'When report is empty' do
-    let(:json_report) { { ruby_tests: {}, js_tests: {} , slowest_ruby_tests: {}, slowest_js_tests: {}, slowest_ember_cli_tests: {} } }
+    let(:json_report) do
+      {
+        ruby_tests: {}, js_tests: {} , slowest_ruby_tests: {},
+        ember_cli_tests: {}, slowest_js_tests: {}, slowest_ember_cli_tests: {},
+        js_timeouts: {}
+      }
+    end
 
     it 'includes a message saying there is no new flakey tests' do
       body = "*Looks like I couldn't find any flaky tests this time :tada:*"
