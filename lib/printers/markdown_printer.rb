@@ -110,7 +110,7 @@ class MarkdownPrinter
   def slow_test_row(test)
     name = test[:name] || test[:output]
     <<~EOS
-    _#{NAME}_
+    _#{name}_
     **Best: #{test[:best].round(2)} - Worst: #{test[:worst].round(2)} - Avg: #{test[:average].round(2)}**
     #{test[:trace]}
     EOS
