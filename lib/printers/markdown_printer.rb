@@ -62,7 +62,7 @@ class MarkdownPrinter
 
     ordered_tests.reduce('') do |memo, test|
       memo += <<~eos
-        #### #{test[:test]}
+        #### #{test[:test] || test[:module]}
 
         Total failures: #{test[:failures]}
         Failures since last report: #{test[:new_failures]}

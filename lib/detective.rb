@@ -12,6 +12,7 @@ class Detective
 
     curate_report!(filtered_report, previous_report, :ruby_tests, threshold)
     curate_report!(filtered_report, previous_report, :js_tests, threshold)
+    curate_report!(filtered_report, previous_report, :ember_cli_tests, threshold)
 
     failures_since_last_report!(filtered_report, previous_report, :ruby_tests)
     failures_since_last_report!(filtered_report, previous_report, :js_tests)
@@ -37,6 +38,7 @@ class Detective
 
   def curate_report!(report, previous_report, test_key, threshold)
     report[test_key].delete_if do |test_name, test|
+      (test_key == :ruby_tests && !test[:module].include?('spec')) ||
       test[:failures] < threshold ||
       (!previous_report.dig(test_key).empty? &&
       report.dig(test_key, test_name, :failures) == previous_report.dig(test_key, test_name, :failures))
