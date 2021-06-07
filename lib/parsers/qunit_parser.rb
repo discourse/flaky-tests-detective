@@ -130,6 +130,10 @@ class QUnitParser < TestsParser
 
     return state unless timed_out[:found]
 
+    if timed_out[:seed].nil?
+      archive.store_timeout("timeout_#{commit_hash}.txt")
+    end
+
     state.last(9) << [commit_hash, timed_out[:seed]]
   end
 

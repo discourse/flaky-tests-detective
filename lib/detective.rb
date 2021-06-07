@@ -16,6 +16,7 @@ class Detective
 
     failures_since_last_report!(filtered_report, previous_report, :ruby_tests)
     failures_since_last_report!(filtered_report, previous_report, :js_tests)
+    failures_since_last_report!(filtered_report, previous_report, :ember_cli_tests)
 
     filtered_report[:metadata][:report_runs] = runs(filtered_report) - runs(previous_report)
 

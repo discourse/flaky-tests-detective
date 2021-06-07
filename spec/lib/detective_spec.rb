@@ -10,12 +10,13 @@ RSpec.describe Detective do
   let(:raw_report) do
     {
       metadata: { runs: 1 },
-      ruby_tests: { test_ruby_a: { failures: 1 }, test_ruby_b: { failures: 2 } },
-      js_tests: { test_js_a: { failures: 6 }, test_js_b: { failures: 3 } }
+      ruby_tests: { test_ruby_a: { failures: 1, module: '/spec/test_ruby_a.rb' }, test_ruby_b: { failures: 2, module: '/spec/test_ruby_b.rb' } },
+      js_tests: { test_js_a: { failures: 6 }, test_js_b: { failures: 3 } },
+      ember_cli_tests: { test_cli_a: { failures: 6 }, test_cli_b: { failures: 3 } }
     }
   end
 
-  let(:archive) { MemoryArchive.new(raw_report, metadata: { runs: 0 }, ruby_tests: {}, js_tests: {}) }
+  let(:archive) { MemoryArchive.new(raw_report, metadata: { runs: 0 }, ruby_tests: {}, js_tests: {}, ember_cli_tests: {}) }
 
   describe '#report_for' do
     it 'filters tests with less than one failures' do
@@ -46,8 +47,9 @@ RSpec.describe Detective do
       let(:previous_report) do
         {
           metadata: { runs: 1 },
-          ruby_tests: { test_ruby_a: { failures: 1 }, test_ruby_b: { failures: 1 } },
-          js_tests: { test_js_a: { failures: 6 }, test_js_b: { failures: 2 } }
+          ruby_tests: { test_ruby_a: { failures: 1, module: '/spec/test_ruby_a.rb'  }, test_ruby_b: { failures: 1, module: '/spec/test_ruby_b.rb' } },
+          js_tests: { test_js_a: { failures: 6 }, test_js_b: { failures: 2 } },
+          ember_cli_tests: { test_cli_a: { failures: 1 }, test_cli_b: { failures: 2 } }
         }
       end
 

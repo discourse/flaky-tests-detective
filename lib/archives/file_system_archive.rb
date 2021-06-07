@@ -56,6 +56,11 @@ class FileSystemArchive
     File.foreach("#{@working_dir}/#{@last_build_file_name}")
   end
 
+  def store_timeout(filename)
+    source = "#{@working_dir}/last_build.txt"
+    FileUtils.cp(source, "#{@working_dir}/#{filename}")
+  end
+
   private
 
   def last_report_path
