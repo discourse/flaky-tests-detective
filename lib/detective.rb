@@ -6,7 +6,7 @@ class Detective
     archive.store_tests_report(results)
   end
 
-  def report_for(report_printer, threshold, archive)
+  def report_for(threshold, archive)
     filtered_report = archive.tests_report
     previous_report = archive.last_report_sent
 
@@ -20,15 +20,30 @@ class Detective
 
     filtered_report[:metadata][:report_runs] = runs(filtered_report) - runs(previous_report)
 
-    report_printer.print_from(filtered_report)
+    filtered_report
   end
 
   def report_to(client, remote_topic_id, report_printer, archive, threshold)
-    report = report_for(report_printer, threshold, archive)
-    client.create_post(topic_id: remote_topic_id, raw: report)
+    report = report_for(threshold, archive)
+    printed_report = report_printer.print_from(report)
+
+    created_post = create_post(client, remote_topic_id, printed_report)
     archive.update_last_report_sent
+
+    ruby_failures = report.dig(:ruby_tests, :failures).to_i
+    js_failures = report.dig(:js_tests, :failures).to_i
+    ember_cli_failures = report.dig(:ember_cli_tests, :failures).to_i
+
+    {
+      post_number: created_post["post_number"],
+      failures: ruby_failures + js_failures + ember_cli_failures
+    }
   rescue DiscourseApi::Error => e
     e.message
+  end
+
+  def create_post(client, topic_id, raw)
+    client.create_post(topic_id: topic_id, raw: raw)
   end
 
   private

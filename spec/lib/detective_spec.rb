@@ -73,7 +73,8 @@ RSpec.describe Detective do
     end
 
     def build_report(threshold, archive)
-      subject.report_for(JSONPrinter.new, threshold, archive)
+      report = subject.report_for(threshold, archive)
+      JSONPrinter.new.print_from(report)
     end
 
     def selected_tests(report)
@@ -105,6 +106,7 @@ RSpec.describe Detective do
 
       def create_post(args)
         raise ::DiscourseApi::Error if @raise_exception
+        { "post_number" => 1 }
       end
     end
   end

@@ -11,4 +11,5 @@ threshold = 3
 working_dir = File.expand_path('../reports', __FILE__)
 archive = FileSystemArchive.new(working_dir, report_filename)
 
-puts Detective.new.report_for(MarkdownPrinter.new, threshold, archive)
+report = Detective.new.report_for(threshold, archive)
+puts MarkdownPrinter.new.print_from(report)
