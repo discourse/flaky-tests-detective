@@ -30,9 +30,9 @@ class Detective
     created_post = create_post(client, remote_topic_id, printed_report)
     archive.update_last_report_sent
 
-    ruby_failures = report.dig(:ruby_tests, :failures).to_i
-    js_failures = report.dig(:js_tests, :failures).to_i
-    ember_cli_failures = report.dig(:ember_cli_tests, :failures).to_i
+    ruby_failures = report.dig(:ruby_tests)&.keys&.length.to_i
+    js_failures = report.dig(:js_tests)&.keys&.length.to_i
+    ember_cli_failures = report.dig(:ember_cli_tests)&.keys&.length.to_i
 
     {
       post_number: created_post["post_number"],
